@@ -1,0 +1,112 @@
+﻿●BASE_DATA●
+{
+    "name": "Triton",
+    "radius": 67630.0,
+    "gravity": 0.77,
+    "timewarpHeight": 5000.0,
+    "mapColor": {
+        "r": 0.6509803921568627,
+        "g": 0.6392156862745098,
+        "b": 0.6235294117647059
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 5000.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 2500,
+        "gradientHeight": 15000.0,
+        "gradientTexture": "Atmo_Europa"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "triton",
+        "planetTextureCutout": 0.9900000095367432,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 70.0,
+            "y": 25.0
+        },
+        "surfaceTextureB": "Dark_Dust",
+        "surfaceTextureSizeB": {
+            "x": 70.0,
+            "y": 25.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 200.0,
+            "y": 120.0
+        },
+        "surfaceLayerSize": 60.0,
+        "minFade": 0.0,
+        "maxFade": 0.6000000238418579,
+        "shadowIntensity": 0.0,
+        "shadowHeight": 0.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 45, 300)",
+        "OUTPUT = AddHeightMap( Perlin, 20, 130)",
+        "OUTPUT = AddHeightMap(Craters, 80, 150)",
+        "OUTPUT = AddHeightMap(Craters, 30, 70)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1000.0
+        },
+        {
+            "loadDistance": 10000.0,
+            "verticeSize": 300.0
+        },
+        {
+            "loadDistance": 3000.0,
+            "verticeSize": 120.0
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 8.0
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2.0
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Neptune",
+    "orbitHeight": 17737950.0,
+    "multiplierSOI": 3.0,
+    "orbitLineResolution": 100
+}

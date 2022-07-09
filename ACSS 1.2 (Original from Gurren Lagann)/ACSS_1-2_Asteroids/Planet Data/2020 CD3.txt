@@ -1,0 +1,97 @@
+●BASE_DATA●
+{
+    "name": "2020 CD3",
+    "radius": 0.135,
+    "gravity": 0.000001465,
+    "timewarpHeight": 0.0,
+    "mapColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "2020 CD3",
+        "planetTextureCutout": 0.8,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Phobos, 1.25, 0.03515)",
+
+		"OUTPUT = AddHeightMap( Mars, 0.32, 0.010625, Curve5)",
+		"OUTPUT = AddHeightMap( Perlin, 3, 0.004555, Curve6)",
+
+		"M = AddHeightMap( Perlin, 1.5, 0.0001, Curve7)",
+
+		"OUTPUT = AddHeightMap( Perlin, 15, 0.0003, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 40, 0.0002, null, M)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 0.0005
+        },
+        {
+            "loadDistance": 0.00125,
+            "verticeSize": 0.000375
+        },
+        {
+            "loadDistance": 0.0005,
+            "verticeSize": 0.00025
+        },
+        {
+            "loadDistance": 0.000125,
+            "verticeSize": 0.000105
+        },
+        {
+            "loadDistance": 0.000025,
+            "verticeSize": 0.00005
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Earth",
+    "orbitHeight": 14000000.0,
+    "multiplierSOI": 1502783.78165423,
+    "orbitLineResolution": 100
+}
+
+
+
+
+
+

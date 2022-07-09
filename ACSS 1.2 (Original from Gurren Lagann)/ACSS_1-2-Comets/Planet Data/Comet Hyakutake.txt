@@ -1,0 +1,121 @@
+﻿●BASE_DATA●
+{
+    "name": "Comet Hyakutake",
+    "radius": 105.0,
+    "gravity": 0.00045,
+    "timewarpHeight": 0.0,
+    "mapColor": {
+        "r": 0.3,
+        "g": 0.3,
+        "b": 0.3
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 1500000.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 1309129.875,
+        "gradientTexture": "Atmo_CometHyakutake"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Hyakutake",
+        "planetTextureCutout": 0.8,
+        "surfaceTextureA": "Soft_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Circles",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Hard_Rocks",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap( Phobos, 1, 63)",
+		"OUTPUT = AddHeightMap( Deimos, 3, 45)",
+        "OUTPUT = AddHeightMap( Perlin, 50, -2, Curve3)",
+        "OUTPUT = AddHeightMap( Perlin, 20, 1, Curve3)",
+		"OUTPUT = AddHeightMap( Perlin, 5, 5, Curve4)",
+
+        "M = AddHeightMap( Perlin, 5, 1)",
+
+		"OUTPUT = AddHeightMap( Perlin, 3, 3, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 8, 4, null, M)"
+    ],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 4.0
+        },
+        {
+            "loadDistance": 2500000.0,
+            "verticeSize": 1.5
+        },
+        {
+            "loadDistance": 1000000.0,
+            "verticeSize": 0.5
+        },
+        {
+            "loadDistance": 250000.0,
+            "verticeSize": 0.1
+        },
+        {
+            "loadDistance": 50000.0,
+            "verticeSize": 0.1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 5086400000000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+

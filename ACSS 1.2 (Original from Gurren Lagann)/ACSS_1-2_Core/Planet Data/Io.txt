@@ -1,0 +1,103 @@
+●BASE_DATA●
+{
+    "name": "Io",
+    "radius": 121500.0,
+    "gravity": 4.32,
+    "timewarpHeight": 5000.0,
+    "mapColor": {
+        "r": 0.8999999761581421,
+        "g": 0.8500000238418579,
+        "b": 0.4000000059604645
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Io",
+        "planetTextureCutout": -1.0,
+        "surfaceTextureA": "Dust",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "None",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Dust",
+        "terrainTextureSize": {
+            "x": 150.0,
+            "y": 50.0
+        },
+        "surfaceLayerSize": 30.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 0.75,
+        "shadowHeight": 15.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Io, 100, 150)",
+        "OUTPUT = AddHeightMap( Io, 300, 20)",
+        "OUTPUT = AddHeightMap( Perlin, 800, 3)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1000.0
+        },
+        {
+            "loadDistance": 10000.0,
+            "verticeSize": 200.0
+        },
+        {
+            "loadDistance": 3000.0,
+            "verticeSize": 50.0
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 20.0
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 5.0
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2.5
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2.5
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Jupiter",
+    "orbitHeight": 16868000.0,
+    "multiplierSOI": 2.0,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 0.0,
+            "shadowIntensity": 1.649999976158142,
+            "hueShift": 0.0,
+            "saturation": 0.949999988079071,
+            "contrast": 1.100000023841858,
+            "red": 0.9599999785423279,
+            "green": 0.9800000190734863,
+            "blue": 1.0
+        }
+    ]
+}
+

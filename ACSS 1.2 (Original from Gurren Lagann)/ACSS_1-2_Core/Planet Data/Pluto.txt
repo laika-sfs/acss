@@ -1,0 +1,138 @@
+●BASE_DATA●
+{
+    "name": "Pluto",
+    "radius": 55000.0,
+    "gravity": 0.62,
+    "timewarpHeight": 2500.0,
+    "mapColor": {
+        "r": 0.75,
+        "g": 0.8100000023841858,
+        "b": 0.8500000238418579
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 3000.0,
+        "density": 0.000000082,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 4500.0,
+        "gradientTexture": "Transparent"        
+    },
+    "CLOUDS": {
+        "cloudTexture": "DayNightPluto",
+        "startHeight": -3333.33333,
+        "height": 49000,
+        "repeatX": 0.0039,
+        "alpha": 1.5,
+        "cloudVelocity": 0.0067647
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Pluto2",
+        "planetTextureCutout": 0.82,
+        "surfaceTextureA": "Hard_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 70.0,
+            "y": 25.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": 70.0,
+            "y": 25.0
+        },
+        "terrainTexture": "Ice",
+        "terrainTextureSize": {
+            "x": 1200.0,
+            "y": 400.0
+        },
+        "surfaceLayerSize": 60.0,
+        "minFade": 0.0,
+        "maxFade": 0.6000000238418579,
+        "shadowIntensity": 0.0,
+        "shadowHeight": 0.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 390, 3.0, Pow3)",
+        "OUTPUT = AddHeightMap( Perlin, 154, 8.0, Pow3)",
+        "OUTPUT = AddHeightMap( Perlin, 50, 30, Pow3)",
+        "OUTPUT = AddHeightMap( Perlin, 600, 2.0, Pow3)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1000.0
+        },
+        {
+            "loadDistance": 10000.0,
+            "verticeSize": 300.0
+        },
+        {
+            "loadDistance": 3000.0,
+            "verticeSize": 120.0
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 8.0
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2.0
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 118270400000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 500.0,
+            "shadowIntensity": 1.399999976158142,
+            "hueShift": 5.0,
+            "saturation": 1.0,
+            "contrast": 1.0499999523162842,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0
+        },
+        {
+            "height": 15000.0,
+            "shadowIntensity": 1.649999976158142,
+            "hueShift": 5.0,
+            "saturation": 1.0,
+            "contrast": 1.024999976158142,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0
+        }
+    ]
+}

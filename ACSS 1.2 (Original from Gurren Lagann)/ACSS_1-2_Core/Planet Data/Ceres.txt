@@ -1,0 +1,93 @@
+﻿●BASE_DATA●
+{
+    "name": "Ceres",
+    "radius": 24064.0,
+    "gravity": 0.28,
+    "timewarpHeight": 5000.0,
+    "mapColor": {
+        "r": 0.375,
+        "g": 0.3805147111415863,
+        "b": 0.3805147111415863
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Ceres",
+        "planetTextureCutout": -0.999,
+        "surfaceTextureA": "Dark_Dust",
+        "surfaceTextureSizeA": {
+            "x": 10.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 30.0,
+            "y": 18.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 280.0,
+            "y": 145.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap(Craters, 12, 24)",
+		"OUTPUT = AddHeightMap(Craters, 6, 10)",
+		"OUTPUT = AddHeightMap( Perlin, 2.5, 50)",
+		"OUTPUT = AddHeightMap( Perlin, 3, 25)"
+	],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 80, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+	],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1500
+        },
+        {
+            "loadDistance": 20000.0,
+            "verticeSize": 200
+        },
+        {
+            "loadDistance": 5000.0,
+            "verticeSize": 100
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 30
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 6
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 8276651800.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}

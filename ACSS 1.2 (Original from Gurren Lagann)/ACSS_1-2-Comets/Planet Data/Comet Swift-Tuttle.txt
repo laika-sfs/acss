@@ -1,0 +1,121 @@
+﻿●BASE_DATA●
+{
+    "name": "Comet Swift-Tuttle",
+    "radius": 2500.0,
+    "gravity": 0.003,
+    "timewarpHeight": 200.0,
+    "mapColor": {
+        "r": 0.23529411764,
+        "g": 0.23529411764,
+        "b": 0.23529411764
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 500000.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 25000.0,
+        "gradientTexture": "Atmo_CometSwiftTuttle"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "SwiftTuttle",
+        "planetTextureCutout": 0.75,
+        "surfaceTextureA": "Ice",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Hard_Rocks",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap( Phobos, 1, 1500)",
+
+        "OUTPUT = AddHeightMap( Perlin, 0.32, 1000, Curve3)",
+        "OUTPUT = AddHeightMap( Perlin, 1, 500, Curve3)",
+		"OUTPUT = AddHeightMap( Perlin, 5, 125, Curve4)",
+
+        "M = AddHeightMap( Perlin, 5, 1)",
+
+		"OUTPUT = AddHeightMap( Perlin, 3, 18, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 8, 4, null, M)"
+    ],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 0.5
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 78067264000.0,
+    "multiplierSOI": 1.5,
+    "orbitLineResolution": 100
+}
+

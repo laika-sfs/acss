@@ -1,0 +1,112 @@
+●BASE_DATA●
+{
+    "name": "Hartley 2",
+    "radius": 28.0,
+    "gravity": 0.00001,
+    "timewarpHeight": 0.0,
+    "mapColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 100.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 100.0,
+        "gradientTexture": "Atmo_Comet"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Hartley 2",
+        "planetTextureCutout": 0.925000011920929,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Deimos, 1, 45.1)",
+
+		"OUTPUT = AddHeightMap( Perlin, 0.32, 14.0, Curve5)",
+		"OUTPUT = AddHeightMap( Perlin, 1.5, 2.0, Curve6)",
+
+		"M = AddHeightMap( Perlin, 1.5, 0.1, Curve7)",
+
+		"OUTPUT = AddHeightMap( Perlin, 1.5, 0.4, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 0.4, 0.2, null, M)"
+	],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 0.040
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 0.015
+        },
+        {
+            "loadDistance": 300.0,
+            "verticeSize": 0.05
+        },
+        {
+            "loadDistance": 125.0,
+            "verticeSize": 0.025
+        },
+        {
+            "loadDistance": 55.0,
+            "verticeSize": 0.01
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 10352320000.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}
+

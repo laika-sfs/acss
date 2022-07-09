@@ -1,0 +1,80 @@
+●BASE_DATA●
+{
+    "name": "2309 Mr Spock",
+    "radius": 3050.0,
+    "gravity": 0.068,
+    "timewarpHeight": 300.0,
+    "mapColor": {
+        "r": 0.125,
+        "g": 0.2,
+        "b": 0.352
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Asteroid7",
+        "planetTextureCutout": 0.9990000128746033,
+        "surfaceTextureA": "Soft_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 30.0,
+            "y": 10.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Dark_Dust",
+        "terrainTextureSize": {
+            "x": 150.0,
+            "y": 50.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 0.0,
+        "shadowIntensity": 0.5,
+        "shadowHeight": 8.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap(Craters, 0, 0)",
+        "OUTPUT = AddHeightMap(Craters, 0, 0)",
+        "OUTPUT = AddHeightMap(Craters, 7, 800)",
+        "OUTPUT = AddHeightMap( Perlin, 5, 6)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 40
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 8975872000.0,
+    "multiplierSOI": 4.5,
+    "orbitLineResolution": 100
+}
+

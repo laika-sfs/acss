@@ -1,0 +1,117 @@
+●BASE_DATA●
+{
+    "name": "Comet Holmes",
+    "radius": 3414.75,
+    "gravity": 0.008,
+    "timewarpHeight": 858,
+    "mapColor": {
+        "r": 0.125,
+        "g": 0.125,
+        "b": 0.125
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 50000000.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 35247950.0,
+        "gradientTexture": "Atmo_CometHolmes"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Comet Holmes",
+        "planetTextureCutout": 0.5, 
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Circles",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Phobos, 1, 870)",
+
+		"OUTPUT = AddHeightMap( Perlin, 0.32, 60.9, Curve5)",
+		"OUTPUT = AddHeightMap( Perlin, 1.5, 43.5, Curve6)",
+
+		"M = AddHeightMap( Perlin, 1.5, 4, Curve7)",
+
+		"OUTPUT = AddHeightMap( Perlin, 6, 14, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 15, 2, null, M)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Phobos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 0.5
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 10826294688.0,
+    "multiplierSOI": 1,
+    "orbitLineResolution": 100
+}
+

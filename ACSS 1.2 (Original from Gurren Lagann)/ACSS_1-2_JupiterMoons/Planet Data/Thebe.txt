@@ -1,0 +1,161 @@
+﻿●BASE_DATA●
+{
+    
+"name": "Thebe",
+    
+"radius": 32732,
+    
+"gravity": 0.843,
+    
+"timewarpHeight": 4000.0,
+    
+"mapColor": 
+{
+        
+"r": 0.3579445481300354,
+        
+"g": 0.25799880623817446,
+        
+"b": 0.2071880829334259
+   
+},
+
+    "mapResolution": 1000,
+    
+"hideNameMultiplier": 80.0
+}
+
+
+
+●TERRAIN_DATA●
+
+
+{
+    "TERRAIN_TEXTURE_DATA": 
+{
+
+        
+"planetTexture": "Thebe",
+        
+"planetTextureCutout": 0.9350000023841858,
+        
+"surfaceTextureA": "Soft_Rocks",
+        
+"surfaceTextureSizeA": {
+            
+"x": 24.0,
+            
+"y": 24.0
+        },
+
+        
+"surfaceTextureB": "Ice",
+        
+"surfaceTextureSizeB": {
+            
+"x": 24.0,
+            
+"y": 24.0
+        },
+
+        
+"terrainTexture": "Circles",
+        
+"terrainTextureSize": 
+{
+            
+"x": 200.0,
+            
+"y": 150.0
+        },
+
+        
+"surfaceLayerSize": 35.0,
+        
+"minFade": 0.15,
+        
+"maxFade": 0.65,
+        
+"shadowIntensity": 8.0,
+        
+"shadowHeight": 2.5
+    },
+
+    
+
+"terrainFromula": 
+[
+
+"OUTPUT = AddHeightMap( Deimos, 1, 4500)",
+"OUTPUT = AddHeightMap( Phobos, 5, 2000)",
+"OUTPUT = AddHeightMap( Phobos, 1, 10000)",
+"OUTPUT = AddHeightMap( Craters, 1, 1200)",
+"OUTPUT = AddHeightMap( Perlin, 500, 1)", 
+"OUTPUT = AddHeightMap( Perlin, 50, 10, Curve2)" 		
+
+    
+],
+
+ 
+   
+"textureFormula": [
+		
+"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    
+
+"DETAIL_LEVELS": 
+[
+        
+{
+            
+"loadDistance": 0.0,
+            
+"verticeSize": 40
+        },
+        
+{
+            
+"loadDistance": 2500.0,
+            
+"verticeSize": 15
+        },
+        
+{
+            
+"loadDistance": 800.0,
+            
+"verticeSize": 3
+        },
+        
+{
+            
+"loadDistance": 200.0,
+            
+"verticeSize": 1
+        },
+        
+{
+            
+"loadDistance": 50.0,
+            
+"verticeSize": 0.5
+        }
+    ]
+}
+
+
+●ORBIT_DATA●
+
+{
+    
+"parent": "Jupiter",
+    
+"orbitHeight": 8876000,
+    
+"multiplierSOI": 3.5,
+    
+"orbitLineResolution": 100
+}
+

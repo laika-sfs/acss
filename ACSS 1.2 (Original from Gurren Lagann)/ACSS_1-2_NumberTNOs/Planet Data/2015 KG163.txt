@@ -1,0 +1,100 @@
+●BASE_DATA●
+{
+    "name": "2015 KG163",
+    "radius": 2600.0, 
+    "gravity": 0.037058,
+    "timewarpHeight": 1000.0,
+    "mapColor": {
+        "r": 0.1,
+        "g": 0.1,
+        "b": 0.1
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "2015 KG163",
+        "planetTextureCutout": 0.9001,
+        "surfaceTextureA": "Dark_Dust",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 30.0,
+            "y": 14.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 280.0,
+            "y": 145.0
+        },
+        "surfaceLayerSize": 30.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.0,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 15, 1)",
+        "OUTPUT = AddHeightMap( Perlin, 10, 10)",
+        "OUTPUT = AddHeightMap( Perlin, 5, 120)",
+        "OUTPUT = AddHeightMap( Perlin, 1, 852)",
+        "OUTPUT = AddHeightMap( Perlin, 0.05, 2585)",
+		"OUTPUT = AddHeightMap(Craters, 10, 350)",
+		"OUTPUT = AddHeightMap(Craters, 50, 100)",
+		"OUTPUT = AddHeightMap(Craters, 320, 12)",
+		"OUTPUT = AddHeightMap( Perlin, 300, 3)"
+		],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 50, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+		],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 150
+        },
+        {
+            "loadDistance": 15000.0,
+            "verticeSize": 30
+        },
+        {
+            "loadDistance": 5000.0,
+            "verticeSize": 12
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 10
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 8
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 4
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 2426422240000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 50
+}
+

@@ -1,0 +1,118 @@
+﻿●BASE_DATA●
+{
+    "name": "Deucalion",
+    "radius": 3275.0,
+    "gravity": 0.0063509,
+    "timewarpHeight": 860.0,
+    "mapColor": {
+        "r": 0.3125,
+        "g": 0.3125,
+        "b": 0.3125
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 45.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Deucalion",
+        "planetTextureCutout": 1.0,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Hard_Rocks",
+        "terrainTextureSize": {
+            "x": 100.0,
+            "y": 30.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 15.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 35.0005, 1)",
+        "OUTPUT = AddHeightMap( Perlin, 5.023, 25)",
+        "OUTPUT = AddHeightMap( Perlin, 1.01, 195)",
+        "OUTPUT = AddHeightMap( Perlin, 0.25, 856)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 200.0
+        },
+        {
+            "loadDistance": 3500.0,
+            "verticeSize": 75.0
+        },
+        {
+            "loadDistance": 1750.0,
+            "verticeSize": 250
+        },
+        {
+            "loadDistance": 400.0,
+            "verticeSize": 75.0
+        },
+        {
+            "loadDistance": 175.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 80.0,
+            "verticeSize": 12.0
+        },
+        {
+            "loadDistance": 38.5,
+            "verticeSize": 3.0
+        },
+        {
+            "loadDistance": 7.5,
+            "verticeSize": 2.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 132829840000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 0.0,
+            "shadowIntensity": 1.35,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.2,
+            "red": 1.12,
+            "green": 1.08,
+            "blue": 1.0
+        },
+        {
+            "height": 25000.0,
+            "shadowIntensity": 1.65,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.2,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0
+        }
+    ]
+}
+

@@ -1,0 +1,93 @@
+●BASE_DATA●
+{
+    "name": "Thereus",
+    "radius": 2162.5,
+    "gravity": 0.007,
+    "timewarpHeight": 400,
+    "mapColor": {
+        "r": 0.1,
+        "g": 0.1,
+        "b": 0.1
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Thereus",
+        "planetTextureCutout": 0.925000011920929,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap(Deimos, 1, 261)",
+		"OUTPUT = AddHeightMap(Phobos, 2, 50)",
+		"OUTPUT = AddHeightMap(Mars, 0.32, 314)",
+		"OUTPUT = AddHeightMap( Perlin, 2, 3)"
+		],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 50, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+		],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 40
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 31834880000.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}
+

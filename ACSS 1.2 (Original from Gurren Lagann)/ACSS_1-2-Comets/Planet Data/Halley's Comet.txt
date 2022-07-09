@@ -1,0 +1,118 @@
+●BASE_DATA●
+{
+    "name": "Halley's Comet",
+    "radius": 5500.0,
+    "gravity": 0.0001214,
+    "timewarpHeight": 1500.0,
+    "mapColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 500000.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 250000.0,
+        "gradientTexture": "Atmo_HalleyComet"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Halley's Comet",
+        "planetTextureCutout": 0.78,
+        "surfaceTextureA": "Ice",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Hard_Rocks",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Phobos, 1, 1920 )",
+
+		"OUTPUT = AddHeightMap( Perlin, 0.05, 2464, Curve3)",
+		"OUTPUT = AddHeightMap( Perlin, 0.32, 134.4, Curve5)",
+		"OUTPUT = AddHeightMap( Perlin, 1.5, 96, Curve6)",
+
+		"M = AddHeightMap( Perlin, 1.5, 1, Curve7)",
+
+		"OUTPUT = AddHeightMap( Perlin, 6, 42, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 15, 6, null, M)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 10
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 7.5
+        },
+        {
+            "loadDistance": 100.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 25.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 5.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 53430664000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+

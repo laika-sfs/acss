@@ -1,0 +1,87 @@
+●BASE_DATA●
+{
+    "name": "Charon",
+    "radius": 30000.0,
+    "gravity": 0.288,
+    "timewarpHeight": 1280.0,
+    "mapColor": {
+        "r": 0.8999999761581421,
+        "g": 0.8999999761581421,
+        "b": 0.8999999761581421
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Charon",
+        "planetTextureCutout": 0.98,
+        "surfaceTextureA": "Ice",
+        "surfaceTextureSizeA": {
+            "x": 30.0,
+            "y": 10.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Ice",
+        "terrainTextureSize": {
+            "x": 150.0,
+            "y": 50.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 0.0,
+        "shadowIntensity": 0.5,
+        "shadowHeight": 8.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap(Craters, 22, 20)",
+        "OUTPUT = AddHeightMap(Craters, 10, 32)",
+        "OUTPUT = AddHeightMap(Craters, 38, 16)",
+        "OUTPUT = AddHeightMap( Perlin, 30, 5)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1000.0
+        },
+        {
+            "loadDistance": 10000.0,
+            "verticeSize": 300.0
+        },
+        {
+            "loadDistance": 3000.0,
+            "verticeSize": 120.0
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 8.0
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2.0
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Pluto",
+    "orbitHeight": 982000.0,
+    "multiplierSOI": 0.420,
+    "orbitLineResolution": 100
+}

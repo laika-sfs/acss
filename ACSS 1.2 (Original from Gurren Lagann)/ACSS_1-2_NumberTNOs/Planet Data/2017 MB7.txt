@@ -1,0 +1,87 @@
+●BASE_DATA●
+{
+    "name": "2017 MB7",
+    "radius": 300.0,
+    "gravity": 0.003684,
+    "timewarpHeight": 250.0,
+    "mapColor": {
+        "r": 0.15,
+        "g": 0.15,
+        "b": 0.15
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "2017 MB7",
+        "planetTextureCutout": 0.925000011920929,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Deimos, 1, 451)",
+
+		"OUTPUT = AddHeightMap( Perlin, 0.32, 140, Curve5)",
+		"OUTPUT = AddHeightMap( Perlin, 1.5, 20, Curve6)",
+
+		"M = AddHeightMap( Perlin, 1.5, 1, Curve7)",
+
+		"OUTPUT = AddHeightMap( Perlin, 1.5, 4, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 0.4, 2, null, M)"
+	],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 40
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 300.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 125.0,
+            "verticeSize": 2.5
+        },
+        {
+            "loadDistance": 55.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 9105104800000.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}
+

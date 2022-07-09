@@ -1,0 +1,163 @@
+●BASE_DATA●
+{
+    "name": "Earth",
+    "radius": 315000.0,
+    "gravity": 9.8,
+    "timewarpHeight": 25000.0,
+    "mapColor": {
+        "r": 0.44999998807907107,
+        "g": 0.6800000071525574,
+        "b": 1.0
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 45.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 30000.0,
+        "density": 0.005,
+        "curve": 10.0
+    },
+    "GRADIENT": {
+        "positionZ": 3500,
+        "gradientHeight": 45000.0,
+        "gradientTexture": "Transparent"        
+    },
+    "CLOUDS": {
+        "cloudTexture": "noicecycle2",
+        "startHeight": -25000,
+        "height": 367500,
+        "repeatX": 0.0039,
+        "alpha": 1.5,
+        "cloudVelocity": 1.6
+    },
+    "FOG": {
+        "keys": [
+            {
+                "r": 0.4618728756904602,
+                "g": 0.4632353186607361,
+                "b": 0.3644571900367737,
+                "a": 0.09803921729326248,
+                "distance": 500.0
+            },
+            {
+                "r": 0.6470588445663452,
+                "g": 0.8487395644187927,
+                "b": 0.890999972820282,
+                "a": 0.11764705926179886,
+                "distance": 3000.0
+            },
+            {
+                "r": 0.6470588445663452,
+                "g": 0.8487395644187927,
+                "b": 1.0,
+                "a": 0.41600000858306887,
+                "distance": 30000.0
+            }
+        ]
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "NewEarth",
+        "planetTextureCutout": 1.0,
+        "surfaceTextureA": "Blured",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "None",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Blured",
+        "terrainTextureSize": {
+            "x": 100.0,
+            "y": 30.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 15.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 104, 35)",
+        "OUTPUT = AddHeightMap( Perlin, 807, 5)",
+        "OUTPUT = AddHeightMap( Perlin, 1500, 1)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 2000.0
+        },
+        {
+            "loadDistance": 27000.0,
+            "verticeSize": 750.0
+        },
+        {
+            "loadDistance": 12000.0,
+            "verticeSize": 250.0
+        },
+        {
+            "loadDistance": 3000.0,
+            "verticeSize": 100.0
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 12.0
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 3.0
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 3.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 2992000000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 0.0,
+            "shadowIntensity": 1.35,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.22,
+            "red": 1.12,
+            "green": 1.08,
+            "blue": 1.0
+        },
+        {
+            "height": 25000.0,
+            "shadowIntensity": 1.65,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.24,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+●BASE_DATA●
+{
+    "name": "S⁄2004 S 3",
+    "radius": 2000,
+    "gravity": 0.01,
+    "timewarpHeight": 600.0,
+    "mapColor": {
+        "r": 0.9005147111415863,
+        "g": 0.9005147111415863,
+        "b": 0.9005147111415863
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "S 2004 S 3",
+        "planetTextureCutout": 0.78,
+        "surfaceTextureA": "Ice",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Hard_Rocks",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Deimos, 1, 1.25)",
+
+		"OUTPUT = AddHeightMap( Perlin, 0.05, 723, Curve3)",
+		"OUTPUT = AddHeightMap( Perlin, 7.5, 0.7, Curve2)",
+
+		"M = AddHeightMap( Perlin, 6.5, 4, Curve1)",
+
+		"OUTPUT = AddHeightMap( Perlin, 1, 10, Curve1)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 40
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Saturn",
+    "orbitHeight": 7053550.0,
+    "multiplierSOI": 25.0,
+    "orbitLineResolution": 100
+}

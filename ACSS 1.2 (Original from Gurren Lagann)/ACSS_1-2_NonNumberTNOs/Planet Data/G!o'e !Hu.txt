@@ -1,0 +1,99 @@
+﻿●BASE_DATA●
+{
+    "name": "G!o'e !Hu",
+    "radius": 3500.0,
+    "gravity": 0.006395,
+    "timewarpHeight": 1100.0,
+    "mapColor": {
+        "r": 0.5,
+        "g": 0.4375,
+        "b": 0.375
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "G!o'e !Hu",
+        "planetTextureCutout": 0.9,
+        "surfaceTextureA": "Soft_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 2.0,
+            "y": 2.0
+        },
+        "surfaceTextureB": "Limestone",
+        "surfaceTextureSizeB": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 100.0,
+            "y": 80.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap(Deimos, 1, 1000)",
+        
+		"OUTPUT = AddHeightMap(Craters, 4, 2)",
+		"OUTPUT = AddHeightMap(Craters, 2, 4)",
+		"OUTPUT = AddHeightMap( Perlin, 3, 5)",
+		
+		"M = AddHeightMap( Perlin, 1, 3, Curve3)",
+		
+		"OUTPUT = AddHeightMap( Perlin, 10, 9, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 32, 4, null, M)"
+	],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 80, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+	],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 150
+        },
+        {
+            "loadDistance": 2000.0,
+            "verticeSize": 20
+        },
+        {
+            "loadDistance": 500.0,
+            "verticeSize": 10
+        },
+        {
+            "loadDistance": 110.0,
+            "verticeSize": 3
+        },
+        {
+            "loadDistance": 60.0,
+            "verticeSize": 0.6
+        },
+        {
+            "loadDistance": 25.0,
+            "verticeSize": 0.2
+        },
+        {
+            "loadDistance": 5.0,
+            "verticeSize": 0.2
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Gǃkun'homdima",
+    "orbitHeight": 301750.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}

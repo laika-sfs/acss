@@ -1,0 +1,40 @@
+●BASE_DATA●
+{
+    "name": "Sun",
+    "radius": 31500000.0,
+    "gravity": 100.0,
+    "timewarpHeight": 25000.0,
+    "mapColor": {
+        "r": 1.0,
+        "g": 0.9700000286102295,
+        "b": 0.7850000262260437
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 300000.0,
+        "density": 0.005,
+        "curve": 10.0
+    },
+    "GRADIENT": {
+        "positionZ": 40000,
+        "gradientHeight": 800000000.0,
+        "gradientTexture": "Atmo_Sun"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 0.0,
+        "alpha": 0.0,
+        "cloudVelocity": 0.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+

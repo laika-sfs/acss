@@ -1,0 +1,119 @@
+﻿●BASE_DATA●
+{
+    "name": "Chaos",
+    "radius": 15000.0,
+    "gravity": 0.020,
+    "timewarpHeight": 3750.0,
+    "mapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 45.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Chaos",
+        "planetTextureCutout": 1.0,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Hard_Rocks",
+        "terrainTextureSize": {
+            "x": 100.0,
+            "y": 30.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 15.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 15, 1)",
+        "OUTPUT = AddHeightMap( Perlin, 10, 10)",
+        "OUTPUT = AddHeightMap( Perlin, 5, 120)",
+        "OUTPUT = AddHeightMap( Perlin, 1, 852)",
+        "OUTPUT = AddHeightMap( Perlin, 0.25, 328.5)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 2000.0
+        },
+        {
+            "loadDistance": 35000.0,
+            "verticeSize": 750.0
+        },
+        {
+            "loadDistance": 17500.0,
+            "verticeSize": 250.0
+        },
+        {
+            "loadDistance": 4000.0,
+            "verticeSize": 100.0
+        },
+        {
+            "loadDistance": 1750.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 800.0,
+            "verticeSize": 12.0
+        },
+        {
+            "loadDistance": 385.0,
+            "verticeSize": 3.0
+        },
+        {
+            "loadDistance": 75.0,
+            "verticeSize": 3.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 137021632000.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 0.0,
+            "shadowIntensity": 1.35,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.2,
+            "red": 1.12,
+            "green": 1.08,
+            "blue": 1.0
+        },
+        {
+            "height": 25000.0,
+            "shadowIntensity": 1.65,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.2,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0
+        }
+    ]
+}
+

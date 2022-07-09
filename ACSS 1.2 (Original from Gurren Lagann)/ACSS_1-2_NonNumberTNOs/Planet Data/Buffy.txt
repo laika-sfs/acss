@@ -1,0 +1,84 @@
+﻿●BASE_DATA●
+{
+    "name": "Buffy",
+    "radius": 15100.0,
+    "gravity": 0.62,
+    "timewarpHeight": 60.0,
+    "mapColor": {
+        "r": 0.375,
+        "g": 0.3805147111415863,
+        "b": 0.3805147111415863
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Buffy",
+        "planetTextureCutout": 1.0,
+        "surfaceTextureA": "Dark_Dust",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 40.0,
+            "y": 16.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 280.0,
+            "y": 145.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap(Craters, 1, 2)",
+		"OUTPUT = AddHeightMap(Craters, 4, 2)",
+		"OUTPUT = AddHeightMap( Perlin, 400, 3)"
+	],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 900, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+	],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 24
+        },
+        {
+            "loadDistance": 2500000000.0,
+            "verticeSize": 14
+        },
+        {
+            "loadDistance": 1000000000.0,
+            "verticeSize": 8
+        },
+        {
+            "loadDistance": 250000.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50000.0,
+            "verticeSize": 1  
+        }
+	] 
+} 
+ 
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 171306960000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}

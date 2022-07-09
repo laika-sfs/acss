@@ -1,0 +1,113 @@
+●BASE_DATA●
+{
+    "name": "Neptune",
+    "radius": 1222900.0,
+    "gravity": 11.15,
+    "timewarpHeight": 40000.0,
+    "mapColor": {
+        "r": 0.0,
+        "g": 0.066666666666667,
+        "b": 0.400000000000002
+    },
+    "mapResolution": 500,
+    "hideNameMultiplier": 80.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 50000.0,
+        "density": 0.025,
+        "curve": 15.0
+    },
+    "GRADIENT": {
+        "positionZ": 3000,
+        "gradientHeight": 3147350.0,
+        "gradientTexture": "Atmo_Neptune"
+    },
+    "CLOUDS": {
+        "cloudTexture": "Earth_Clouds",
+        "startHeight": -3000,
+        "height": 20000,
+        "repeatX": 0.25,
+        "alpha": 0.6499999761581421,
+        "cloudVelocity": 6.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "neptune",
+        "planetTextureCutout": 0.9950000047683716,
+        "surfaceTextureA": "Ice",
+        "surfaceTextureSizeA": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Ice",
+        "terrainTextureSize": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "surfaceLayerSize": 60.0,
+        "minFade": 0.0,
+        "maxFade": 0.6000000238418579,
+        "shadowIntensity": 0.0,
+        "shadowHeight": 0.0
+    },
+    "terrainFromula": [],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 2000.0
+        },
+        {
+            "loadDistance": 5000.0,
+            "verticeSize": 1000.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 90068873220.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 0.0,
+            "shadowIntensity": 1.399999976158142,
+            "hueShift": 0.0,
+            "saturation": 0.949999988079071,
+            "contrast": 1.100000023841858,
+            "red": 0.9599999785423279,
+            "green": 0.9800000190734863,
+            "blue": 1.0
+        },
+        {
+            "height": 100000.0,
+            "shadowIntensity": 1.649999976158142,
+            "hueShift": 0.0,
+            "saturation": 0.949999988079071,
+            "contrast": 1.100000023841858,
+            "red": 0.9599999785423279,
+            "green": 0.9800000190734863,
+            "blue": 1.0
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+﻿●BASE_DATA●
+{
+    "name": "Comet Ikeya-Seki B",
+    "radius": 455.0,
+    "gravity": 0.001,
+    "timewarpHeight": 0.0,
+    "mapColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 2500.0,
+        "density": 0.0,
+        "curve": 1.0
+    },
+    "GRADIENT": {
+        "positionZ": 1,
+        "gradientHeight": 2500.0,
+        "gradientTexture": "Atmo_IkeyaSeki"
+    },
+    "CLOUDS": {
+        "cloudTexture": "None",
+        "startHeight": 0,
+        "height": 0,
+        "repeatX": 1.0,
+        "alpha": 1.0,
+        "cloudVelocity": 1.0
+    },
+    "FOG": {
+        "keys": []
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "IkeyaSekiB",
+        "planetTextureCutout": 0.9,
+        "surfaceTextureA": "Soft_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Dust",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap(Deimos, 1, 500)",
+        "OUTPUT = AddHeightMap(Phobos, 1, -400)",
+        "OUTPUT = AddHeightMap(Craters, 26, 2)",
+        "OUTPUT = AddHeightMap(Craters, 10, 5)",
+        "OUTPUT = AddHeightMap(Craters, 20, 6)",
+        "OUTPUT = AddHeightMap( Perlin, 30, 5)"
+    ],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 0.40
+        },
+        {
+            "loadDistance": 2500000.0,
+            "verticeSize": 0.15
+        },
+        {
+            "loadDistance": 1000000.0,
+            "verticeSize": 0.05
+        },
+        {
+            "loadDistance": 250000.0,
+            "verticeSize": 0.01
+        },
+        {
+            "loadDistance": 50000.0,
+            "verticeSize": 0.01
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 310290346670.0,
+    "multiplierSOI": 10.0,
+    "orbitLineResolution": 100
+}
+

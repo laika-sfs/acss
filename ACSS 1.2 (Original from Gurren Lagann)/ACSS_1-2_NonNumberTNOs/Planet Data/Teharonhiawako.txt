@@ -1,0 +1,94 @@
+●BASE_DATA●
+{
+    "name": "Teharonhiawako",
+    "radius": 4450.0,
+    "gravity": 0.010885,
+    "timewarpHeight": 1000.0,
+    "mapColor": {
+        "r": 0.1875,
+        "g": 0.15625,
+        "b": 0.1875
+       
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Teharonhiawako",
+        "planetTextureCutout": -0.999,
+        "surfaceTextureA": "Dark_Dust",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": 40.0,
+            "y": 16.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 280.0,
+            "y": 145.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap( Deimos, 1, 1000)",
+		"OUTPUT = AddHeightMap(Craters, 57, 22)",
+		"OUTPUT = AddHeightMap( Perlin, 300, 13)"
+	],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 80, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+	],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 150
+        },
+        {
+            "loadDistance": 2000.0,
+            "verticeSize": 20
+        },
+        {
+            "loadDistance": 500.0,
+            "verticeSize": 10
+        },
+        {
+            "loadDistance": 110.0,
+            "verticeSize": 7.5
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 6
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 131184240000.0,
+    "multiplierSOI": 10,
+    "orbitLineResolution": 100
+}
+

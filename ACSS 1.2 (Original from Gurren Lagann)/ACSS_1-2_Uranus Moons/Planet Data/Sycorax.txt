@@ -1,0 +1,100 @@
+﻿●BASE_DATA●
+{
+    "name": "Sycorax",
+    "radius": 4125.0,
+    "gravity": 0.025,
+    "timewarpHeight": 1000.0,
+    "mapColor": {
+        "r": 0.3647058823529412,
+        "g": 0.3647058823529412,
+        "b": 0.3647058823529412
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Sycorax",
+        "planetTextureCutout": -0.899,
+        "surfaceTextureA": "Hard_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 30.0,
+            "y": 50.0
+        },
+        "surfaceTextureB": "Soft_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 50.0,
+            "y": 20.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 200.0,
+            "y": 130.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap(Phobos, 1, 2000)",
+        
+		"OUTPUT = AddHeightMap(Craters, 1, 20)",
+		"OUTPUT = AddHeightMap(Craters, 0, 0)",
+		"OUTPUT = AddHeightMap( Perlin, 0, 0)",
+		
+		"M = AddHeightMap( Perlin, 0, 0)",
+		
+		"OUTPUT = AddHeightMap( Perlin, 5, 100, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 25, 10)",
+		"OUTPUT = AddHeightMap(Craters, 50, 30)"
+	],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 80, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+	],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1500
+        },
+        {
+            "loadDistance": 20000.0,
+            "verticeSize": 200
+        },
+        {
+            "loadDistance": 5000.0,
+            "verticeSize": 100
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 30
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 6
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Uranus",
+    "orbitHeight": 608950000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}

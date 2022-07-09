@@ -1,0 +1,161 @@
+﻿●BASE_DATA●
+{
+    
+"name": "Sedna",
+    
+"radius": 24900,
+    
+"gravity": 0.5,
+    
+"timewarpHeight": 1800.0,
+    
+"mapColor": 
+{
+        
+"r": 0.8879445481300354,
+        
+"g": 0.28799880623817446,
+        
+"b": 0.2871880829334259
+   
+},
+
+    "mapResolution": 100,
+    
+"hideNameMultiplier": 1000.0
+}
+
+
+
+●TERRAIN_DATA●
+
+
+{
+    "TERRAIN_TEXTURE_DATA": 
+{
+
+        
+"planetTexture": "Sedna",
+        
+"planetTextureCutout": 0.9350000023841858,
+        
+"surfaceTextureA": "Ice",
+        
+"surfaceTextureSizeA": {
+            
+"x": 24.0,
+            
+"y": 24.0
+        },
+
+        
+"surfaceTextureB": "Ice",
+        
+"surfaceTextureSizeB": {
+            
+"x": 24.0,
+            
+"y": 24.0
+        },
+
+        
+"terrainTexture": "Hard_Rocks",
+        
+"terrainTextureSize": 
+{
+            
+"x": 200.0,
+            
+"y": 150.0
+        },
+
+        
+"surfaceLayerSize": 35.0,
+        
+"minFade": 0.15,
+        
+"maxFade": 0.65,
+        
+"shadowIntensity": 8.0,
+        
+"shadowHeight": 2.5
+    },
+
+    
+
+"terrainFromula": 
+[
+
+"OUTPUT = AddHeightMap( Deimos, 1, 5)",	
+"OUTPUT = AddHeightMap( Craters, 2, 15)", 	
+
+"OUTPUT = AddHeightMap( Perlin, 15, 5, Curve4)",
+"OUTPUT = AddHeightMap( Perlin, 1, 3)"
+     		
+
+    
+],
+
+ 
+   
+"textureFormula": [
+		
+"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    
+
+"DETAIL_LEVELS": 
+[
+        
+{
+            
+"loadDistance": 0.0,
+            
+"verticeSize": 40
+        },
+        
+{
+            
+"loadDistance": 2500.0,
+            
+"verticeSize": 15
+        },
+        
+{
+            
+"loadDistance": 800.0,
+            
+"verticeSize": 3
+        },
+        
+{
+            
+"loadDistance": 200.0,
+            
+"verticeSize": 1
+        },
+        
+{
+            
+"loadDistance": 50.0,
+            
+"verticeSize": 0.5
+        }
+    ]
+}
+
+
+●ORBIT_DATA●
+
+{
+    
+"parent": "Sun",
+    
+"orbitHeight": 1516345600000.0,
+    
+"multiplierSOI": 1.25,
+    
+"orbitLineResolution": 100
+}
+

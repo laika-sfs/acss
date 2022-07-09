@@ -1,0 +1,160 @@
+﻿●BASE_DATA●
+{
+    
+"name": "Amalthea",
+    
+"radius": 56112,
+    
+"gravity": 0.221,
+    
+"timewarpHeight": 2000.0,
+    
+"mapColor": 
+{
+        
+"r": 0.1579445481300354,
+        
+"g": 0.11799880623817446,
+        
+"b": 0.0871880829334259
+   
+},
+
+    "mapResolution": 1000,
+    
+"hideNameMultiplier": 80.0
+}
+
+
+
+●TERRAIN_DATA●
+
+
+{
+    "TERRAIN_TEXTURE_DATA": 
+{
+
+        
+"planetTexture": "Amalthea",
+        
+"planetTextureCutout": 0.9350000023841858,
+        
+"surfaceTextureA": "Soft_Rocks",
+        
+"surfaceTextureSizeA": {
+            
+"x": 24.0,
+            
+"y": 24.0
+        },
+
+        
+"surfaceTextureB": "Ice",
+        
+"surfaceTextureSizeB": {
+            
+"x": 24.0,
+            
+"y": 24.0
+        },
+
+        
+"terrainTexture": "Circles",
+        
+"terrainTextureSize": 
+{
+            
+"x": 200.0,
+            
+"y": 150.0
+        },
+
+        
+"surfaceLayerSize": 35.0,
+        
+"minFade": 0.15,
+        
+"maxFade": 0.65,
+        
+"shadowIntensity": 8.0,
+        
+"shadowHeight": 2.5
+    },
+
+    
+
+"terrainFromula": 
+[
+
+"M = AddHeightMap(Perlin, 20, 0.5)",
+"OUTPUT = AddHeightMap( Phobos, 1, 9000)",
+"OUTPUT = AddHeightMap( Craters, 1, 3500)",
+"OUTPUT = AddHeightMap( Perlin, 500, 1)",
+"OUTPUT = AddHeightMap( Perlin, 1000, 5, Curve4, M)"    		
+
+    
+],
+
+ 
+   
+"textureFormula": [
+		
+"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    
+
+"DETAIL_LEVELS": 
+[
+        
+{
+            
+"loadDistance": 0.0,
+            
+"verticeSize": 40
+        },
+        
+{
+            
+"loadDistance": 2500.0,
+            
+"verticeSize": 15
+        },
+        
+{
+            
+"loadDistance": 800.0,
+            
+"verticeSize": 3
+        },
+        
+{
+            
+"loadDistance": 200.0,
+            
+"verticeSize": 1
+        },
+        
+{
+            
+"loadDistance": 50.0,
+            
+"verticeSize": 0.5
+        }
+    ]
+}
+
+
+●ORBIT_DATA●
+
+{
+    
+"parent": "Jupiter",
+    
+"orbitHeight": 7562000,
+    
+"multiplierSOI": 5,
+    
+"orbitLineResolution": 100
+}
+

@@ -1,0 +1,92 @@
+﻿●BASE_DATA●
+{
+    "name": "Puck",
+    "radius": 8100.0,
+    "gravity": 0.028,
+    "timewarpHeight": 1000.0,
+    "mapColor": {
+        "r": 0.5725490196078431,
+        "g": 0.5725490196078431,
+        "b": 0.5803921568627451
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Puck",
+        "planetTextureCutout": -0.899,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Soft_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 280.0,
+            "y": 145.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap( Phobos, 1, 3600)",
+
+        "OUTPUT = AddHeightMap( Perlin, 1, 100, Curve3)",
+        "OUTPUT = AddHeightMap( Perlin, 3, 50, Curve3)",
+		"OUTPUT = AddHeightMap( Perlin, 5, 25, Curve4)",
+
+        "M = AddHeightMap( Perlin, 5, 1)",
+
+		"OUTPUT = AddHeightMap( Perlin, 10, 18, null, M)",
+		"OUTPUT = AddHeightMap( Perlin, 100, 4, null, M)"
+    ],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap( Perlin, 5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 40
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 800.0,
+            "verticeSize": 3
+        },
+        {
+            "loadDistance": 200.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 0.5
+        }
+    ]
+}
+
+
+
+●ORBIT_DATA●
+{
+    "parent": "Uranus",
+    "orbitHeight": 4300500.0,
+    "multiplierSOI": 25.0,
+    "orbitLineResolution": 100
+}

@@ -1,0 +1,87 @@
+●BASE_DATA●
+{
+    "name": "Lysithea",
+    "radius": 900.0,
+    "gravity": 0.013,
+    "timewarpHeight": 3000.0,
+    "mapColor": {
+        "r": 0.3,
+        "g": 0.3,
+        "b": 0.3
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 80.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Lysithea",
+        "planetTextureCutout": 0.9990000128746033,
+        "surfaceTextureA": "Soft_Rocks",
+        "surfaceTextureSizeA": {
+            "x": 30.0,
+            "y": 10.0
+        },
+        "surfaceTextureB": "None",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "None",
+        "terrainTextureSize": {
+            "x": 150.0,
+            "y": 50.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 0.0,
+        "shadowIntensity": 0.5,
+        "shadowHeight": 8.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap(Craters, 22, 200)",
+        "OUTPUT = AddHeightMap(Craters, 100, 50)",
+        "OUTPUT = AddHeightMap(Craters, 380, 16)",
+        "OUTPUT = AddHeightMap( Perlin, 300, 5)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1000.0
+        },
+        {
+            "loadDistance": 10000.0,
+            "verticeSize": 300.0
+        },
+        {
+            "loadDistance": 3000.0,
+            "verticeSize": 120.0
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 8.0
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2.0
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Jupiter",
+    "orbitHeight": 586000000.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}

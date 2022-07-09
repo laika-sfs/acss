@@ -1,0 +1,94 @@
+●BASE_DATA●
+{
+    "name": "Alauda",
+    "radius": 9750.0,
+    "gravity": 0.11,
+    "timewarpHeight": 300.0,
+    "mapColor": {
+        "r": 0.370,
+        "g": 0.370,
+        "b": 0.370
+       
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 60.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Asteroid2",
+        "planetTextureCutout": -0.999,
+        "surfaceTextureA": "Dark_Dust",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": 40.0,
+            "y": 16.0
+        },
+        "terrainTexture": "Soft_Rocks",
+        "terrainTextureSize": {
+            "x": 280.0,
+            "y": 145.0
+        },
+        "surfaceLayerSize": 50.0,
+        "minFade": 0.0,
+        "maxFade": 1.0,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 10.0
+    },
+
+    "terrainFromula": [
+		"OUTPUT = AddHeightMap( Deimos, 1, 1000)",
+		"OUTPUT = AddHeightMap(Craters, 57, 22)",
+		"OUTPUT = AddHeightMap( Perlin, 300, 3)"
+	],
+
+    "textureFormula": [
+		"OUTPUT = AddHeightMap(Perlin, 80, 1, Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)",
+		"OUTPUT = ApplyCurve(Curve8)"
+	],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 1500
+        },
+        {
+            "loadDistance": 20000.0,
+            "verticeSize": 200
+        },
+        {
+            "loadDistance": 5000.0,
+            "verticeSize": 100
+        },
+        {
+            "loadDistance": 1100.0,
+            "verticeSize": 30
+        },
+        {
+            "loadDistance": 600.0,
+            "verticeSize": 6
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 2
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 2
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 9585000000.0,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+

@@ -1,0 +1,86 @@
+●BASE_DATA●
+{
+    "name": "101955 Bennu",
+    "radius": 525.0,
+    "gravity": 0.054,
+    "timewarpHeight": 1500.0,
+    "mapColor": {
+        "r": 0.41600000858306887,
+        "g": 0.35491618514060976,
+        "b": 0.27684900164604189
+    },
+    "mapResolution": 1000,
+    "hideNameMultiplier": 150.0
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Bennu",
+        "planetTextureCutout": 0.925000011920929,
+        "surfaceTextureA": "Limestone",
+        "surfaceTextureSizeA": {
+            "x": 22.0,
+            "y": 14.0
+        },
+        "surfaceTextureB": "Hard_Rocks",
+        "surfaceTextureSizeB": {
+            "x": 28.0,
+            "y": 21.0
+        },
+        "terrainTexture": "Limestone",
+        "terrainTextureSize": {
+            "x": 320.0,
+            "y": 200.0
+        },
+        "surfaceLayerSize": 35.0,
+        "minFade": 0.0,
+        "maxFade": 0.5,
+        "shadowIntensity": 35.0,
+        "shadowHeight": 3.0
+    },
+
+    "terrainFromula": [
+
+		"OUTPUT = AddHeightMap( Perlin, 4, 10.5, Curve2, )",
+  "OUTPUT = AddHeightMap( Phobos, 1.25, 42, Curve3,)",
+  "OUTPUT = AddHeightMap( Perlin, 0.1, -157.5, Curve2, )"
+			],
+
+    "textureFormula": [
+
+		"M = AddHeightMap( Deimos, 1.5, 1)"
+	],
+
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 40
+        },
+        {
+            "loadDistance": 2500.0,
+            "verticeSize": 15
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 5
+        },
+        {
+            "loadDistance": 250.0,
+            "verticeSize": 1
+        },
+        {
+            "loadDistance": 50.0,
+            "verticeSize": 1
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Sun",
+    "orbitHeight": 4202000000.0,
+    "multiplierSOI": 1.25,
+    "orbitLineResolution": 100
+}
+

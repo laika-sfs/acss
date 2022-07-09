@@ -21,3 +21,15 @@ INSERT INTO Heightmap (
 ) VALUES (
 	'Perlin'
 )
+
+INSERT INTO Heightmap (
+	Title
+) VALUES (
+	'Venus'
+)
+
+INSERT INTO Heightmap (
+	Title
+) VALUES (
+	'Venus_Plains'
+)

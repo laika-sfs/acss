@@ -246,7 +246,7 @@ INSERT INTO TerrainFormula (
 	AddOnFormulaId
 ) VALUES (
 	'OUTPUT',
-	(SELECT Id FROM Heightmap WHERE Title = 'Craters'),
+	(SELECT Id FROM Heightmap WHERE Title = 'Perlin'),
 	2513.274,
 	3,
 	NULL,
@@ -330,6 +330,234 @@ INSERT INTO TerrainDataFormulaDifficulty (
 ) VALUES (
 	SCOPE_IDENTITY(),
 	(SELECT Id FROM Difficulty WHERE Title = 'normal'),
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormula (
+	Title,
+	HeightmapId,
+	Width,
+	Height,
+	ModifierId,
+	AddOnFormulaId
+) VALUES (
+	'PLAINS',
+	(SELECT Id FROM Heightmap WHERE Title = 'Mercury_Plains'),
+	1507964.473,
+	1,
+	NULL,
+	NULL
+)
+
+SET @TerrainFormula1 = SCOPE_IDENTITY()
+
+INSERT INTO TerrainFormula (
+	Title,
+	HeightmapId,
+	Width,
+	Height,
+	ModifierId,
+	AddOnFormulaId
+) VALUES (
+	'OUTPUT',
+	(SELECT Id FROM Heightmap WHERE Title = 'Mercury'),
+	1507964.473,
+	1000,
+	NULL,
+	NULL
+)
+
+SET @TerrainFormula2 = SCOPE_IDENTITY()
+
+INSERT INTO TerrainFormulaSet (
+	Title
+) VALUES (
+	'MercuryHard'
+)
+
+SET @TerrainFormulaSetId = SCOPE_IDENTITY()
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula1,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula2,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula3,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula4,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula5,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula6,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainData (
+	PlanetId,
+	TerrainTextureDataId,
+	VerticeSize,
+	Collider
+) VALUES (
+	@PlanetId,
+	@TerrainTextureDataId,
+	2.0,
+	1
+)
+
+INSERT INTO TerrainDataFormulaDifficulty (
+	TerrainDataId,
+	DifficultyId,
+	TerrainFormulaSetId
+) VALUES (
+	SCOPE_IDENTITY(),
+	(SELECT Id FROM Difficulty WHERE Title = 'hard'),
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormula (
+	Title,
+	HeightmapId,
+	Width,
+	Height,
+	ModifierId,
+	AddOnFormulaId
+) VALUES (
+	'PLAINS',
+	(SELECT Id FROM Heightmap WHERE Title = 'Mercury_Plains'),
+	15079644.737,
+	1,
+	NULL,
+	NULL
+)
+
+SET @TerrainFormula1 = SCOPE_IDENTITY()
+
+INSERT INTO TerrainFormula (
+	Title,
+	HeightmapId,
+	Width,
+	Height,
+	ModifierId,
+	AddOnFormulaId
+) VALUES (
+	'OUTPUT',
+	(SELECT Id FROM Heightmap WHERE Title = 'Mercury'),
+	15079644.737,
+	5000,
+	NULL,
+	NULL
+)
+
+SET @TerrainFormula2 = SCOPE_IDENTITY()
+
+INSERT INTO TerrainFormulaSet (
+	Title
+) VALUES (
+	'MercuryRealistic'
+)
+
+SET @TerrainFormulaSetId = SCOPE_IDENTITY()
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula1,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula2,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula3,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula4,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula5,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainFormulaLink (
+	TerrainFormulaId,
+	TerrainFormulaSetId
+) VALUES (
+	@TerrainFormula6,
+	@TerrainFormulaSetId
+)
+
+INSERT INTO TerrainData (
+	PlanetId,
+	TerrainTextureDataId,
+	VerticeSize,
+	Collider
+) VALUES (
+	@PlanetId,
+	@TerrainTextureDataId,
+	2.0,
+	1
+)
+
+INSERT INTO TerrainDataFormulaDifficulty (
+	TerrainDataId,
+	DifficultyId,
+	TerrainFormulaSetId
+) VALUES (
+	SCOPE_IDENTITY(),
+	(SELECT Id FROM Difficulty WHERE Title = 'realistic'),
 	@TerrainFormulaSetId
 )
 

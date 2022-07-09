@@ -1,0 +1,164 @@
+●BASE_DATA●
+{
+    "name": "Proxima c",
+    "radius": 961500,
+    "gravity": 6.467,
+    "timewarpHeight": 100000.0,
+    "mapColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.25
+    },
+    "mapResolution": 1500,
+    "hideNameMultiplier": 45.0
+}
+
+●ATMOSPHERE_DATA●
+{
+    "PHYSICS": {
+        "height": 200000.0,
+        "density": 0.00668279,
+        "curve": 7.8
+    },
+    "GRADIENT": {
+        "positionZ": 13000,
+        "gradientHeight": 10000000.0,
+        "gradientTexture": "Atmo_Proximac"
+    },
+    "CLOUDS": {
+        "cloudTexture": "Earth_Clouds",
+        "startHeight": 1000,
+        "height": 20000,
+        "repeatX": 0.18000000715255738,
+        "alpha": 1.25,
+        "cloudVelocity": 3.0
+    },
+    "FOG": {
+        "keys": [
+            {
+                "r": 0.0041,
+                "g": 0.00741,
+                "b": 0.156,
+                "a": 0.09803921729326248,
+                "distance": 350.0
+            },
+            {
+                "r": 0.0041,
+                "g": 0.00501,
+                "b": 0.1839,
+                "a": 0.31764705926179886,
+                "distance": 3500.0
+            },
+            {
+                "r": 0.0035,
+                "g": 0.0086,
+                "b": 0.1764,
+                "a": 0.5,
+                "distance": 35000.0
+            }
+        ]
+    }
+}
+
+●TERRAIN_DATA●
+{
+    "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "Proximac",
+        "planetTextureCutout": 0.95,
+        "surfaceTextureA": "Ice",
+        "surfaceTextureSizeA": {
+            "x": 20.0,
+            "y": 8.0
+        },
+        "surfaceTextureB": "Ice",
+        "surfaceTextureSizeB": {
+            "x": -1.0,
+            "y": -1.0
+        },
+        "terrainTexture": "Ice",
+        "terrainTextureSize": {
+            "x": 100.0,
+            "y": 30.0
+        },
+        "surfaceLayerSize": 40.0,
+        "minFade": 0.0,
+        "maxFade": 0.60,
+        "shadowIntensity": 1.25,
+        "shadowHeight": 15.0
+    },
+    "terrainFromula": [
+        "OUTPUT = AddHeightMap( Perlin, 10.4, 35)",
+        "OUTPUT = AddHeightMap( Perlin, 8.07, 5)",
+        "OUTPUT = AddHeightMap( Perlin, 15, 1)"
+    ],
+    "textureFormula": [],
+    "DETAIL_LEVELS": [
+        {
+            "loadDistance": 0.0,
+            "verticeSize": 2000.0
+        },
+        {
+            "loadDistance": 100000.0,
+            "verticeSize": 750.0
+        },
+        {
+            "loadDistance": 80000.0,
+            "verticeSize": 250.0
+        },
+        {
+            "loadDistance": 30000.0,
+            "verticeSize": 100.0
+        },
+        {
+            "loadDistance": 20000.0,
+            "verticeSize": 40.0
+        },
+        {
+            "loadDistance": 5500.0,
+            "verticeSize": 12.0
+        },
+        {
+            "loadDistance": 1000.0,
+            "verticeSize": 3.0
+        },
+        {
+            "loadDistance": 200.0,
+            "verticeSize": 1.0
+        }
+    ]
+}
+
+●ORBIT_DATA●
+{
+    "parent": "Proxima Centauri",
+    "orbitHeight": 4428160000,
+    "multiplierSOI": 1.0,
+    "orbitLineResolution": 100
+}
+
+●POST_PROCESSING●
+{
+    "keys": [
+        {
+            "height": 0.0,
+            "shadowIntensity": 1.35,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.2,
+            "red": 1.12,
+            "green": 1.08,
+            "blue": 1.0
+        },
+        {
+            "height": 25000.0,
+            "shadowIntensity": 1.65,
+            "hueShift": 0.0,
+            "saturation": 0.95,
+            "contrast": 1.2,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0
+        }
+    ]
+}
+

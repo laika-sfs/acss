@@ -1,0 +1,95 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 28.0,
+    "radiusDifficultyScale": {},
+    "gravity": 1E-05,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 0.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.25,
+      "g": 0.25,
+      "b": 0.25,
+      "a": 1.0
+    }
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 100.0,
+    "density": 0.0,
+    "curve": 1.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.0,
+    "upperAtmosphere": 0.33,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 0.66,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 1,
+      "height": 100.0,
+      "texture": "Atmo_Comet"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": 0,
+      "width": 0.0,
+      "height": 0,
+      "alpha": 1.0,
+      "velocity": 1.0
+    },
+    "FOG": {
+      "keys": []
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Hartley 2",
+      "planetTextureCutout": 0.925000011920929,
+      "surfaceTexture_A": "Limestone",
+      "surfaceTextureSize_A": {
+        "x": 22.0,
+        "y": 14.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 28.0,
+        "y": 21.0
+      },
+      "terrainTexture_C": "Limestone",
+      "terrainTextureSize_C": {
+        "x": 320.0,
+        "y": 200.0
+      },
+      "surfaceLayerSize": 35.0,
+      "minFade": 0.0,
+      "maxFade": 0.5,
+      "shadowIntensity": 35.0,
+      "shadowHeight": 3.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [],
+    "verticeSize": 0.01,
+    "collider": true,
+    "flatZones": []
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 10352320000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.25,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

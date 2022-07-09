@@ -1,0 +1,92 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 12500.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.08508,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 2500.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.8125,
+      "g": 0.625,
+      "b": 0.8125,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Farout",
+      "planetTextureCutout": 0.82,
+      "surfaceTexture_A": "Hard_Rocks",
+      "surfaceTextureSize_A": {
+        "x": 70.0,
+        "y": 25.0
+      },
+      "surfaceTexture_B": "Ice",
+      "surfaceTextureSize_B": {
+        "x": 70.0,
+        "y": 25.0
+      },
+      "terrainTexture_C": "Ice",
+      "terrainTextureSize_C": {
+        "x": 1200.0,
+        "y": 400.0
+      },
+      "surfaceLayerSize": 60.0,
+      "minFade": 0.0,
+      "maxFade": 0.6000000238418579,
+      "shadowIntensity": 0.0,
+      "shadowHeight": 0.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 500.0,
+        "shadowIntensity": 1.399999976158142,
+        "starIntensity": 0.0,
+        "hueShift": 5.0,
+        "saturation": 1.0,
+        "contrast": 1.0499999523162842,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 15000.0,
+        "shadowIntensity": 1.649999976158142,
+        "starIntensity": 0.0,
+        "hueShift": 5.0,
+        "saturation": 1.0,
+        "contrast": 1.024999976158142,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 374000000000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

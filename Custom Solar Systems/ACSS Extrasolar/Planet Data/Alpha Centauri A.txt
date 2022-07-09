@@ -1,0 +1,121 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 38537100.0,
+    "radiusDifficultyScale": {},
+    "gravity": 201.5,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 80000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 0.0,
+      "a": 1.0
+    }
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 1000000.0,
+    "density": 0.025,
+    "curve": 15.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.0,
+    "upperAtmosphere": 0.33,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 0.66,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 100000,
+      "height": 15000000.0,
+      "texture": "Atmo_AlphaCentauriA"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": 0,
+      "width": 1187500.0,
+      "height": 950000,
+      "alpha": 0.6499999761581421,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": []
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "AlphaCentauriA",
+      "planetTextureCutout": 0.9950000047683716,
+      "surfaceTexture_A": "Star",
+      "surfaceTextureSize_A": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "surfaceTexture_B": "Star",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Star",
+      "terrainTextureSize_C": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "surfaceLayerSize": 60.0,
+      "minFade": 0.0,
+      "maxFade": 0.6000000238418579,
+      "shadowIntensity": 0.0,
+      "shadowHeight": 0.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [],
+    "verticeSize": 1000.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.399999976158142,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.949999988079071,
+        "contrast": 1.100000023841858,
+        "red": 0.9599999785423279,
+        "green": 0.9800000190734863,
+        "blue": 1.0
+      },
+      {
+        "height": 100000.0,
+        "shadowIntensity": 1.649999976158142,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.949999988079071,
+        "contrast": 1.100000023841858,
+        "red": 0.9599999785423279,
+        "green": 0.9800000190734863,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sagittarius A",
+    "semiMajorAxis": 4.918752977898712E+18,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 0.04179768189004,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

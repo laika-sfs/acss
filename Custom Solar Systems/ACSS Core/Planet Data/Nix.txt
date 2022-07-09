@@ -1,0 +1,68 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 6850.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.032,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 500.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.41600000858306885,
+      "g": 0.35491618514060974,
+      "b": 0.27684900164604187,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Nix",
+      "planetTextureCutout": 0.925000011920929,
+      "surfaceTexture_A": "Hard_Rocks",
+      "surfaceTextureSize_A": {
+        "x": 22.0,
+        "y": 14.0
+      },
+      "surfaceTexture_B": "Ice",
+      "surfaceTextureSize_B": {
+        "x": 28.0,
+        "y": 21.0
+      },
+      "terrainTexture_C": "Ice",
+      "terrainTextureSize_C": {
+        "x": 320.0,
+        "y": 200.0
+      },
+      "surfaceLayerSize": 35.0,
+      "minFade": 0.0,
+      "maxFade": 0.5,
+      "shadowIntensity": 35.0,
+      "shadowHeight": 3.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [
+      "M = AddHeightMap( Deimos, 1.5, 1)"
+    ],
+    "verticeSize": 1,
+    "collider": true,
+    "flatZones": []
+  },
+  "ORBIT_DATA": {
+    "parent": "Pluto",
+    "semiMajorAxis": 2435000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 0.82,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

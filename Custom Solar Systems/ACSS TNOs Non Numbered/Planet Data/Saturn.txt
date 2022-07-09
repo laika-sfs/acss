@@ -1,0 +1,140 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 2976000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 10.44,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 40000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 1.0,
+      "g": 0.843137254901965,
+      "b": 0.0,
+      "a": 1.0
+    }
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 113779.6,
+    "density": 0.005,
+    "curve": 9.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.0,
+    "upperAtmosphere": 0.33,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 0.66,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 100,
+      "height": 21024000.0,
+      "texture": "Atmo_Saturn"
+    },
+    "CLOUDS": {
+      "texture": "Earth_Clouds",
+      "startHeight": 0,
+      "width": 87500.0,
+      "height": 70000,
+      "alpha": 1.15,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.6823529601097107,
+            "g": 0.4745098352432251,
+            "b": 0.4078431725502014,
+            "a": 0.0
+          },
+          "distance": 0.0
+        },
+        {
+          "color": {
+            "r": 0.6823529601097107,
+            "g": 0.47435295581817627,
+            "b": 0.40705883502960205,
+            "a": 0.30000001192092896
+          },
+          "distance": 15000.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Saturn",
+      "planetTextureCutout": 0.9900000095367432,
+      "surfaceTexture_A": "Soft_Rocks",
+      "surfaceTextureSize_A": {
+        "x": 25.0,
+        "y": 12.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 40.0,
+        "y": 18.0
+      },
+      "terrainTexture_C": "Soft_Rocks",
+      "terrainTextureSize_C": {
+        "x": 380.0,
+        "y": 170.0
+      },
+      "surfaceLayerSize": 60.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 0.8500000238418579,
+      "shadowHeight": 25.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [],
+    "verticeSize": 3.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 3500.0,
+        "shadowIntensity": 1.4,
+        "starIntensity": 0.0,
+        "hueShift": 1.0,
+        "saturation": 1.0,
+        "contrast": 0.95,
+        "red": 1.1,
+        "green": 1.04,
+        "blue": 1.0
+      },
+      {
+        "height": 20000.0,
+        "shadowIntensity": 1.65,
+        "starIntensity": 0.0,
+        "hueShift": 1.0,
+        "saturation": 1.0,
+        "contrast": 1.05,
+        "red": 1.1,
+        "green": 1.04,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 28668987400.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

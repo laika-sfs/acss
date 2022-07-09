@@ -1,0 +1,66 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 3050.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.068,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 300.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.125,
+      "g": 0.2,
+      "b": 0.352,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Asteroid7",
+      "planetTextureCutout": 0.9990000128746033,
+      "surfaceTexture_A": "Soft_Rocks",
+      "surfaceTextureSize_A": {
+        "x": 30.0,
+        "y": 10.0
+      },
+      "surfaceTexture_B": "Ice",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Dark_Dust",
+      "terrainTextureSize_C": {
+        "x": 150.0,
+        "y": 50.0
+      },
+      "surfaceLayerSize": 40.0,
+      "minFade": 0.0,
+      "maxFade": 0.0,
+      "shadowIntensity": 0.5,
+      "shadowHeight": 8.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [],
+    "verticeSize": 1,
+    "collider": true,
+    "flatZones": []
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 8975872000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 4.5,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

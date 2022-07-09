@@ -1,0 +1,92 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 9500.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.0403,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 3750.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.3,
+      "g": 0.3,
+      "b": 0.3,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "S 2018 (532037) 1",
+      "planetTextureCutout": 1.0,
+      "surfaceTexture_A": "Limestone",
+      "surfaceTextureSize_A": {
+        "x": 20.0,
+        "y": 8.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Hard_Rocks",
+      "terrainTextureSize_C": {
+        "x": 100.0,
+        "y": 30.0
+      },
+      "surfaceLayerSize": 40.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 1.25,
+      "shadowHeight": 15.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [],
+    "verticeSize": 0.3,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.35,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.12,
+        "green": 1.08,
+        "blue": 1.0
+      },
+      {
+        "height": 25000.0,
+        "shadowIntensity": 1.65,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "2013 FY27",
+    "semiMajorAxis": 196000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.25,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

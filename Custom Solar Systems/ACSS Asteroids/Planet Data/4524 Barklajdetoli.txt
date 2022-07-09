@@ -1,0 +1,68 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 606.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.091,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 85.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.3579445481300354,
+      "g": 0.30799880623817444,
+      "b": 0.2871880829334259,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "AsteroidP4",
+      "planetTextureCutout": 0.9350000023841858,
+      "surfaceTexture_A": "Soft_Rocks",
+      "surfaceTextureSize_A": {
+        "x": 24.0,
+        "y": 24.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 24.0,
+        "y": 24.0
+      },
+      "terrainTexture_C": "Circles",
+      "terrainTextureSize_C": {
+        "x": 200.0,
+        "y": 150.0
+      },
+      "surfaceLayerSize": 35.0,
+      "minFade": 0.15,
+      "maxFade": 0.65,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 2.5
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [
+      "OUTPUT = AddHeightMap( Perlin, 5, 1)"
+    ],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": []
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 7866454000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 1.25,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

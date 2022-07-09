@@ -1,0 +1,68 @@
+{
+  "version": "1.5",
+  "BASE_DATA": {
+    "radius": 8100.0,
+    "radiusDifficultyScale": {},
+    "gravity": 0.028,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 1000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.5725490196078431,
+      "g": 0.5725490196078431,
+      "b": 0.5803921568627451,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Puck",
+      "planetTextureCutout": -0.899,
+      "surfaceTexture_A": "Limestone",
+      "surfaceTextureSize_A": {
+        "x": 22.0,
+        "y": 14.0
+      },
+      "surfaceTexture_B": "Soft_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 28.0,
+        "y": 21.0
+      },
+      "terrainTexture_C": "Limestone",
+      "terrainTextureSize_C": {
+        "x": 280.0,
+        "y": 145.0
+      },
+      "surfaceLayerSize": 50.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 1.25,
+      "shadowHeight": 10.0
+    },
+    "terrainFormulaDifficulties": {},
+    "textureFormula": [
+      "OUTPUT = AddHeightMap( Perlin, 5, 1)"
+    ],
+    "verticeSize": 0.5,
+    "collider": true,
+    "flatZones": []
+  },
+  "ORBIT_DATA": {
+    "parent": "Uranus",
+    "semiMajorAxis": 4300500.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 25.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

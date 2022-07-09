@@ -1,0 +1,23 @@
+INSERT INTO Heightmap (
+	Title
+) VALUES (
+	'Mercury_Plains'
+)
+
+INSERT INTO Heightmap (
+	Title
+) VALUES (
+	'Mercury'
+)
+
+INSERT INTO Heightmap (
+	Title
+) VALUES (
+	'Craters'
+)
+
+INSERT INTO Heightmap (
+	Title
+) VALUES (
+	'Perlin'
+)

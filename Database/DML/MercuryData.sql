@@ -1,8 +1,5 @@
 DECLARE @PlanetId INT
 DECLARE @ColourId INT
-DECLARE @GradientId INT
-DECLARE @CloudId INT
-DECLARE @FogKeySetId INT
 DECLARE @TextureSizeId INT
 DECLARE @SurfaceTextureA INT
 DECLARE @SurfaceTextureB INT
@@ -146,6 +143,20 @@ INSERT INTO TerrainTextureData (
 )
 
 SET @TerrainTextureDataId = SCOPE_IDENTITY()
+
+INSERT INTO TerrainData (
+	PlanetId,
+	TerrainTextureDataId,
+	VerticeSize,
+	Collider
+) VALUES (
+	@PlanetId,
+	@TerrainTextureDataId,
+	2.0,
+	1
+)
+
+SET @TerrainDataId = SCOPE_IDENTITY()
 
 INSERT INTO TerrainFormula (
 	Title,
@@ -311,24 +322,12 @@ INSERT INTO TerrainFormulaLink (
 	@TerrainFormulaSetId
 )
 
-INSERT INTO TerrainData (
-	PlanetId,
-	TerrainTextureDataId,
-	VerticeSize,
-	Collider
-) VALUES (
-	@PlanetId,
-	@TerrainTextureDataId,
-	2.0,
-	1
-)
-
 INSERT INTO TerrainDataFormulaDifficulty (
 	TerrainDataId,
 	DifficultyId,
 	TerrainFormulaSetId
 ) VALUES (
-	SCOPE_IDENTITY(),
+	@TerrainDataId,
 	(SELECT Id FROM Difficulty WHERE Title = 'normal'),
 	@TerrainFormulaSetId
 )
@@ -425,24 +424,12 @@ INSERT INTO TerrainFormulaLink (
 	@TerrainFormulaSetId
 )
 
-INSERT INTO TerrainData (
-	PlanetId,
-	TerrainTextureDataId,
-	VerticeSize,
-	Collider
-) VALUES (
-	@PlanetId,
-	@TerrainTextureDataId,
-	2.0,
-	1
-)
-
 INSERT INTO TerrainDataFormulaDifficulty (
 	TerrainDataId,
 	DifficultyId,
 	TerrainFormulaSetId
 ) VALUES (
-	SCOPE_IDENTITY(),
+	@TerrainDataId,
 	(SELECT Id FROM Difficulty WHERE Title = 'hard'),
 	@TerrainFormulaSetId
 )
@@ -539,24 +526,12 @@ INSERT INTO TerrainFormulaLink (
 	@TerrainFormulaSetId
 )
 
-INSERT INTO TerrainData (
-	PlanetId,
-	TerrainTextureDataId,
-	VerticeSize,
-	Collider
-) VALUES (
-	@PlanetId,
-	@TerrainTextureDataId,
-	2.0,
-	1
-)
-
 INSERT INTO TerrainDataFormulaDifficulty (
 	TerrainDataId,
 	DifficultyId,
 	TerrainFormulaSetId
 ) VALUES (
-	SCOPE_IDENTITY(),
+	@TerrainDataId,
 	(SELECT Id FROM Difficulty WHERE Title = 'realistic'),
 	@TerrainFormulaSetId
 )

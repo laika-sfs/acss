@@ -13,6 +13,7 @@ DECLARE @TerrainFormula4 INT
 DECLARE @TerrainFormula5 INT
 DECLARE @TerrainFormula6 INT
 DECLARE @TerrainFormulaSetId INT
+DECLARE @TextureFormulaId INT
 
 INSERT INTO Planet (
 	Title, 
@@ -534,6 +535,66 @@ INSERT INTO TerrainDataFormulaDifficulty (
 	@TerrainDataId,
 	(SELECT Id FROM Difficulty WHERE Title = 'realistic'),
 	@TerrainFormulaSetId
+)
+
+INSERT INTO TextureFormula (
+	Title,
+	HeightmapId,
+	Width,
+	Height,
+	ModifierId,
+	AddOnFormulaId
+) VALUES (
+	'OUTPUT',
+	(SELECT Id FROM Heightmap WHERE Title = 'Perlin'),
+	15079.644,
+	1,
+	(SELECT Id FROM Modifier WHERE Title = 'Curve8'),
+	NULL
+)
+
+SET @TextureFormulaId = SCOPE_IDENTITY()
+
+INSERT INTO TerrainDataTextureFormula (
+	TerrainDataId,
+	TextureFormulaId
+) VALUES (
+	@TerrainDataId,
+	@TextureFormulaId
+)
+
+INSERT INTO TextureFormula (
+	Title,
+	HeightmapId,
+	Width,
+	Height,
+	ModifierId,
+	AddOnFormulaId
+) VALUES (
+	'OUTPUT',
+	NULL,
+	NULL,
+	NULL,
+	(SELECT Id FROM Modifier WHERE Title = 'Curve8'),
+	NULL
+)
+
+SET @TextureFormulaId = SCOPE_IDENTITY()
+
+INSERT INTO TerrainDataTextureFormula (
+	TerrainDataId,
+	TextureFormulaId
+) VALUES (
+	@TerrainDataId,
+	@TextureFormulaId
+)
+
+INSERT INTO TerrainDataTextureFormula (
+	TerrainDataId,
+	TextureFormulaId
+) VALUES (
+	@TerrainDataId,
+	@TextureFormulaId
 )
 
 INSERT INTO PostProcessingKey (

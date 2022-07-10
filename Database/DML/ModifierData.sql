@@ -9,3 +9,9 @@ INSERT INTO Modifier (
 ) VALUES (
     'Curve2'
 )
+
+INSERT INTO Modifier (
+    Title
+) VALUES (
+    'Curve8'
+)

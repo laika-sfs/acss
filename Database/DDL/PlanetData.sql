@@ -1,280 +1,315 @@
-DROP TRIGGER [TU_TextureSize_AFTER]
+USE [SFS]
 GO
-DROP TRIGGER [TD_TextureSize_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TextureSize_AFTER]
 GO
-DROP TRIGGER [TU_Texture_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TextureSize_AFTER]
 GO
-DROP TRIGGER [TD_Texture_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TextureFormula_AFTER]
 GO
-DROP TRIGGER [TU_TerrainTextureData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TextureFormula_AFTER]
 GO
-DROP TRIGGER [TD_TerrainTextureData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Texture_AFTER]
 GO
-DROP TRIGGER [TU_TerrainFormulaSet_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Texture_AFTER]
 GO
-DROP TRIGGER [TD_TerrainFormulaSet_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainTextureData_AFTER]
 GO
-DROP TRIGGER [TU_TerrainFormulaLink_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainTextureData_AFTER]
 GO
-DROP TRIGGER [TD_TerrainFormulaLink_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainFormulaSet_AFTER]
 GO
-DROP TRIGGER [TU_TerrainFormula_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainFormulaSet_AFTER]
 GO
-DROP TRIGGER [TD_TerrainFormula_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainFormulaLink_AFTER]
 GO
-DROP TRIGGER [TU_TerrainDataFormulaDifficulty_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainFormulaLink_AFTER]
 GO
-DROP TRIGGER [TD_TerrainDataFormulaDifficulty_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainFormula_AFTER]
 GO
-DROP TRIGGER [TU_TerrainDataFlatZone_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainFormula_AFTER]
 GO
-DROP TRIGGER [TD_TerrainDataFlatZone_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainDataTextureFormula_AFTER]
 GO
-DROP TRIGGER [TU_TerrainData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainDataTextureFormula_AFTER]
 GO
-DROP TRIGGER [TD_TerrainData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainDataFormulaDifficulty_AFTER]
 GO
-DROP TRIGGER [TU_PostProcessingKey_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainDataFormulaDifficulty_AFTER]
 GO
-DROP TRIGGER [TD_PostProcessingKey_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainDataFlatZone_AFTER]
 GO
-DROP TRIGGER [TU_PlanetPostProcessing_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainDataFlatZone_AFTER]
 GO
-DROP TRIGGER [TD_PlanetPostProcessing_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_TerrainData_AFTER]
 GO
-DROP TRIGGER [TU_PlanetOrbitData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_TerrainData_AFTER]
 GO
-DROP TRIGGER [TD_PlanetOrbitData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PostProcessingKey_AFTER]
 GO
-DROP TRIGGER [TU_PlanetLandmark_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PostProcessingKey_AFTER]
 GO
-DROP TRIGGER [TD_PlanetLandmark_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetPostProcessing_AFTER]
 GO
-DROP TRIGGER [TU_PlanetBaseData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetPostProcessing_AFTER]
 GO
-DROP TRIGGER [TD_PlanetBaseData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetOrbitData_AFTER]
 GO
-DROP TRIGGER [TU_PlanetAtmosphereVisualsData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetOrbitData_AFTER]
 GO
-DROP TRIGGER [TD_PlanetAtmosphereVisualsData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetLandmark_AFTER]
 GO
-DROP TRIGGER [TU_PlanetAtmospherePhysicsData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetLandmark_AFTER]
 GO
-DROP TRIGGER [TD_PlanetAtmospherePhysicsData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetBaseData_AFTER]
 GO
-DROP TRIGGER [TU_PlanetAchievementData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetBaseData_AFTER]
 GO
-DROP TRIGGER [TD_PlanetAchievementData_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetAtmosphereVisualsData_AFTER]
 GO
-DROP TRIGGER [TU_Planet_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetAtmosphereVisualsData_AFTER]
 GO
-DROP TRIGGER [TD_Planet_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetAtmospherePhysicsData_AFTER]
 GO
-DROP TRIGGER [TU_Modifier_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetAtmospherePhysicsData_AFTER]
 GO
-DROP TRIGGER [TD_Modifier_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_PlanetAchievementData_AFTER]
 GO
-DROP TRIGGER [TU_Landmark_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_PlanetAchievementData_AFTER]
 GO
-DROP TRIGGER [TD_Landmark_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Planet_AFTER]
 GO
-DROP TRIGGER [TU_Heightmap_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Planet_AFTER]
 GO
-DROP TRIGGER [TD_Heightmap_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Modifier_AFTER]
 GO
-DROP TRIGGER [TU_Gradient_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Modifier_AFTER]
 GO
-DROP TRIGGER [TD_Gradient_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Landmark_AFTER]
 GO
-DROP TRIGGER [TU_FogKeySet_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Landmark_AFTER]
 GO
-DROP TRIGGER [TD_FogKeySet_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Heightmap_AFTER]
 GO
-DROP TRIGGER [TU_FogKeyLink_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Heightmap_AFTER]
 GO
-DROP TRIGGER [TD_FogKeyLink_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Gradient_AFTER]
 GO
-DROP TRIGGER [TU_FogKey_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Gradient_AFTER]
 GO
-DROP TRIGGER [TD_FogKey_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_FogKeySet_AFTER]
 GO
-DROP TRIGGER [TU_FlatZone_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_FogKeySet_AFTER]
 GO
-DROP TRIGGER [TD_FlatZone_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_FogKeyLink_AFTER]
 GO
-DROP TRIGGER [TU_Difficulty_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_FogKeyLink_AFTER]
 GO
-DROP TRIGGER [TD_Difficulty_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_FogKey_AFTER]
 GO
-DROP TRIGGER [TU_Colour_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_FogKey_AFTER]
 GO
-DROP TRIGGER [TD_Colour_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_FlatZone_AFTER]
 GO
-DROP TRIGGER [TU_Cloud_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_FlatZone_AFTER]
 GO
-DROP TRIGGER [TD_Cloud_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Difficulty_AFTER]
 GO
-ALTER TABLE [Texture] DROP CONSTRAINT [FK_Texture_TextureSize]
+DROP TRIGGER IF EXISTS [dbo].[TD_Difficulty_AFTER]
 GO
-ALTER TABLE [TerrainTextureData] DROP CONSTRAINT [FK_TerrainTextureData_Texture2]
+DROP TRIGGER IF EXISTS [dbo].[TU_Colour_AFTER]
 GO
-ALTER TABLE [TerrainTextureData] DROP CONSTRAINT [FK_TerrainTextureData_Texture1]
+DROP TRIGGER IF EXISTS [dbo].[TD_Colour_AFTER]
 GO
-ALTER TABLE [TerrainTextureData] DROP CONSTRAINT [FK_TerrainTextureData_Texture]
+DROP TRIGGER IF EXISTS [dbo].[TU_Cloud_AFTER]
 GO
-ALTER TABLE [TerrainFormulaLink] DROP CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet]
+DROP TRIGGER IF EXISTS [dbo].[TD_Cloud_AFTER]
 GO
-ALTER TABLE [TerrainFormulaLink] DROP CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TextureFormula] DROP CONSTRAINT IF EXISTS [CK_TextureFormula]
 GO
-ALTER TABLE [TerrainFormula] DROP CONSTRAINT [FK_TerrainFormula_TerrainFormula]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TextureFormula] DROP CONSTRAINT IF EXISTS [FK_TextureFormula_TextureFormula]
 GO
-ALTER TABLE [TerrainFormula] DROP CONSTRAINT [FK_TerrainFormula_Modifier]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TextureFormula] DROP CONSTRAINT IF EXISTS [FK_TextureFormula_Modifier]
 GO
-ALTER TABLE [TerrainFormula] DROP CONSTRAINT [FK_TerrainFormula_Heightmap]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TextureFormula] DROP CONSTRAINT IF EXISTS [FK_TextureFormula_Heightmap]
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty] DROP CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Texture]') AND type in (N'U'))
+ALTER TABLE [dbo].[Texture] DROP CONSTRAINT IF EXISTS [FK_Texture_TextureSize]
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty] DROP CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainTextureData]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainTextureData] DROP CONSTRAINT IF EXISTS [FK_TerrainTextureData_Texture2]
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty] DROP CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainTextureData]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainTextureData] DROP CONSTRAINT IF EXISTS [FK_TerrainTextureData_Texture1]
 GO
-ALTER TABLE [TerrainDataFlatZone] DROP CONSTRAINT [FK_TerrainDataFlatZone_TerrainData]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainTextureData]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainTextureData] DROP CONSTRAINT IF EXISTS [FK_TerrainTextureData_Texture]
 GO
-ALTER TABLE [TerrainDataFlatZone] DROP CONSTRAINT [FK_TerrainDataFlatZone_FlatZone]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainFormulaLink]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainFormulaLink] DROP CONSTRAINT IF EXISTS [FK_TerrainFormulaLink_TerrainFormulaSet]
 GO
-ALTER TABLE [TerrainData] DROP CONSTRAINT [FK_TerrainData_TerrainTextureData]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainFormulaLink]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainFormulaLink] DROP CONSTRAINT IF EXISTS [FK_TerrainFormulaLink_TerrainFormula]
 GO
-ALTER TABLE [TerrainData] DROP CONSTRAINT [FK_TerrainData_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainFormula_TerrainFormula]
 GO
-ALTER TABLE [PlanetPostProcessing] DROP CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainFormula_Modifier]
 GO
-ALTER TABLE [PlanetPostProcessing] DROP CONSTRAINT [FK_PlanetPostProcessing_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainFormula_Heightmap]
 GO
-ALTER TABLE [PlanetOrbitData] DROP CONSTRAINT [FK_PlanetOrbitData_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataTextureFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataTextureFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainDataTextureFormula_TextureFormula]
 GO
-ALTER TABLE [PlanetOrbitData] DROP CONSTRAINT [FK_PlanetOrbitData_ParentPlanet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataTextureFormula]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataTextureFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainDataTextureFormula_TerrainData]
 GO
-ALTER TABLE [PlanetLandmark] DROP CONSTRAINT [FK_PlanetLandmark_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataFormulaDifficulty]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet]
 GO
-ALTER TABLE [PlanetLandmark] DROP CONSTRAINT [FK_PlanetLandmark_Landmark]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataFormulaDifficulty]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFormulaDifficulty_TerrainData]
 GO
-ALTER TABLE [PlanetBaseData] DROP CONSTRAINT [FK_PlanetBaseData_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataFormulaDifficulty]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFormulaDifficulty_Difficulty]
 GO
-ALTER TABLE [PlanetBaseData] DROP CONSTRAINT [FK_PlanetBaseData_Colour]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataFlatZone]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataFlatZone] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFlatZone_TerrainData]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] DROP CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainDataFlatZone]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainDataFlatZone] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFlatZone_FlatZone]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] DROP CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainData]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainData] DROP CONSTRAINT IF EXISTS [FK_TerrainData_TerrainTextureData]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] DROP CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TerrainData]') AND type in (N'U'))
+ALTER TABLE [dbo].[TerrainData] DROP CONSTRAINT IF EXISTS [FK_TerrainData_Planet]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] DROP CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetPostProcessing]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetPostProcessing] DROP CONSTRAINT IF EXISTS [FK_PlanetPostProcessing_PostProcessingKey]
 GO
-ALTER TABLE [PlanetAtmospherePhysicsData] DROP CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetPostProcessing]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetPostProcessing] DROP CONSTRAINT IF EXISTS [FK_PlanetPostProcessing_Planet]
 GO
-ALTER TABLE [PlanetAchievementData] DROP CONSTRAINT [FK_PlanetAchievementData_Planet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetOrbitData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetOrbitData] DROP CONSTRAINT IF EXISTS [FK_PlanetOrbitData_Planet]
 GO
-ALTER TABLE [FogKeyLink] DROP CONSTRAINT [FK_FogKeyLink_FogKeySet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetOrbitData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetOrbitData] DROP CONSTRAINT IF EXISTS [FK_PlanetOrbitData_ParentPlanet]
 GO
-ALTER TABLE [FogKeyLink] DROP CONSTRAINT [FK_FogKeyLink_FogKey]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetLandmark]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetLandmark] DROP CONSTRAINT IF EXISTS [FK_PlanetLandmark_Planet]
 GO
-ALTER TABLE [FogKey] DROP CONSTRAINT [FK_FogKey_Colour]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetLandmark]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetLandmark] DROP CONSTRAINT IF EXISTS [FK_PlanetLandmark_Landmark]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TextureSize]') AND type in (N'U'))
-DROP TABLE [TextureSize]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetBaseData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetBaseData] DROP CONSTRAINT IF EXISTS [FK_PlanetBaseData_Planet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Texture]') AND type in (N'U'))
-DROP TABLE [Texture]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetBaseData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetBaseData] DROP CONSTRAINT IF EXISTS [FK_PlanetBaseData_Colour]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainTextureData]') AND type in (N'U'))
-DROP TABLE [TerrainTextureData]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Planet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainFormulaSet]') AND type in (N'U'))
-DROP TABLE [TerrainFormulaSet]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Gradient]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainFormulaLink]') AND type in (N'U'))
-DROP TABLE [TerrainFormulaLink]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_FogKeySet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainFormula]') AND type in (N'U'))
-DROP TABLE [TerrainFormula]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Cloud]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainDataFormulaDifficulty]') AND type in (N'U'))
-DROP TABLE [TerrainDataFormulaDifficulty]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmospherePhysicsData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetAtmospherePhysicsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmospherePhysicsData_Planet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainDataFlatZone]') AND type in (N'U'))
-DROP TABLE [TerrainDataFlatZone]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAchievementData]') AND type in (N'U'))
+ALTER TABLE [dbo].[PlanetAchievementData] DROP CONSTRAINT IF EXISTS [FK_PlanetAchievementData_Planet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[TerrainData]') AND type in (N'U'))
-DROP TABLE [TerrainData]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FogKeyLink]') AND type in (N'U'))
+ALTER TABLE [dbo].[FogKeyLink] DROP CONSTRAINT IF EXISTS [FK_FogKeyLink_FogKeySet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PostProcessingKey]') AND type in (N'U'))
-DROP TABLE [PostProcessingKey]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FogKeyLink]') AND type in (N'U'))
+ALTER TABLE [dbo].[FogKeyLink] DROP CONSTRAINT IF EXISTS [FK_FogKeyLink_FogKey]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetPostProcessing]') AND type in (N'U'))
-DROP TABLE [PlanetPostProcessing]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[FogKey]') AND type in (N'U'))
+ALTER TABLE [dbo].[FogKey] DROP CONSTRAINT IF EXISTS [FK_FogKey_Colour]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetOrbitData]') AND type in (N'U'))
-DROP TABLE [PlanetOrbitData]
+DROP TABLE IF EXISTS [dbo].[TextureSize]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetLandmark]') AND type in (N'U'))
-DROP TABLE [PlanetLandmark]
+DROP TABLE IF EXISTS [dbo].[TextureFormula]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetBaseData]') AND type in (N'U'))
-DROP TABLE [PlanetBaseData]
+DROP TABLE IF EXISTS [dbo].[Texture]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetAtmosphereVisualsData]') AND type in (N'U'))
-DROP TABLE [PlanetAtmosphereVisualsData]
+DROP TABLE IF EXISTS [dbo].[TerrainTextureData]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetAtmospherePhysicsData]') AND type in (N'U'))
-DROP TABLE [PlanetAtmospherePhysicsData]
+DROP TABLE IF EXISTS [dbo].[TerrainFormulaSet]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[PlanetAchievementData]') AND type in (N'U'))
-DROP TABLE [PlanetAchievementData]
+DROP TABLE IF EXISTS [dbo].[TerrainFormulaLink]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet]') AND type in (N'U'))
-DROP TABLE [Planet]
+DROP TABLE IF EXISTS [dbo].[TerrainFormula]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Modifier]') AND type in (N'U'))
-DROP TABLE [Modifier]
+DROP TABLE IF EXISTS [dbo].[TerrainDataTextureFormula]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Landmark]') AND type in (N'U'))
-DROP TABLE [Landmark]
+DROP TABLE IF EXISTS [dbo].[TerrainDataFormulaDifficulty]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Heightmap]') AND type in (N'U'))
-DROP TABLE [Heightmap]
+DROP TABLE IF EXISTS [dbo].[TerrainDataFlatZone]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Gradient]') AND type in (N'U'))
-DROP TABLE [Gradient]
+DROP TABLE IF EXISTS [dbo].[TerrainData]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[FogKeySet]') AND type in (N'U'))
-DROP TABLE [FogKeySet]
+DROP TABLE IF EXISTS [dbo].[PostProcessingKey]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[FogKeyLink]') AND type in (N'U'))
-DROP TABLE [FogKeyLink]
+DROP TABLE IF EXISTS [dbo].[PlanetPostProcessing]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[FogKey]') AND type in (N'U'))
-DROP TABLE [FogKey]
+DROP TABLE IF EXISTS [dbo].[PlanetOrbitData]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[FlatZone]') AND type in (N'U'))
-DROP TABLE [FlatZone]
+DROP TABLE IF EXISTS [dbo].[PlanetLandmark]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Difficulty]') AND type in (N'U'))
-DROP TABLE [Difficulty]
+DROP TABLE IF EXISTS [dbo].[PlanetBaseData]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Colour]') AND type in (N'U'))
-DROP TABLE [Colour]
+DROP TABLE IF EXISTS [dbo].[PlanetAtmosphereVisualsData]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Cloud]') AND type in (N'U'))
-DROP TABLE [Cloud]
+DROP TABLE IF EXISTS [dbo].[PlanetAtmospherePhysicsData]
 GO
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[AuditLog]') AND type in (N'U'))
-DROP TABLE [AuditLog]
+DROP TABLE IF EXISTS [dbo].[PlanetAchievementData]
+GO
+DROP TABLE IF EXISTS [dbo].[Planet]
+GO
+DROP TABLE IF EXISTS [dbo].[Modifier]
+GO
+DROP TABLE IF EXISTS [dbo].[Landmark]
+GO
+DROP TABLE IF EXISTS [dbo].[Heightmap]
+GO
+DROP TABLE IF EXISTS [dbo].[Gradient]
+GO
+DROP TABLE IF EXISTS [dbo].[FogKeySet]
+GO
+DROP TABLE IF EXISTS [dbo].[FogKeyLink]
+GO
+DROP TABLE IF EXISTS [dbo].[FogKey]
+GO
+DROP TABLE IF EXISTS [dbo].[FlatZone]
+GO
+DROP TABLE IF EXISTS [dbo].[Difficulty]
+GO
+DROP TABLE IF EXISTS [dbo].[Colour]
+GO
+DROP TABLE IF EXISTS [dbo].[Cloud]
+GO
+DROP TABLE IF EXISTS [dbo].[AuditLog]
 GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [AuditLog](
+CREATE TABLE [dbo].[AuditLog](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TriggerDate] [datetime2](7) NOT NULL,
 	[SourceContext] [nvarchar](100) NOT NULL,
@@ -294,7 +329,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Cloud](
+CREATE TABLE [dbo].[Cloud](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[Texture] [nvarchar](50) NOT NULL,
@@ -326,7 +361,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Colour](
+CREATE TABLE [dbo].[Colour](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[Red] [decimal](6, 3) NOT NULL,
@@ -354,7 +389,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Difficulty](
+CREATE TABLE [dbo].[Difficulty](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Difficulty] PRIMARY KEY CLUSTERED 
@@ -371,7 +406,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [FlatZone](
+CREATE TABLE [dbo].[FlatZone](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[Height] [decimal](21, 3) NOT NULL,
@@ -399,7 +434,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [FogKey](
+CREATE TABLE [dbo].[FogKey](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[ColourId] [int] NOT NULL,
 	[Distance] [decimal](21, 3) NOT NULL,
@@ -418,7 +453,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [FogKeyLink](
+CREATE TABLE [dbo].[FogKeyLink](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[FogKeyId] [int] NOT NULL,
 	[FogKeySetId] [int] NOT NULL,
@@ -432,7 +467,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [FogKeySet](
+CREATE TABLE [dbo].[FogKeySet](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_FogKeySet] PRIMARY KEY CLUSTERED 
@@ -449,7 +484,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Gradient](
+CREATE TABLE [dbo].[Gradient](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[PositionZ] [decimal](21, 3) NOT NULL,
@@ -475,7 +510,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Heightmap](
+CREATE TABLE [dbo].[Heightmap](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Heightmap] PRIMARY KEY CLUSTERED 
@@ -492,7 +527,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Landmark](
+CREATE TABLE [dbo].[Landmark](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[Angle] [decimal](21, 3) NOT NULL,
@@ -512,7 +547,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Modifier](
+CREATE TABLE [dbo].[Modifier](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Modifier] PRIMARY KEY CLUSTERED 
@@ -529,7 +564,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Planet](
+CREATE TABLE [dbo].[Planet](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[GameVersion] [decimal](2, 1) NOT NULL,
@@ -548,7 +583,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetAchievementData](
+CREATE TABLE [dbo].[PlanetAchievementData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[Landed] [bit] NOT NULL,
@@ -570,7 +605,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetAtmospherePhysicsData](
+CREATE TABLE [dbo].[PlanetAtmospherePhysicsData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[Height] [decimal](21, 3) NOT NULL,
@@ -594,7 +629,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetAtmosphereVisualsData](
+CREATE TABLE [dbo].[PlanetAtmosphereVisualsData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[GradientId] [int] NOT NULL,
@@ -614,7 +649,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetBaseData](
+CREATE TABLE [dbo].[PlanetBaseData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[ColourId] [int] NOT NULL,
@@ -636,7 +671,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetLandmark](
+CREATE TABLE [dbo].[PlanetLandmark](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[LandmarkId] [int] NOT NULL,
@@ -655,7 +690,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetOrbitData](
+CREATE TABLE [dbo].[PlanetOrbitData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[ParentPlanetId] [int] NOT NULL,
@@ -674,7 +709,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PlanetPostProcessing](
+CREATE TABLE [dbo].[PlanetPostProcessing](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[PostProcessingKeyId] [int] NOT NULL,
@@ -693,7 +728,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [PostProcessingKey](
+CREATE TABLE [dbo].[PostProcessingKey](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[Height] [decimal](21, 3) NOT NULL,
@@ -731,7 +766,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainData](
+CREATE TABLE [dbo].[TerrainData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[TerrainTextureDataId] [int] NOT NULL,
@@ -747,7 +782,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainDataFlatZone](
+CREATE TABLE [dbo].[TerrainDataFlatZone](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TerrainDataId] [int] NOT NULL,
 	[FlatZoneId] [int] NOT NULL,
@@ -766,7 +801,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainDataFormulaDifficulty](
+CREATE TABLE [dbo].[TerrainDataFormulaDifficulty](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TerrainDataId] [int] NOT NULL,
 	[DifficultyId] [int] NOT NULL,
@@ -787,7 +822,21 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainFormula](
+CREATE TABLE [dbo].[TerrainDataTextureFormula](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TerrainDataId] [int] NOT NULL,
+	[TextureFormulaId] [int] NOT NULL,
+ CONSTRAINT [PK_TerrainDataTextureFormula] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TerrainFormula](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[HeightmapId] [int] NOT NULL,
@@ -814,7 +863,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainFormulaLink](
+CREATE TABLE [dbo].[TerrainFormulaLink](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TerrainFormulaId] [int] NOT NULL,
 	[TerrainFormulaSetId] [int] NOT NULL,
@@ -828,7 +877,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainFormulaSet](
+CREATE TABLE [dbo].[TerrainFormulaSet](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_TerrainFormulaSet] PRIMARY KEY CLUSTERED 
@@ -845,7 +894,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TerrainTextureData](
+CREATE TABLE [dbo].[TerrainTextureData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[PlanetTexture] [nvarchar](50) NOT NULL,
@@ -885,7 +934,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [Texture](
+CREATE TABLE [dbo].[Texture](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[TextureSizeId] [int] NOT NULL,
@@ -904,7 +953,25 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [TextureSize](
+CREATE TABLE [dbo].[TextureFormula](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[HeightmapId] [int] NULL,
+	[Width] [decimal](21, 3) NULL,
+	[Height] [decimal](21, 3) NULL,
+	[ModifierId] [int] NULL,
+	[AddOnFormulaId] [int] NULL,
+ CONSTRAINT [PK_TextureFormula] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TextureSize](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[X] [decimal](21, 3) NOT NULL,
 	[Y] [decimal](21, 3) NOT NULL,
@@ -919,170 +986,199 @@ CREATE TABLE [TextureSize](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [FogKey]  WITH CHECK ADD  CONSTRAINT [FK_FogKey_Colour] FOREIGN KEY([ColourId])
-REFERENCES [Colour] ([Id])
+ALTER TABLE [dbo].[FogKey]  WITH CHECK ADD  CONSTRAINT [FK_FogKey_Colour] FOREIGN KEY([ColourId])
+REFERENCES [dbo].[Colour] ([Id])
 GO
-ALTER TABLE [FogKey] CHECK CONSTRAINT [FK_FogKey_Colour]
+ALTER TABLE [dbo].[FogKey] CHECK CONSTRAINT [FK_FogKey_Colour]
 GO
-ALTER TABLE [FogKeyLink]  WITH CHECK ADD  CONSTRAINT [FK_FogKeyLink_FogKey] FOREIGN KEY([FogKeyId])
-REFERENCES [FogKey] ([Id])
+ALTER TABLE [dbo].[FogKeyLink]  WITH CHECK ADD  CONSTRAINT [FK_FogKeyLink_FogKey] FOREIGN KEY([FogKeyId])
+REFERENCES [dbo].[FogKey] ([Id])
 GO
-ALTER TABLE [FogKeyLink] CHECK CONSTRAINT [FK_FogKeyLink_FogKey]
+ALTER TABLE [dbo].[FogKeyLink] CHECK CONSTRAINT [FK_FogKeyLink_FogKey]
 GO
-ALTER TABLE [FogKeyLink]  WITH CHECK ADD  CONSTRAINT [FK_FogKeyLink_FogKeySet] FOREIGN KEY([FogKeySetId])
-REFERENCES [FogKeySet] ([Id])
+ALTER TABLE [dbo].[FogKeyLink]  WITH CHECK ADD  CONSTRAINT [FK_FogKeyLink_FogKeySet] FOREIGN KEY([FogKeySetId])
+REFERENCES [dbo].[FogKeySet] ([Id])
 GO
-ALTER TABLE [FogKeyLink] CHECK CONSTRAINT [FK_FogKeyLink_FogKeySet]
+ALTER TABLE [dbo].[FogKeyLink] CHECK CONSTRAINT [FK_FogKeyLink_FogKeySet]
 GO
-ALTER TABLE [PlanetAchievementData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAchievementData_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetAchievementData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAchievementData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetAchievementData] CHECK CONSTRAINT [FK_PlanetAchievementData_Planet]
+ALTER TABLE [dbo].[PlanetAchievementData] CHECK CONSTRAINT [FK_PlanetAchievementData_Planet]
 GO
-ALTER TABLE [PlanetAtmospherePhysicsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetAtmospherePhysicsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetAtmospherePhysicsData] CHECK CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet]
+ALTER TABLE [dbo].[PlanetAtmospherePhysicsData] CHECK CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud] FOREIGN KEY([CloudId])
-REFERENCES [Cloud] ([Id])
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud] FOREIGN KEY([CloudId])
+REFERENCES [dbo].[Cloud] ([Id])
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud]
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet] FOREIGN KEY([FogKeySetId])
-REFERENCES [FogKeySet] ([Id])
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet] FOREIGN KEY([FogKeySetId])
+REFERENCES [dbo].[FogKeySet] ([Id])
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet]
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient] FOREIGN KEY([GradientId])
-REFERENCES [Gradient] ([Id])
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient] FOREIGN KEY([GradientId])
+REFERENCES [dbo].[Gradient] ([Id])
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient]
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient]
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet]
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet]
 GO
-ALTER TABLE [PlanetBaseData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetBaseData_Colour] FOREIGN KEY([ColourId])
-REFERENCES [Colour] ([Id])
+ALTER TABLE [dbo].[PlanetBaseData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetBaseData_Colour] FOREIGN KEY([ColourId])
+REFERENCES [dbo].[Colour] ([Id])
 GO
-ALTER TABLE [PlanetBaseData] CHECK CONSTRAINT [FK_PlanetBaseData_Colour]
+ALTER TABLE [dbo].[PlanetBaseData] CHECK CONSTRAINT [FK_PlanetBaseData_Colour]
 GO
-ALTER TABLE [PlanetBaseData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetBaseData_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetBaseData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetBaseData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetBaseData] CHECK CONSTRAINT [FK_PlanetBaseData_Planet]
+ALTER TABLE [dbo].[PlanetBaseData] CHECK CONSTRAINT [FK_PlanetBaseData_Planet]
 GO
-ALTER TABLE [PlanetLandmark]  WITH CHECK ADD  CONSTRAINT [FK_PlanetLandmark_Landmark] FOREIGN KEY([LandmarkId])
-REFERENCES [Landmark] ([Id])
+ALTER TABLE [dbo].[PlanetLandmark]  WITH CHECK ADD  CONSTRAINT [FK_PlanetLandmark_Landmark] FOREIGN KEY([LandmarkId])
+REFERENCES [dbo].[Landmark] ([Id])
 GO
-ALTER TABLE [PlanetLandmark] CHECK CONSTRAINT [FK_PlanetLandmark_Landmark]
+ALTER TABLE [dbo].[PlanetLandmark] CHECK CONSTRAINT [FK_PlanetLandmark_Landmark]
 GO
-ALTER TABLE [PlanetLandmark]  WITH CHECK ADD  CONSTRAINT [FK_PlanetLandmark_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetLandmark]  WITH CHECK ADD  CONSTRAINT [FK_PlanetLandmark_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetLandmark] CHECK CONSTRAINT [FK_PlanetLandmark_Planet]
+ALTER TABLE [dbo].[PlanetLandmark] CHECK CONSTRAINT [FK_PlanetLandmark_Planet]
 GO
-ALTER TABLE [PlanetOrbitData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetOrbitData_ParentPlanet] FOREIGN KEY([ParentPlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetOrbitData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetOrbitData_ParentPlanet] FOREIGN KEY([ParentPlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetOrbitData] CHECK CONSTRAINT [FK_PlanetOrbitData_ParentPlanet]
+ALTER TABLE [dbo].[PlanetOrbitData] CHECK CONSTRAINT [FK_PlanetOrbitData_ParentPlanet]
 GO
-ALTER TABLE [PlanetOrbitData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetOrbitData_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetOrbitData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetOrbitData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetOrbitData] CHECK CONSTRAINT [FK_PlanetOrbitData_Planet]
+ALTER TABLE [dbo].[PlanetOrbitData] CHECK CONSTRAINT [FK_PlanetOrbitData_Planet]
 GO
-ALTER TABLE [PlanetPostProcessing]  WITH CHECK ADD  CONSTRAINT [FK_PlanetPostProcessing_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[PlanetPostProcessing]  WITH CHECK ADD  CONSTRAINT [FK_PlanetPostProcessing_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [PlanetPostProcessing] CHECK CONSTRAINT [FK_PlanetPostProcessing_Planet]
+ALTER TABLE [dbo].[PlanetPostProcessing] CHECK CONSTRAINT [FK_PlanetPostProcessing_Planet]
 GO
-ALTER TABLE [PlanetPostProcessing]  WITH CHECK ADD  CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey] FOREIGN KEY([PostProcessingKeyId])
-REFERENCES [PostProcessingKey] ([Id])
+ALTER TABLE [dbo].[PlanetPostProcessing]  WITH CHECK ADD  CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey] FOREIGN KEY([PostProcessingKeyId])
+REFERENCES [dbo].[PostProcessingKey] ([Id])
 GO
-ALTER TABLE [PlanetPostProcessing] CHECK CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey]
+ALTER TABLE [dbo].[PlanetPostProcessing] CHECK CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey]
 GO
-ALTER TABLE [TerrainData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainData_Planet] FOREIGN KEY([PlanetId])
-REFERENCES [Planet] ([Id])
+ALTER TABLE [dbo].[TerrainData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [dbo].[Planet] ([Id])
 GO
-ALTER TABLE [TerrainData] CHECK CONSTRAINT [FK_TerrainData_Planet]
+ALTER TABLE [dbo].[TerrainData] CHECK CONSTRAINT [FK_TerrainData_Planet]
 GO
-ALTER TABLE [TerrainData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainData_TerrainTextureData] FOREIGN KEY([TerrainTextureDataId])
-REFERENCES [TerrainTextureData] ([Id])
+ALTER TABLE [dbo].[TerrainData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainData_TerrainTextureData] FOREIGN KEY([TerrainTextureDataId])
+REFERENCES [dbo].[TerrainTextureData] ([Id])
 GO
-ALTER TABLE [TerrainData] CHECK CONSTRAINT [FK_TerrainData_TerrainTextureData]
+ALTER TABLE [dbo].[TerrainData] CHECK CONSTRAINT [FK_TerrainData_TerrainTextureData]
 GO
-ALTER TABLE [TerrainDataFlatZone]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFlatZone_FlatZone] FOREIGN KEY([FlatZoneId])
-REFERENCES [FlatZone] ([Id])
+ALTER TABLE [dbo].[TerrainDataFlatZone]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFlatZone_FlatZone] FOREIGN KEY([FlatZoneId])
+REFERENCES [dbo].[FlatZone] ([Id])
 GO
-ALTER TABLE [TerrainDataFlatZone] CHECK CONSTRAINT [FK_TerrainDataFlatZone_FlatZone]
+ALTER TABLE [dbo].[TerrainDataFlatZone] CHECK CONSTRAINT [FK_TerrainDataFlatZone_FlatZone]
 GO
-ALTER TABLE [TerrainDataFlatZone]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFlatZone_TerrainData] FOREIGN KEY([TerrainDataId])
-REFERENCES [TerrainData] ([Id])
+ALTER TABLE [dbo].[TerrainDataFlatZone]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFlatZone_TerrainData] FOREIGN KEY([TerrainDataId])
+REFERENCES [dbo].[TerrainData] ([Id])
 GO
-ALTER TABLE [TerrainDataFlatZone] CHECK CONSTRAINT [FK_TerrainDataFlatZone_TerrainData]
+ALTER TABLE [dbo].[TerrainDataFlatZone] CHECK CONSTRAINT [FK_TerrainDataFlatZone_TerrainData]
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty] FOREIGN KEY([DifficultyId])
-REFERENCES [Difficulty] ([Id])
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty] FOREIGN KEY([DifficultyId])
+REFERENCES [dbo].[Difficulty] ([Id])
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty]
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty]
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData] FOREIGN KEY([TerrainDataId])
-REFERENCES [TerrainData] ([Id])
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData] FOREIGN KEY([TerrainDataId])
+REFERENCES [dbo].[TerrainData] ([Id])
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData]
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData]
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet] FOREIGN KEY([TerrainFormulaSetId])
-REFERENCES [TerrainFormulaSet] ([Id])
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet] FOREIGN KEY([TerrainFormulaSetId])
+REFERENCES [dbo].[TerrainFormulaSet] ([Id])
 GO
-ALTER TABLE [TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet]
+ALTER TABLE [dbo].[TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet]
 GO
-ALTER TABLE [TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_Heightmap] FOREIGN KEY([HeightmapId])
-REFERENCES [Heightmap] ([Id])
+ALTER TABLE [dbo].[TerrainDataTextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataTextureFormula_TerrainData] FOREIGN KEY([TerrainDataId])
+REFERENCES [dbo].[TerrainData] ([Id])
 GO
-ALTER TABLE [TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_Heightmap]
+ALTER TABLE [dbo].[TerrainDataTextureFormula] CHECK CONSTRAINT [FK_TerrainDataTextureFormula_TerrainData]
 GO
-ALTER TABLE [TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_Modifier] FOREIGN KEY([ModifierId])
-REFERENCES [Modifier] ([Id])
+ALTER TABLE [dbo].[TerrainDataTextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataTextureFormula_TextureFormula] FOREIGN KEY([TextureFormulaId])
+REFERENCES [dbo].[TextureFormula] ([Id])
 GO
-ALTER TABLE [TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_Modifier]
+ALTER TABLE [dbo].[TerrainDataTextureFormula] CHECK CONSTRAINT [FK_TerrainDataTextureFormula_TextureFormula]
 GO
-ALTER TABLE [TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_TerrainFormula] FOREIGN KEY([AddOnFormulaId])
-REFERENCES [TerrainFormula] ([Id])
+ALTER TABLE [dbo].[TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_Heightmap] FOREIGN KEY([HeightmapId])
+REFERENCES [dbo].[Heightmap] ([Id])
 GO
-ALTER TABLE [TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_TerrainFormula]
+ALTER TABLE [dbo].[TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_Heightmap]
 GO
-ALTER TABLE [TerrainFormulaLink]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula] FOREIGN KEY([TerrainFormulaId])
-REFERENCES [TerrainFormula] ([Id])
+ALTER TABLE [dbo].[TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_Modifier] FOREIGN KEY([ModifierId])
+REFERENCES [dbo].[Modifier] ([Id])
 GO
-ALTER TABLE [TerrainFormulaLink] CHECK CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula]
+ALTER TABLE [dbo].[TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_Modifier]
 GO
-ALTER TABLE [TerrainFormulaLink]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet] FOREIGN KEY([TerrainFormulaSetId])
-REFERENCES [TerrainFormulaSet] ([Id])
+ALTER TABLE [dbo].[TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_TerrainFormula] FOREIGN KEY([AddOnFormulaId])
+REFERENCES [dbo].[TerrainFormula] ([Id])
 GO
-ALTER TABLE [TerrainFormulaLink] CHECK CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet]
+ALTER TABLE [dbo].[TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_TerrainFormula]
 GO
-ALTER TABLE [TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture] FOREIGN KEY([SurfaceTextureA])
-REFERENCES [Texture] ([Id])
+ALTER TABLE [dbo].[TerrainFormulaLink]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula] FOREIGN KEY([TerrainFormulaId])
+REFERENCES [dbo].[TerrainFormula] ([Id])
 GO
-ALTER TABLE [TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture]
+ALTER TABLE [dbo].[TerrainFormulaLink] CHECK CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula]
 GO
-ALTER TABLE [TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture1] FOREIGN KEY([SurfaceTextureB])
-REFERENCES [Texture] ([Id])
+ALTER TABLE [dbo].[TerrainFormulaLink]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet] FOREIGN KEY([TerrainFormulaSetId])
+REFERENCES [dbo].[TerrainFormulaSet] ([Id])
 GO
-ALTER TABLE [TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture1]
+ALTER TABLE [dbo].[TerrainFormulaLink] CHECK CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet]
 GO
-ALTER TABLE [TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture2] FOREIGN KEY([TerrainTextureC])
-REFERENCES [Texture] ([Id])
+ALTER TABLE [dbo].[TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture] FOREIGN KEY([SurfaceTextureA])
+REFERENCES [dbo].[Texture] ([Id])
 GO
-ALTER TABLE [TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture2]
+ALTER TABLE [dbo].[TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture]
 GO
-ALTER TABLE [Texture]  WITH CHECK ADD  CONSTRAINT [FK_Texture_TextureSize] FOREIGN KEY([TextureSizeId])
-REFERENCES [TextureSize] ([Id])
+ALTER TABLE [dbo].[TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture1] FOREIGN KEY([SurfaceTextureB])
+REFERENCES [dbo].[Texture] ([Id])
 GO
-ALTER TABLE [Texture] CHECK CONSTRAINT [FK_Texture_TextureSize]
+ALTER TABLE [dbo].[TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture1]
+GO
+ALTER TABLE [dbo].[TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture2] FOREIGN KEY([TerrainTextureC])
+REFERENCES [dbo].[Texture] ([Id])
+GO
+ALTER TABLE [dbo].[TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture2]
+GO
+ALTER TABLE [dbo].[Texture]  WITH CHECK ADD  CONSTRAINT [FK_Texture_TextureSize] FOREIGN KEY([TextureSizeId])
+REFERENCES [dbo].[TextureSize] ([Id])
+GO
+ALTER TABLE [dbo].[Texture] CHECK CONSTRAINT [FK_Texture_TextureSize]
+GO
+ALTER TABLE [dbo].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TextureFormula_Heightmap] FOREIGN KEY([HeightmapId])
+REFERENCES [dbo].[Heightmap] ([Id])
+GO
+ALTER TABLE [dbo].[TextureFormula] CHECK CONSTRAINT [FK_TextureFormula_Heightmap]
+GO
+ALTER TABLE [dbo].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TextureFormula_Modifier] FOREIGN KEY([ModifierId])
+REFERENCES [dbo].[Modifier] ([Id])
+GO
+ALTER TABLE [dbo].[TextureFormula] CHECK CONSTRAINT [FK_TextureFormula_Modifier]
+GO
+ALTER TABLE [dbo].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TextureFormula_TextureFormula] FOREIGN KEY([AddOnFormulaId])
+REFERENCES [dbo].[TextureFormula] ([Id])
+GO
+ALTER TABLE [dbo].[TextureFormula] CHECK CONSTRAINT [FK_TextureFormula_TextureFormula]
+GO
+ALTER TABLE [dbo].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [CK_TextureFormula] CHECK  (([HeightmapId] IS NULL AND [Width] IS NULL AND [Height] IS NULL AND [ModifierId] IS NOT NULL AND [AddOnFormulaId] IS NULL OR [HeightmapId] IS NOT NULL AND [Width] IS NOT NULL AND [Height] IS NOT NULL))
+GO
+ALTER TABLE [dbo].[TextureFormula] CHECK CONSTRAINT [CK_TextureFormula]
 GO
 SET ANSI_NULLS ON
 GO
@@ -1090,7 +1186,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE     TRIGGER [TD_Cloud_AFTER] ON [Cloud] AFTER DELETE AS
+CREATE     TRIGGER [dbo].[TD_Cloud_AFTER] ON [dbo].[Cloud] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1127,7 +1223,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE     TRIGGER [TU_Cloud_AFTER] ON [Cloud] AFTER UPDATE AS
+CREATE     TRIGGER [dbo].[TU_Cloud_AFTER] ON [dbo].[Cloud] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1170,7 +1266,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE   TRIGGER [TD_Colour_AFTER] ON [Colour] AFTER DELETE AS
+CREATE   TRIGGER [dbo].[TD_Colour_AFTER] ON [dbo].[Colour] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1206,7 +1302,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE   TRIGGER [TU_Colour_AFTER] ON [Colour] AFTER UPDATE AS
+CREATE   TRIGGER [dbo].[TU_Colour_AFTER] ON [dbo].[Colour] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1251,7 +1347,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_Difficulty_AFTER] ON [Difficulty] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_Difficulty_AFTER] ON [dbo].[Difficulty] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1289,7 +1385,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_Difficulty_AFTER] ON [Difficulty] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_Difficulty_AFTER] ON [dbo].[Difficulty] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1334,7 +1430,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_FlatZone_AFTER] ON [FlatZone] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_FlatZone_AFTER] ON [dbo].[FlatZone] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1372,7 +1468,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_FlatZone_AFTER] ON [FlatZone] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_FlatZone_AFTER] ON [dbo].[FlatZone] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1416,7 +1512,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE     TRIGGER [TD_FogKey_AFTER] ON [FogKey] AFTER DELETE AS
+CREATE     TRIGGER [dbo].[TD_FogKey_AFTER] ON [dbo].[FogKey] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1453,7 +1549,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE     TRIGGER [TU_FogKey_AFTER] ON [FogKey] AFTER UPDATE AS
+CREATE     TRIGGER [dbo].[TU_FogKey_AFTER] ON [dbo].[FogKey] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1498,7 +1594,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_FogKeyLink_AFTER] ON [FogKeyLink] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_FogKeyLink_AFTER] ON [dbo].[FogKeyLink] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1536,7 +1632,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_FogKeyLink_AFTER] ON [FogKeyLink] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_FogKeyLink_AFTER] ON [dbo].[FogKeyLink] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1581,7 +1677,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_FogKeySet_AFTER] ON [FogKeySet] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_FogKeySet_AFTER] ON [dbo].[FogKeySet] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1619,7 +1715,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_FogKeySet_AFTER] ON [FogKeySet] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_FogKeySet_AFTER] ON [dbo].[FogKeySet] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1663,7 +1759,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE     TRIGGER [TD_Gradient_AFTER] ON [Gradient] AFTER DELETE AS
+CREATE     TRIGGER [dbo].[TD_Gradient_AFTER] ON [dbo].[Gradient] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1700,7 +1796,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE     TRIGGER [TU_Gradient_AFTER] ON [Gradient] AFTER UPDATE AS
+CREATE     TRIGGER [dbo].[TU_Gradient_AFTER] ON [dbo].[Gradient] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1745,7 +1841,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_Heightmap_AFTER] ON [Heightmap] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_Heightmap_AFTER] ON [dbo].[Heightmap] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1783,7 +1879,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_Heightmap_AFTER] ON [Heightmap] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_Heightmap_AFTER] ON [dbo].[Heightmap] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1828,7 +1924,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_Landmark_AFTER] ON [Landmark] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_Landmark_AFTER] ON [dbo].[Landmark] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1866,7 +1962,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_Landmark_AFTER] ON [Landmark] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_Landmark_AFTER] ON [dbo].[Landmark] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1911,7 +2007,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_Modifier_AFTER] ON [Modifier] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_Modifier_AFTER] ON [dbo].[Modifier] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1949,7 +2045,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_Modifier_AFTER] ON [Modifier] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_Modifier_AFTER] ON [dbo].[Modifier] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1992,7 +2088,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE   TRIGGER [TD_Planet_AFTER] ON [Planet] AFTER DELETE AS
+CREATE   TRIGGER [dbo].[TD_Planet_AFTER] ON [dbo].[Planet] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2030,7 +2126,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE   TRIGGER [TU_Planet_AFTER] ON [Planet] AFTER UPDATE AS
+CREATE   TRIGGER [dbo].[TU_Planet_AFTER] ON [dbo].[Planet] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2075,7 +2171,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_PlanetAchievementData_AFTER] ON [PlanetAchievementData] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_PlanetAchievementData_AFTER] ON [dbo].[PlanetAchievementData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2113,7 +2209,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_PlanetAchievementData_AFTER] ON [PlanetAchievementData] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_PlanetAchievementData_AFTER] ON [dbo].[PlanetAchievementData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2157,7 +2253,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE     TRIGGER [TD_PlanetAtmospherePhysicsData_AFTER] ON [PlanetAtmospherePhysicsData] AFTER DELETE AS
+CREATE     TRIGGER [dbo].[TD_PlanetAtmospherePhysicsData_AFTER] ON [dbo].[PlanetAtmospherePhysicsData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2194,7 +2290,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE     TRIGGER [TU_PlanetAtmospherePhysicsData_AFTER] ON [PlanetAtmospherePhysicsData] AFTER UPDATE AS
+CREATE     TRIGGER [dbo].[TU_PlanetAtmospherePhysicsData_AFTER] ON [dbo].[PlanetAtmospherePhysicsData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2239,7 +2335,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_PlanetAtmosphereVisualsData_AFTER] ON [PlanetAtmosphereVisualsData] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_PlanetAtmosphereVisualsData_AFTER] ON [dbo].[PlanetAtmosphereVisualsData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2277,7 +2373,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_PlanetAtmosphereVisualsData_AFTER] ON [PlanetAtmosphereVisualsData] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_PlanetAtmosphereVisualsData_AFTER] ON [dbo].[PlanetAtmosphereVisualsData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2320,7 +2416,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE   TRIGGER [TD_PlanetBaseData_AFTER] ON [PlanetBaseData] AFTER DELETE AS
+CREATE   TRIGGER [dbo].[TD_PlanetBaseData_AFTER] ON [dbo].[PlanetBaseData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2356,7 +2452,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE   TRIGGER [TU_PlanetBaseData_AFTER] ON [PlanetBaseData] AFTER UPDATE AS
+CREATE   TRIGGER [dbo].[TU_PlanetBaseData_AFTER] ON [dbo].[PlanetBaseData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2401,7 +2497,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_PlanetLandmark_AFTER] ON [PlanetLandmark] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_PlanetLandmark_AFTER] ON [dbo].[PlanetLandmark] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2439,7 +2535,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_PlanetLandmark_AFTER] ON [PlanetLandmark] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_PlanetLandmark_AFTER] ON [dbo].[PlanetLandmark] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2484,7 +2580,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_PlanetOrbitData_AFTER] ON [PlanetOrbitData] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_PlanetOrbitData_AFTER] ON [dbo].[PlanetOrbitData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2522,7 +2618,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_PlanetOrbitData_AFTER] ON [PlanetOrbitData] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_PlanetOrbitData_AFTER] ON [dbo].[PlanetOrbitData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2567,7 +2663,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_PlanetPostProcessing_AFTER] ON [PlanetPostProcessing] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_PlanetPostProcessing_AFTER] ON [dbo].[PlanetPostProcessing] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2605,7 +2701,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_PlanetPostProcessing_AFTER] ON [PlanetPostProcessing] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_PlanetPostProcessing_AFTER] ON [dbo].[PlanetPostProcessing] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2650,7 +2746,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_PostProcessingKey_AFTER] ON [PostProcessingKey] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_PostProcessingKey_AFTER] ON [dbo].[PostProcessingKey] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2688,7 +2784,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_PostProcessingKey_AFTER] ON [PostProcessingKey] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_PostProcessingKey_AFTER] ON [dbo].[PostProcessingKey] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2733,7 +2829,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_TerrainData_AFTER] ON [TerrainData] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TerrainData_AFTER] ON [dbo].[TerrainData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2771,7 +2867,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainData_AFTER] ON [TerrainData] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainData_AFTER] ON [dbo].[TerrainData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2816,7 +2912,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_TerrainDataFlatZone_AFTER] ON [TerrainDataFlatZone] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TerrainDataFlatZone_AFTER] ON [dbo].[TerrainDataFlatZone] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2854,7 +2950,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainDataFlatZone_AFTER] ON [TerrainDataFlatZone] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainDataFlatZone_AFTER] ON [dbo].[TerrainDataFlatZone] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2899,7 +2995,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_TerrainDataFormulaDifficulty_AFTER] ON [TerrainDataFormulaDifficulty] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TerrainDataFormulaDifficulty_AFTER] ON [dbo].[TerrainDataFormulaDifficulty] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2937,7 +3033,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainDataFormulaDifficulty_AFTER] ON [TerrainDataFormulaDifficulty] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainDataFormulaDifficulty_AFTER] ON [dbo].[TerrainDataFormulaDifficulty] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -2980,9 +3076,89 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+CREATE     TRIGGER [dbo].[TD_TerrainDataTextureFormula_AFTER] ON [dbo].[TerrainDataTextureFormula] AFTER DELETE AS
+BEGIN
+    IF (ROWCOUNT_BIG() = 0)
+        RETURN;
+    
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM deleted)
+        RETURN;
+    
+    DECLARE @operationType nvarchar(16) = 'DELETE';
+    DECLARE @databaseName nvarchar(64) = 'SpaceFlightSimulator';
+    DECLARE @schemaName nvarchar(64) = 'dbo';
+    DECLARE @tableName nvarchar(64) = 'TerrainDataTextureFormula';
+
+    INSERT INTO AuditLog (TriggerDate, SourceContext, Operation, DatabaseName, SchemaName, TableName, TableId, LogData)
+    SELECT SYSDATETIME(), SYSTEM_USER, @operationType, @databaseName, @schemaName, @tableName, D1.Id, D2.LogData
+    FROM deleted AS D1
+        CROSS APPLY (
+            SELECT LogData = (
+                SELECT *
+                FROM deleted
+                WHERE deleted.Id = D1.Id
+                FOR JSON PATH,
+                INCLUDE_NULL_VALUES,
+                WITHOUT_ARRAY_WRAPPER
+            )
+        ) AS D2
+END;
+GO
+ALTER TABLE [dbo].[TerrainDataTextureFormula] ENABLE TRIGGER [TD_TerrainDataTextureFormula_AFTER]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE     TRIGGER [dbo].[TU_TerrainDataTextureFormula_AFTER] ON [dbo].[TerrainDataTextureFormula] AFTER UPDATE AS
+BEGIN
+    IF (ROWCOUNT_BIG() = 0)
+        RETURN;
+    
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM deleted)
+        RETURN;
+    
+    DECLARE @operationType nvarchar(16) = 'UPDATE';
+    DECLARE @databaseName nvarchar(64) = 'SpaceFlightSimulator';
+    DECLARE @schemaName nvarchar(64) = 'dbo';
+    DECLARE @tableName nvarchar(64) = 'TerrainDataTextureFormula';
+
+    SELECT * INTO #ModifiedData FROM (
+        SELECT * FROM deleted
+        EXCEPT
+        SELECT * FROM inserted
+    ) AS ModifiedData;
+
+    INSERT INTO AuditLog (TriggerDate, SourceContext, Operation, DatabaseName, SchemaName, TableName, TableId, LogData)
+    SELECT SYSDATETIME(), SYSTEM_USER, @operationType, @databaseName, @schemaName, @tableName, M1.Id, M2.LogData
+    FROM #ModifiedData AS M1
+        CROSS APPLY (
+            SELECT LogData = (
+                SELECT *
+                FROM #ModifiedData
+                WHERE #ModifiedData.Id = M1.Id
+                FOR JSON PATH,
+                INCLUDE_NULL_VALUES,
+                WITHOUT_ARRAY_WRAPPER
+            )
+        ) AS M2
+END;
+GO
+ALTER TABLE [dbo].[TerrainDataTextureFormula] ENABLE TRIGGER [TU_TerrainDataTextureFormula_AFTER]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
-CREATE       TRIGGER [TD_TerrainFormula_AFTER] ON [TerrainFormula] AFTER DELETE AS
+
+CREATE       TRIGGER [dbo].[TD_TerrainFormula_AFTER] ON [dbo].[TerrainFormula] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3020,7 +3196,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainFormula_AFTER] ON [TerrainFormula] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainFormula_AFTER] ON [dbo].[TerrainFormula] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3065,7 +3241,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_TerrainFormulaLink_AFTER] ON [TerrainFormulaLink] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TerrainFormulaLink_AFTER] ON [dbo].[TerrainFormulaLink] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3103,7 +3279,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainFormulaLink_AFTER] ON [TerrainFormulaLink] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainFormulaLink_AFTER] ON [dbo].[TerrainFormulaLink] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3148,7 +3324,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_TerrainFormulaSet_AFTER] ON [TerrainFormulaSet] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TerrainFormulaSet_AFTER] ON [dbo].[TerrainFormulaSet] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3186,7 +3362,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainFormulaSet_AFTER] ON [TerrainFormulaSet] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainFormulaSet_AFTER] ON [dbo].[TerrainFormulaSet] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3231,7 +3407,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_TerrainTextureData_AFTER] ON [TerrainTextureData] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TerrainTextureData_AFTER] ON [dbo].[TerrainTextureData] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3269,7 +3445,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TerrainTextureData_AFTER] ON [TerrainTextureData] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TerrainTextureData_AFTER] ON [dbo].[TerrainTextureData] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3314,7 +3490,7 @@ GO
 
 
 
-CREATE       TRIGGER [TD_Texture_AFTER] ON [Texture] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_Texture_AFTER] ON [dbo].[Texture] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3352,7 +3528,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_Texture_AFTER] ON [Texture] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_Texture_AFTER] ON [dbo].[Texture] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3394,10 +3570,89 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+CREATE     TRIGGER [dbo].[TD_TextureFormula_AFTER] ON [dbo].[TextureFormula] AFTER DELETE AS
+BEGIN
+    IF (ROWCOUNT_BIG() = 0)
+        RETURN;
+    
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM deleted)
+        RETURN;
+    
+    DECLARE @operationType nvarchar(16) = 'DELETE';
+    DECLARE @databaseName nvarchar(64) = 'SpaceFlightSimulator';
+    DECLARE @schemaName nvarchar(64) = 'dbo';
+    DECLARE @tableName nvarchar(64) = 'TextureFormula';
+
+    INSERT INTO AuditLog (TriggerDate, SourceContext, Operation, DatabaseName, SchemaName, TableName, TableId, LogData)
+    SELECT SYSDATETIME(), SYSTEM_USER, @operationType, @databaseName, @schemaName, @tableName, D1.Id, D2.LogData
+    FROM deleted AS D1
+        CROSS APPLY (
+            SELECT LogData = (
+                SELECT *
+                FROM deleted
+                WHERE deleted.Id = D1.Id
+                FOR JSON PATH,
+                INCLUDE_NULL_VALUES,
+                WITHOUT_ARRAY_WRAPPER
+            )
+        ) AS D2
+END;
+GO
+ALTER TABLE [dbo].[TextureFormula] ENABLE TRIGGER [TD_TextureFormula_AFTER]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE     TRIGGER [dbo].[TU_TextureFormula_AFTER] ON [dbo].[TextureFormula] AFTER UPDATE AS
+BEGIN
+    IF (ROWCOUNT_BIG() = 0)
+        RETURN;
+    
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM deleted)
+        RETURN;
+    
+    DECLARE @operationType nvarchar(16) = 'UPDATE';
+    DECLARE @databaseName nvarchar(64) = 'SpaceFlightSimulator';
+    DECLARE @schemaName nvarchar(64) = 'dbo';
+    DECLARE @tableName nvarchar(64) = 'TextureFormula';
+
+    SELECT * INTO #ModifiedData FROM (
+        SELECT * FROM deleted
+        EXCEPT
+        SELECT * FROM inserted
+    ) AS ModifiedData;
+
+    INSERT INTO AuditLog (TriggerDate, SourceContext, Operation, DatabaseName, SchemaName, TableName, TableId, LogData)
+    SELECT SYSDATETIME(), SYSTEM_USER, @operationType, @databaseName, @schemaName, @tableName, M1.Id, M2.LogData
+    FROM #ModifiedData AS M1
+        CROSS APPLY (
+            SELECT LogData = (
+                SELECT *
+                FROM #ModifiedData
+                WHERE #ModifiedData.Id = M1.Id
+                FOR JSON PATH,
+                INCLUDE_NULL_VALUES,
+                WITHOUT_ARRAY_WRAPPER
+            )
+        ) AS M2
+END;
+GO
+ALTER TABLE [dbo].[TextureFormula] ENABLE TRIGGER [TU_TextureFormula_AFTER]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 
 
 
-CREATE       TRIGGER [TD_TextureSize_AFTER] ON [TextureSize] AFTER DELETE AS
+CREATE       TRIGGER [dbo].[TD_TextureSize_AFTER] ON [dbo].[TextureSize] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -3435,7 +3690,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE       TRIGGER [TU_TextureSize_AFTER] ON [TextureSize] AFTER UPDATE AS
+CREATE       TRIGGER [dbo].[TU_TextureSize_AFTER] ON [dbo].[TextureSize] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;

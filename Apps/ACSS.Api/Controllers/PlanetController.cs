@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ACSS.Api.Models.Planet;
 using ACSS.Api.Data;
+using ACSS.Lib.Models.Planet;
 using System.Dynamic;
 
 namespace ACSS.Api.Controllers
@@ -24,18 +25,18 @@ namespace ACSS.Api.Controllers
 
         // GET: api/Planets
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Planet>>> GetPlanet()
+        public async Task<ActionResult<IEnumerable<Models.Planet.Planet>>> GetPlanet()
         {
-          if (_context.Planet == null)
-          {
-              return NotFound();
-          }
+            if (_context.Planet == null)
+            {
+                return NotFound();
+            }
             return await _context.Planet.ToListAsync();
         }
 
         // GET: api/Planets/json
         [HttpGet("json")]
-        public async Task<ActionResult<IEnumerable<KeyValuePair<string, object>>>> GetPlanetJson()
+        public async Task<ActionResult<IEnumerable<KeyValuePair<string, Lib.Models.Planet.PlanetData>>>> GetPlanetJson()
         {
             if (_context.Planet == null)
             {
@@ -44,77 +45,136 @@ namespace ACSS.Api.Controllers
 
 
 
-            Dictionary<string, object> planetData = new();
+            Dictionary<string, Lib.Models.Planet.PlanetData> planetDataList = new();
+            List<Models.Planet.Planet> planetList = await _context.Planet.ToListAsync();
 
-            foreach (var entity in _context.Planet.ToList())
+            foreach (var planet in planetList)
             {
-                dynamic planet = new ExpandoObject();
-                planet.version = entity.GameVersion;
-
-
-
-                dynamic baseData = new ExpandoObject();
-                baseData.radius = entity.PlanetBaseData.Radius;
-                baseData.radiusGravityScale = new ExpandoObject();
-                baseData.gravity = entity.PlanetBaseData.Gravity;
-                baseData.gravityDifficultyScale = new ExpandoObject();
-                baseData.timewarpHeight = entity.PlanetBaseData.TimewarpHeight;
-
-                if (entity.PlanetBaseData.VelocityArrowsHeight > 0)
+                Lib.Models.Planet.PlanetData planetData = new Lib.Models.Planet.PlanetData()
                 {
-                    baseData.velocityArrowsHeight = entity.PlanetBaseData.VelocityArrowsHeight;
-                }
-                else
+                    Version = planet.GameVersion,
+                    BaseData = new()
+                    {
+                        Radius = planet.PlanetBaseData.Radius,
+                        Gravity = planet.PlanetBaseData.Gravity,
+                        TimewarpHeight = planet.PlanetBaseData.TimewarpHeight,
+                        VelocityArrowsHeight = planet.PlanetBaseData.VelocityArrowsHeight,
+                        Colour = new()
+                        {
+                            Red = planet.PlanetBaseData.Colour.Red,
+                            Green = planet.PlanetBaseData.Colour.Green,
+                            Blue = planet.PlanetBaseData.Colour.Blue,
+                            Alpha = planet.PlanetBaseData.Colour.Alpha
+                        }
+                    },
+                    AchievementData = new()
+                    {
+                        Landed = planet.PlanetAchievementData.Landed,
+                        Takeoff = planet.PlanetAchievementData.Takeoff,
+                        Atmosphere = planet.PlanetAchievementData.Atmosphere,
+                        Orbit = planet.PlanetAchievementData.Orbit,
+                        Crash = planet.PlanetAchievementData.Crash
+                    }
+                };
+
+                var terrainDataEntity = planet.TerrainData.FirstOrDefault();
+
+                if (planet.PlanetAtmospherePhysicsData != null)
                 {
-                    baseData.velocityArrowsHeight = "NaN"; 
+                    planetData.AtmospherePhysicsData = new()
+                    {
+                        Height = planet.PlanetAtmospherePhysicsData.Height,
+                        Density = planet.PlanetAtmospherePhysicsData.Density,
+                        Curve = planet.PlanetAtmospherePhysicsData.Curve,
+                        ParachuteMultiplier = planet.PlanetAtmospherePhysicsData.ParachuteMultiplier,
+                        UpperAtmosphere = planet.PlanetAtmospherePhysicsData.UpperAtmosphere,
+                        ShockwaveIntensity = planet.PlanetAtmospherePhysicsData.ShockwaveIntensity,
+                        MinHeatingVelocityMultiplier = planet.PlanetAtmospherePhysicsData.MinHeatingVelocityMultiplier
+                    };
                 }
 
-                dynamic mapColor = new ExpandoObject();
-                mapColor.r = entity.PlanetBaseData.Colour.Red;
-                mapColor.g = entity.PlanetBaseData.Colour.Green;
-                mapColor.b = entity.PlanetBaseData.Colour.Blue;
-                mapColor.a = entity.PlanetBaseData.Colour.Alpha;
-                baseData.mapColor = mapColor;
-                planet.BASE_DATA = baseData;
+                if (planet.PlanetAtmosphereVisualsData != null)
+                {
+                    planetData.AtmosphereVisualsData = new()
+                    {
+                        Gradient = new()
+                        {
+                            PositionZ = planet.PlanetAtmosphereVisualsData.Gradient.PositionZ,
+                            Height = planet.PlanetAtmosphereVisualsData.Gradient.Height,
+                            Texture = planet.PlanetAtmosphereVisualsData.Gradient.Texture
+                        },
+                        Clouds = new()
+                        {
+                            Texture = planet.PlanetAtmosphereVisualsData.Cloud.Texture,
+                            StartHeight = planet.PlanetAtmosphereVisualsData.Cloud.StartHeight,
+                            Width = planet.PlanetAtmosphereVisualsData.Cloud.Width,
+                            Height = planet.PlanetAtmosphereVisualsData.Cloud.Height,
+                            Alpha = planet.PlanetAtmosphereVisualsData.Cloud.Alpha,
+                            Velocity = planet.PlanetAtmosphereVisualsData.Cloud.Velocity
+                        },
+                        Fog = new()
+                    };
 
 
+                    foreach (var fogKeyLinkEntity in planet.PlanetAtmosphereVisualsData.FogKeySet.FogKeyLink)
+                    {
+                        if (planetData.AtmosphereVisualsData.Fog.Keys != null)
+                        {
+                            planetData.AtmosphereVisualsData.Fog.Keys.Add(new()
+                            {
+                                Colour = new()
+                                {
+                                    Red = fogKeyLinkEntity.FogKey.Colour.Red,
+                                    Green = fogKeyLinkEntity.FogKey.Colour.Green,
+                                    Blue = fogKeyLinkEntity.FogKey.Colour.Blue,
+                                    Alpha = fogKeyLinkEntity.FogKey.Colour.Alpha
+                                },
+                                Distance = fogKeyLinkEntity.FogKey.Distance
+                            });
+                        }
+                    }
+                }
 
-                dynamic terrainData = new ExpandoObject();
-
-                var terrainDataEntity = entity.TerrainData.FirstOrDefault();
                 if (terrainDataEntity != null)
                 {
-                    dynamic terrainTextureData = new ExpandoObject();
+                    planetData.TerrainData = new()
+                    {
+                        TerrainTextureData = new()
+                        {
+                            PlanetTexture = terrainDataEntity.TerrainTextureData.PlanetTexture,
+                            PlanetTextureCutout = terrainDataEntity.TerrainTextureData.PlanetTextureCutout,
+                            SurfaceTextureA = terrainDataEntity.TerrainTextureData.SurfaceTextureANavigation.Title,
+                            SurfaceTextureSizeA = new()
+                            {
+                                X = terrainDataEntity.TerrainTextureData.SurfaceTextureANavigation.TextureSize.X,
+                                Y = terrainDataEntity.TerrainTextureData.SurfaceTextureANavigation.TextureSize.Y
+                            },
+                            SurfaceTextureB = terrainDataEntity.TerrainTextureData.SurfaceTextureBNavigation.Title,
+                            SurfaceTextureSizeB = new()
+                            {
+                                X = terrainDataEntity.TerrainTextureData.SurfaceTextureBNavigation.TextureSize.X,
+                                Y = terrainDataEntity.TerrainTextureData.SurfaceTextureBNavigation.TextureSize.Y
+                            },
+                            TerrainTextureC = terrainDataEntity.TerrainTextureData.TerrainTextureCNavigation.Title,
+                            TerrainTextureSizeC = new()
+                            {
+                                X = terrainDataEntity.TerrainTextureData.TerrainTextureCNavigation.TextureSize.X,
+                                Y = terrainDataEntity.TerrainTextureData.TerrainTextureCNavigation.TextureSize.Y
+                            },
+                            SurfaceLayerSize = terrainDataEntity.TerrainTextureData.SurfaceLayerSize,
+                            MinFade = terrainDataEntity.TerrainTextureData.MinFade,
+                            MaxFade = terrainDataEntity.TerrainTextureData.MaxFade,
+                            ShadowIntensity = terrainDataEntity.TerrainTextureData.ShadowIntensity,
+                            ShadowHeight = terrainDataEntity.TerrainTextureData.ShadowHeight
+                        },
+                        TerrainFormulaDifficulties = new()
+                    };
 
-                    terrainTextureData.planetTexture = terrainDataEntity.TerrainTextureData.PlanetTexture;
-                    terrainTextureData.planetTextureCutout = terrainDataEntity.TerrainTextureData.PlanetTextureCutout;
-                    terrainTextureData.surfaceTexture_A = terrainDataEntity.TerrainTextureData.SurfaceTextureANavigation.Title;
-
-                    dynamic surfaceTextureSizeA = new ExpandoObject();
-                    surfaceTextureSizeA.x = terrainDataEntity.TerrainTextureData.SurfaceTextureANavigation.TextureSize.X;
-                    surfaceTextureSizeA.y = terrainDataEntity.TerrainTextureData.SurfaceTextureANavigation.TextureSize.Y;
-                    terrainTextureData.surfaceTextureSize_A = surfaceTextureSizeA;
-
-                    dynamic surfaceTextureSizeB = new ExpandoObject();
-                    surfaceTextureSizeB.x = terrainDataEntity.TerrainTextureData.SurfaceTextureBNavigation.TextureSize.X;
-                    surfaceTextureSizeB.y = terrainDataEntity.TerrainTextureData.SurfaceTextureBNavigation.TextureSize.Y;
-                    terrainTextureData.surfaceTextureSize_B = surfaceTextureSizeB;
-
-                    dynamic terrainTextureSizeC = new ExpandoObject();
-                    terrainTextureSizeC.x = terrainDataEntity.TerrainTextureData.TerrainTextureCNavigation.TextureSize.X;
-                    terrainTextureSizeC.y = terrainDataEntity.TerrainTextureData.TerrainTextureCNavigation.TextureSize.Y;
-                    terrainTextureData.terrainTextureSize_C = terrainTextureSizeC;
-
-                    terrainTextureData.surfaceLayerSize = terrainDataEntity.TerrainTextureData.SurfaceLayerSize;
-                    terrainTextureData.minFade = terrainDataEntity.TerrainTextureData.MinFade;
-                    terrainTextureData.maxFade = terrainDataEntity.TerrainTextureData.MaxFade;
-                    terrainTextureData.shadowIntensity = terrainDataEntity.TerrainTextureData.ShadowIntensity;
-                    terrainTextureData.shadowHeight = terrainDataEntity.TerrainTextureData.ShadowHeight;
-
-                    terrainData.TERRAIN_TEXTURE_DATA = terrainTextureData;
                     var terrainFormulaDifficulties = new Dictionary<string, List<string>>();
 
-                    foreach (var terrainFormulaDifficultiesEntity in terrainDataEntity.TerrainDataFormulaDifficulty) {
+                    foreach (var terrainFormulaDifficultiesEntity in terrainDataEntity.TerrainDataFormulaDifficulty)
+                    {
+
                         var terrainFormulaList = new List<string>();
 
                         var terrainFormulaSet = terrainFormulaDifficultiesEntity.TerrainFormulaSet;
@@ -153,10 +213,8 @@ namespace ACSS.Api.Controllers
                             }
                         }
 
-                        terrainFormulaDifficulties[terrainFormulaDifficultiesEntity.Difficulty.Title] = terrainFormulaList;
+                        planetData.TerrainData.TerrainFormulaDifficulties[terrainFormulaDifficultiesEntity.Difficulty.Title] = terrainFormulaList;
                     }
-
-                    terrainData.terrainFormulaDifficulties = terrainFormulaDifficulties;
 
                     List<string> textureFormula = new();
 
@@ -205,98 +263,93 @@ namespace ACSS.Api.Controllers
                         textureFormula.Add(formula);
                     }
 
-                    terrainData.textureFormula = textureFormula;
-                    terrainData.verticeSize = terrainDataEntity.VerticeSize;
-                    terrainData.collider = terrainDataEntity.Collider;
-                    terrainData.flatZones = terrainDataEntity.TerrainDataFlatZone.ToList();
-                }
+                    planetData.TerrainData.TextureFormula = textureFormula;
+                    planetData.TerrainData.VerticeSize = terrainDataEntity.VerticeSize;
+                    planetData.TerrainData.Collider = terrainDataEntity.Collider;
 
-                planet.TERRAIN_DATA = terrainData;
+                    planetData.TerrainData.FlatZones = new();
 
-                if (entity.PlanetPostProcessing.Any())
-                {
-                    dynamic postProcessing = new ExpandoObject();
-                    List<object> keys = new();
-
-                    foreach (var postProcessingEntity in entity.PlanetPostProcessing)
+                    foreach (var terrainDataFlatZone in terrainDataEntity.TerrainDataFlatZone)
                     {
-                        dynamic key = new ExpandoObject();
-
-                        key.height = postProcessingEntity.PostProcessingKey.Height;
-                        key.shadowIntensity = postProcessingEntity.PostProcessingKey.ShadowIntensity;
-                        key.starIntensity = postProcessingEntity.PostProcessingKey.StarIntensity;
-                        key.hueShift = postProcessingEntity.PostProcessingKey.HueShift;
-                        key.saturation = postProcessingEntity.PostProcessingKey.Saturation;
-                        key.contrast = postProcessingEntity.PostProcessingKey.Contrast;
-                        key.red = postProcessingEntity.PostProcessingKey.Red;
-                        key.green = postProcessingEntity.PostProcessingKey.Green;
-                        key.blue = postProcessingEntity.PostProcessingKey.Blue;
-
-                        keys.Add(key);
+                        planetData.TerrainData.FlatZones.Add(new()
+                        {
+                            Height = terrainDataFlatZone.FlatZone.Height,
+                            Angle = terrainDataFlatZone.FlatZone.Angle,
+                            Width = terrainDataFlatZone.FlatZone.Width,
+                            Transition = terrainDataFlatZone.FlatZone.Transition
+                        });
                     }
-
-                    postProcessing.keys = keys;
-
-                    planet.POST_PROCESSING = postProcessing;
                 }
 
-                var orbitDataEntity = entity.PlanetOrbitDataPlanet.FirstOrDefault();
+                if (planet.PlanetPostProcessing.Any())
+                {
+                    planetData.PostProcessing = new()
+                    {
+                        Keys = new()
+                    };
+
+                    foreach (var postProcessingEntity in planet.PlanetPostProcessing)
+                    {
+                        planetData.PostProcessing.Keys.Add(new()
+                        {
+                            Height = postProcessingEntity.PostProcessingKey.Height,
+                            ShadowIntensity = postProcessingEntity.PostProcessingKey.ShadowIntensity,
+                            StarIntensity = postProcessingEntity.PostProcessingKey.StarIntensity,
+                            HueShift = postProcessingEntity.PostProcessingKey.HueShift,
+                            Saturation = postProcessingEntity.PostProcessingKey.Saturation,
+                            Contrast = postProcessingEntity.PostProcessingKey.Contrast,
+                            Red = postProcessingEntity.PostProcessingKey.Red,
+                            Green = postProcessingEntity.PostProcessingKey.Green,
+                            Blue = postProcessingEntity.PostProcessingKey.Blue
+                        });
+                    }
+                }
+
+                var orbitDataEntity = planet.PlanetOrbitDataPlanet.FirstOrDefault();
 
                 if (orbitDataEntity != null)
                 {
-                    dynamic orbitData = new ExpandoObject();
-
-                    orbitData.parent = orbitDataEntity.ParentPlanet.Title;
-                    orbitData.semiMajorAxis = orbitDataEntity.SemiMajorAxis;
-                    orbitData.smaDifficultyScale = new ExpandoObject();
-                    orbitData.eccentricity = orbitDataEntity.Eccentricity;
-                    orbitData.argumentOfPeriapsis = orbitDataEntity.ArgumentOfPeriapsis;
-                    orbitData.directory = orbitDataEntity.Direction;
-                    orbitData.multiplierSOI = orbitDataEntity.MultiplierSOI;
-                    orbitData.soiDifficultyScale = new ExpandoObject();
-
-                    planet.ORBIT_DATA = orbitData;
-                }
-
-                dynamic achievementData = new ExpandoObject();
-                achievementData.Landed = entity.PlanetAchievementData.Landed;
-                achievementData.Takeoff = entity.PlanetAchievementData.Takeoff;
-                achievementData.Atmosphere = entity.PlanetAchievementData.Atmosphere;
-                achievementData.Orbit = entity.PlanetAchievementData.Orbit;
-                achievementData.Crash = entity.PlanetAchievementData.Crash;
-                planet.ACHIEVEMENT_DATA = achievementData;
-
-                if (entity.PlanetLandmark.Any())
-                {
-                    List<object> landmarks = new();
-
-                    foreach (var landmarkEntity in entity.PlanetLandmark)
+                    planetData.OrbitData = new()
                     {
-                        dynamic landmark = new ExpandoObject();
-                        landmark.name = landmarkEntity.Landmark.Title;
-                        landmark.angle = landmarkEntity.Landmark.Angle;
-                        landmark.startAngle = landmarkEntity.Landmark.StartAngle;
-                        landmark.endAngle = landmarkEntity.Landmark.EndAngle;
-                        landmarks.Add(landmark);
-                    }
-
-                    planet.LANDMARKS = landmarks;
+                        Parent = orbitDataEntity.ParentPlanet.Title,
+                        SemiMajorAxis = orbitDataEntity.SemiMajorAxis,
+                        Eccentricity = orbitDataEntity.Eccentricity,
+                        ArgumentOfPeriapsis = orbitDataEntity.ArgumentOfPeriapsis,
+                        Direction = orbitDataEntity.Direction,
+                        MultiplierSOI = orbitDataEntity.MultiplierSOI
+                    };
                 }
 
-                planetData[entity.Title] = planet;
+                if (planet.PlanetLandmark.Any())
+                {
+                    planetData.Landmarks = new();
+
+                    foreach (var landmarkEntity in planet.PlanetLandmark)
+                    {
+                        planetData.Landmarks.Add(new()
+                        {
+                            Name = landmarkEntity.Landmark.Title,
+                            Angle = landmarkEntity.Landmark.Angle,
+                            StartAngle = landmarkEntity.Landmark.StartAngle,
+                            EndAngle = landmarkEntity.Landmark.EndAngle
+                        });
+                    }
+                }
+
+                planetDataList[planet.Title] = planetData;
             }
 
-            return planetData;
+            return planetDataList;
         }
 
         // GET: api/Planets/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Planet>> GetPlanet(int id)
+        public async Task<ActionResult<Models.Planet.Planet>> GetPlanet(int id)
         {
-          if (_context.Planet == null)
-          {
-              return NotFound();
-          }
+            if (_context.Planet == null)
+            {
+                return NotFound();
+            }
             var planet = await _context.Planet.FindAsync(id);
 
             if (planet == null)
@@ -310,7 +363,7 @@ namespace ACSS.Api.Controllers
         // PUT: api/Planets/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlanet(int id, Planet planet)
+        public async Task<IActionResult> PutPlanet(int id, Models.Planet.Planet planet)
         {
             if (id != planet.Id)
             {
@@ -341,12 +394,12 @@ namespace ACSS.Api.Controllers
         // POST: api/Planets
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Planet>> PostPlanet(Planet planet)
+        public async Task<ActionResult<Models.Planet.Planet>> PostPlanet(Models.Planet.Planet planet)
         {
-          if (_context.Planet == null)
-          {
-              return Problem("Entity set 'PlanetContext.Planet'  is null.");
-          }
+            if (_context.Planet == null)
+            {
+                return Problem("Entity set 'PlanetContext.Planet'  is null.");
+            }
             _context.Planet.Add(planet);
             await _context.SaveChangesAsync();
 

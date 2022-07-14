@@ -1097,6 +1097,28 @@ INSERT INTO TerrainDataFormulaDifficulty (
 	@TerrainFormulaSetId
 )
 
+INSERT INTO FlatZone (
+	Title,
+	Height,
+	Angle,
+	Width,
+	Transition
+) VALUES (
+	'Earth',
+	18.0,
+	1.57,
+	900.0,
+	200.0
+)
+
+INSERT INTO TerrainDataFlatZone (
+	TerrainDataId,
+	FlatZoneId
+) VALUES (
+	@TerrainDataId,
+	SCOPE_IDENTITY()
+)
+
 INSERT INTO PostProcessingKey (
     Title,
     Height,

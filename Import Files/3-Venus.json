@@ -1,0 +1,151 @@
+{
+    "version": 1.5,
+    "BASE_DATA": {
+      "radius": 300000.0,
+      "radiusDifficultyScale": {},
+      "gravity": 8.87,
+      "gravityDifficultyScale": {},
+      "timewarpHeight": 35000.0,
+      "velocityArrowsHeight": 0,
+      "mapColor": {
+        "r": 0.7896551489830017,
+        "g": 0.6457908749580383,
+        "b": 0.4971310496330261,
+        "a": 1.0
+      }
+    },
+    "ATMOSPHERE_PHYSICS_DATA": {
+      "height": 40000.0,
+      "density": 0.024,
+      "curve": 13.0,
+      "curveScale": {},
+      "parachuteMultiplier": 1.0,
+      "upperAtmosphere": 0.33,
+      "heightDifficultyScale": {},
+      "shockwaveIntensity": 0.66,
+      "minHeatingVelocityMultiplier": 1.0
+    },
+    "ATMOSPHERE_VISUALS_DATA": {
+      "GRADIENT": {
+        "positionZ": 500,
+        "height": 45000.0,
+        "texture": "Transparent"
+      },
+      "CLOUDS": {
+        "texture": "DayNightVenus",
+        "startHeight": -33333.33333,
+        "width": 612500.0,
+        "height": 490000,
+        "alpha": 1.5,
+        "velocity": -0.00652
+      },
+      "FOG": {
+        "keys": [
+          {
+            "color": {
+              "r": 0.8360798358917236,
+              "g": 0.845588207244873,
+              "b": 0.5595804452896118,
+              "a": 0.0
+            },
+            "distance": 100.0
+          },
+          {
+            "color": {
+              "r": 0.8156863451004028,
+              "g": 0.7882353663444519,
+              "b": 0.7098039388656616,
+              "a": 1.0
+            },
+            "distance": 50000.0
+          }
+        ]
+      }
+    },
+    "TERRAIN_DATA": {
+      "TERRAIN_TEXTURE_DATA": {
+        "planetTexture": "NewVenus",
+        "planetTextureCutout": 0.9449999928474426,
+        "surfaceTexture_A": "Dust",
+        "surfaceTextureSize_A": {
+          "x": 32.0,
+          "y": 14.0
+        },
+        "surfaceTexture_B": "Soft_Rocks",
+        "surfaceTextureSize_B": {
+          "x": 48.0,
+          "y": 20.0
+        },
+        "terrainTexture_C": "Blured",
+        "terrainTextureSize_C": {
+          "x": 2000.0,
+          "y": 650.0
+        },
+        "surfaceLayerSize": 60.0,
+        "minFade": 0.0,
+        "maxFade": 0.800000011920929,
+        "shadowIntensity": 0.5,
+        "shadowHeight": 6.5
+      },
+      "terrainFormulaDifficulties": {
+        "normal": [
+          "OUTPUT = AddHeightMap( Perlin, 300, 8, Curve1)",
+          "OUTPUT = AddHeightMap( Perlin, 540, 5, Curve1)",
+          "OUTPUT = AddHeightMap( Perlin, 1300, 1.6, Curve1)",
+          "OUTPUT = AddHeightMap( Perlin, 2000, 1.5, Curve1)",
+          "M = AddHeightMap( Perlin, 40, 1, Curve2)",
+          "OUTPUT = AddHeightMap( Perlin, 70, 200, Curve1, M)",
+          "M2 = AddHeightMap( Perlin, 7, 1, Curve2)",
+          "OUTPUT = AddHeightMap( Perlin, 20, 1300, Curve1, M2)"
+        ]
+      },
+      "textureFormula": [],
+      "verticeSize": 1.0,
+      "collider": true,
+      "flatZones": []
+    },
+    "POST_PROCESSING": {
+      "keys": [
+        {
+          "height": 500.0,
+          "shadowIntensity": 1.35,
+          "starIntensity": 0.0,
+          "hueShift": 14.0,
+          "saturation": 1.0,
+          "contrast": 1.18,
+          "red": 1.11,
+          "green": 1.08,
+          "blue": 0.85
+        },
+        {
+          "height": 40000.0,
+          "shadowIntensity": 1.649999976158142,
+          "starIntensity": 0.0,
+          "hueShift": 0.0,
+          "saturation": 1.0,
+          "contrast": 1.100000023841858,
+          "red": 1.0,
+          "green": 1.0,
+          "blue": 1.0
+        }
+      ]
+    },
+    "ORBIT_DATA": {
+      "parent": "Sun",
+      "semiMajorAxis": 2043000000.0,
+      "smaDifficultyScale": {},
+      "eccentricity": 0.0,
+      "argumentOfPeriapsis": 0.0,
+      "direction": 1,
+      "multiplierSOI": 1.25,
+      "soiDifficultyScale": {}
+    },
+    "ACHIEVEMENT_DATA": {
+      "Landed": true,
+      "Takeoff": true,
+      "Atmosphere": true,
+      "Orbit": true,
+      "Crash": true
+    },
+    "LANDMARKS": []
+  }

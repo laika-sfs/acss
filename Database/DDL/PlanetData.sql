@@ -1,4 +1,4 @@
-USE [SFS]
+USE [sfs]
 GO
 DROP TRIGGER IF EXISTS [dbo].[TU_TextureSize_AFTER]
 GO
@@ -120,9 +120,9 @@ DROP TRIGGER IF EXISTS [dbo].[TU_Colour_AFTER]
 GO
 DROP TRIGGER IF EXISTS [dbo].[TD_Colour_AFTER]
 GO
-DROP TRIGGER IF EXISTS [dbo].[TU_Cloud_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TU_Clouds_AFTER]
 GO
-DROP TRIGGER IF EXISTS [dbo].[TD_Cloud_AFTER]
+DROP TRIGGER IF EXISTS [dbo].[TD_Clouds_AFTER]
 GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TextureFormula]') AND type in (N'U'))
 ALTER TABLE [dbo].[TextureFormula] DROP CONSTRAINT IF EXISTS [CK_TextureFormula]
@@ -224,7 +224,7 @@ IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Plane
 ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_FogKeySet]
 GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
-ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Cloud]
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Clouds]
 GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PlanetAtmospherePhysicsData]') AND type in (N'U'))
 ALTER TABLE [dbo].[PlanetAtmospherePhysicsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmospherePhysicsData_Planet]
@@ -301,7 +301,7 @@ DROP TABLE IF EXISTS [dbo].[Difficulty]
 GO
 DROP TABLE IF EXISTS [dbo].[Colour]
 GO
-DROP TABLE IF EXISTS [dbo].[Cloud]
+DROP TABLE IF EXISTS [dbo].[Clouds]
 GO
 DROP TABLE IF EXISTS [dbo].[AuditLog]
 GO
@@ -329,20 +329,20 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Cloud](
+CREATE TABLE [dbo].[Clouds](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[Texture] [nvarchar](50) NOT NULL,
-	[StartHeight] [decimal](21, 3) NOT NULL,
-	[Width] [decimal](21, 3) NOT NULL,
-	[Height] [decimal](21, 3) NOT NULL,
-	[Alpha] [decimal](21, 3) NOT NULL,
-	[Velocity] [decimal](21, 3) NOT NULL,
- CONSTRAINT [PK_Cloud] PRIMARY KEY CLUSTERED 
+	[StartHeight] [decimal](36, 18) NOT NULL,
+	[Width] [decimal](36, 18) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Alpha] [decimal](36, 18) NOT NULL,
+	[Velocity] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_Clouds] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [UQ_Cloud] UNIQUE NONCLUSTERED 
+ CONSTRAINT [UQ_Clouds] UNIQUE NONCLUSTERED 
 (
 	[Texture] ASC,
 	[StartHeight] ASC,
@@ -351,7 +351,7 @@ CREATE TABLE [dbo].[Cloud](
 	[Alpha] ASC,
 	[Velocity] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [UQ_Cloud_Title] UNIQUE NONCLUSTERED 
+ CONSTRAINT [UQ_Clouds_Title] UNIQUE NONCLUSTERED 
 (
 	[Title] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -364,10 +364,10 @@ GO
 CREATE TABLE [dbo].[Colour](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
-	[Red] [decimal](6, 3) NOT NULL,
-	[Green] [decimal](6, 3) NOT NULL,
-	[Blue] [decimal](6, 3) NOT NULL,
-	[Alpha] [decimal](6, 3) NOT NULL,
+	[Red] [decimal](21, 18) NOT NULL,
+	[Green] [decimal](21, 18) NOT NULL,
+	[Blue] [decimal](21, 18) NOT NULL,
+	[Alpha] [decimal](21, 18) NOT NULL,
  CONSTRAINT [PK_Colour] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -409,10 +409,10 @@ GO
 CREATE TABLE [dbo].[FlatZone](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
-	[Height] [decimal](21, 3) NOT NULL,
-	[Angle] [decimal](21, 3) NOT NULL,
-	[Width] [decimal](21, 3) NOT NULL,
-	[Transition] [decimal](21, 3) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Angle] [decimal](36, 18) NOT NULL,
+	[Width] [decimal](36, 18) NOT NULL,
+	[Transition] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_FlatZone] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -437,7 +437,7 @@ GO
 CREATE TABLE [dbo].[FogKey](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[ColourId] [int] NOT NULL,
-	[Distance] [decimal](21, 3) NOT NULL,
+	[Distance] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_FogKey] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -487,8 +487,8 @@ GO
 CREATE TABLE [dbo].[Gradient](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
-	[PositionZ] [decimal](21, 3) NOT NULL,
-	[Height] [decimal](21, 3) NOT NULL,
+	[PositionZ] [decimal](36, 18) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
 	[Texture] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Gradient] PRIMARY KEY CLUSTERED 
 (
@@ -530,9 +530,9 @@ GO
 CREATE TABLE [dbo].[Landmark](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
-	[Angle] [decimal](21, 3) NOT NULL,
-	[StartAngle] [decimal](21, 3) NOT NULL,
-	[EndAngle] [decimal](21, 3) NOT NULL,
+	[Angle] [decimal](36, 18) NOT NULL,
+	[StartAngle] [decimal](36, 18) NOT NULL,
+	[EndAngle] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_Landmark] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -608,13 +608,13 @@ GO
 CREATE TABLE [dbo].[PlanetAtmospherePhysicsData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
-	[Height] [decimal](21, 3) NOT NULL,
-	[Density] [decimal](21, 3) NOT NULL,
-	[Curve] [decimal](21, 3) NOT NULL,
-	[ParachuteMultiplier] [decimal](21, 3) NOT NULL,
-	[UpperAtmosphere] [decimal](21, 3) NOT NULL,
-	[ShockwaveIntensity] [decimal](21, 3) NOT NULL,
-	[MinHeatingVelocityMultiplier] [decimal](21, 3) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Density] [decimal](36, 18) NOT NULL,
+	[Curve] [decimal](36, 18) NOT NULL,
+	[ParachuteMultiplier] [decimal](36, 18) NOT NULL,
+	[UpperAtmosphere] [decimal](36, 18) NOT NULL,
+	[ShockwaveIntensity] [decimal](36, 18) NOT NULL,
+	[MinHeatingVelocityMultiplier] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_PlanetAtmospherePhysicsData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -633,7 +633,7 @@ CREATE TABLE [dbo].[PlanetAtmosphereVisualsData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[GradientId] [int] NOT NULL,
-	[CloudId] [int] NOT NULL,
+	[CloudsId] [int] NOT NULL,
 	[FogKeySetId] [int] NOT NULL,
  CONSTRAINT [PK_PlanetAtmosphereVisualsData] PRIMARY KEY CLUSTERED 
 (
@@ -653,10 +653,10 @@ CREATE TABLE [dbo].[PlanetBaseData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[ColourId] [int] NOT NULL,
-	[Radius] [decimal](21, 3) NOT NULL,
-	[Gravity] [decimal](21, 3) NOT NULL,
-	[TimewarpHeight] [decimal](21, 3) NOT NULL,
-	[VelocityArrowsHeight] [decimal](21, 3) NOT NULL,
+	[Radius] [decimal](36, 18) NOT NULL,
+	[Gravity] [decimal](36, 18) NOT NULL,
+	[TimewarpHeight] [decimal](36, 18) NOT NULL,
+	[VelocityArrowsHeight] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_PlanetBaseData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -694,11 +694,11 @@ CREATE TABLE [dbo].[PlanetOrbitData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[ParentPlanetId] [int] NOT NULL,
-	[SemiMajorAxis] [decimal](21, 3) NOT NULL,
-	[Eccentricity] [decimal](21, 3) NOT NULL,
-	[ArgumentOfPeriapsis] [decimal](21, 3) NOT NULL,
-	[Direction] [decimal](21, 3) NOT NULL,
-	[MultiplierSOI] [decimal](21, 3) NOT NULL,
+	[SemiMajorAxis] [decimal](36, 18) NOT NULL,
+	[Eccentricity] [decimal](36, 18) NOT NULL,
+	[ArgumentOfPeriapsis] [decimal](36, 18) NOT NULL,
+	[Direction] [decimal](36, 18) NOT NULL,
+	[MultiplierSOI] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_PlanetOrbitData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -731,15 +731,15 @@ GO
 CREATE TABLE [dbo].[PostProcessingKey](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
-	[Height] [decimal](21, 3) NOT NULL,
-	[ShadowIntensity] [decimal](21, 3) NOT NULL,
-	[StarIntensity] [decimal](21, 3) NOT NULL,
-	[HueShift] [decimal](21, 3) NOT NULL,
-	[Saturation] [decimal](21, 3) NOT NULL,
-	[Contrast] [decimal](21, 3) NOT NULL,
-	[Red] [decimal](21, 3) NOT NULL,
-	[Green] [decimal](21, 3) NOT NULL,
-	[Blue] [decimal](21, 3) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[ShadowIntensity] [decimal](36, 18) NOT NULL,
+	[StarIntensity] [decimal](36, 18) NOT NULL,
+	[HueShift] [decimal](36, 18) NOT NULL,
+	[Saturation] [decimal](36, 18) NOT NULL,
+	[Contrast] [decimal](36, 18) NOT NULL,
+	[Red] [decimal](36, 18) NOT NULL,
+	[Green] [decimal](36, 18) NOT NULL,
+	[Blue] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_PostProcessingKey] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -770,7 +770,7 @@ CREATE TABLE [dbo].[TerrainData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PlanetId] [int] NOT NULL,
 	[TerrainTextureDataId] [int] NOT NULL,
-	[VerticeSize] [decimal](21, 3) NOT NULL,
+	[VerticeSize] [decimal](36, 18) NOT NULL,
 	[Collider] [bit] NOT NULL,
  CONSTRAINT [PK_TerrainData] PRIMARY KEY CLUSTERED 
 (
@@ -840,15 +840,15 @@ CREATE TABLE [dbo].[TerrainFormula](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[HeightmapId] [int] NOT NULL,
-	[Width] [decimal](21, 3) NOT NULL,
-	[Height] [decimal](21, 3) NOT NULL,
+	[Width] [decimal](36, 18) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
 	[ModifierId] [int] NULL,
 	[AddOnFormulaId] [int] NULL,
  CONSTRAINT [PK_TerrainFormula] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [UQ_TerrainFormula_Title] UNIQUE NONCLUSTERED 
+ CONSTRAINT [UQ_TerrainFormula] UNIQUE NONCLUSTERED 
 (
 	[Title] ASC,
 	[HeightmapId] ASC,
@@ -867,6 +867,7 @@ CREATE TABLE [dbo].[TerrainFormulaLink](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[TerrainFormulaId] [int] NOT NULL,
 	[TerrainFormulaSetId] [int] NOT NULL,
+    [TerrainFormulaOrder] [int] NOT NULL,
  CONSTRAINT [PK_TerrainFormulaLink] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -898,15 +899,15 @@ CREATE TABLE [dbo].[TerrainTextureData](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[PlanetTexture] [nvarchar](50) NOT NULL,
-	[PlanetTextureCutout] [decimal](21, 3) NOT NULL,
+	[PlanetTextureCutout] [decimal](36, 18) NOT NULL,
 	[SurfaceTextureA] [int] NOT NULL,
 	[SurfaceTextureB] [int] NOT NULL,
 	[TerrainTextureC] [int] NOT NULL,
-	[SurfaceLayerSize] [decimal](21, 3) NOT NULL,
-	[MinFade] [decimal](21, 3) NOT NULL,
-	[MaxFade] [decimal](21, 3) NOT NULL,
-	[ShadowIntensity] [decimal](21, 3) NOT NULL,
-	[ShadowHeight] [decimal](21, 3) NOT NULL,
+	[SurfaceLayerSize] [decimal](36, 18) NOT NULL,
+	[MinFade] [decimal](36, 18) NOT NULL,
+	[MaxFade] [decimal](36, 18) NOT NULL,
+	[ShadowIntensity] [decimal](36, 18) NOT NULL,
+	[ShadowHeight] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_TerrainTextureData] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -957,13 +958,22 @@ CREATE TABLE [dbo].[TextureFormula](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[HeightmapId] [int] NULL,
-	[Width] [decimal](21, 3) NULL,
-	[Height] [decimal](21, 3) NULL,
+	[Width] [decimal](36, 18) NULL,
+	[Height] [decimal](36, 18) NULL,
 	[ModifierId] [int] NULL,
 	[AddOnFormulaId] [int] NULL,
  CONSTRAINT [PK_TextureFormula] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TextureFormula] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC,
+	[HeightmapId] ASC,
+	[Width] ASC,
+	[Height] ASC,
+	[ModifierId] ASC,
+	[AddOnFormulaId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -973,8 +983,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[TextureSize](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[X] [decimal](21, 3) NOT NULL,
-	[Y] [decimal](21, 3) NOT NULL,
+	[X] [decimal](36, 18) NOT NULL,
+	[Y] [decimal](36, 18) NOT NULL,
  CONSTRAINT [PK_TextureSize] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -1011,10 +1021,10 @@ REFERENCES [dbo].[Planet] ([Id])
 GO
 ALTER TABLE [dbo].[PlanetAtmospherePhysicsData] CHECK CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet]
 GO
-ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud] FOREIGN KEY([CloudId])
-REFERENCES [dbo].[Cloud] ([Id])
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Clouds] FOREIGN KEY([CloudsId])
+REFERENCES [dbo].[Clouds] ([Id])
 GO
-ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Cloud]
+ALTER TABLE [dbo].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Clouds]
 GO
 ALTER TABLE [dbo].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet] FOREIGN KEY([FogKeySetId])
 REFERENCES [dbo].[FogKeySet] ([Id])
@@ -1186,7 +1196,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE     TRIGGER [dbo].[TD_Cloud_AFTER] ON [dbo].[Cloud] AFTER DELETE AS
+CREATE     TRIGGER [dbo].[TD_Clouds_AFTER] ON [dbo].[Clouds] AFTER DELETE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1199,7 +1209,7 @@ BEGIN
     DECLARE @operationType nvarchar(16) = 'DELETE';
     DECLARE @databaseName nvarchar(64) = 'SpaceFlightSimulator';
     DECLARE @schemaName nvarchar(64) = 'dbo';
-    DECLARE @tableName nvarchar(64) = 'Cloud';
+    DECLARE @tableName nvarchar(64) = 'Clouds';
 
     INSERT INTO AuditLog (TriggerDate, SourceContext, Operation, DatabaseName, SchemaName, TableName, TableId, LogData)
     SELECT SYSDATETIME(), SYSTEM_USER, @operationType, @databaseName, @schemaName, @tableName, D1.Id, D2.LogData
@@ -1216,14 +1226,14 @@ BEGIN
         ) AS D2
 END;
 GO
-ALTER TABLE [dbo].[Cloud] ENABLE TRIGGER [TD_Cloud_AFTER]
+ALTER TABLE [dbo].[Clouds] ENABLE TRIGGER [TD_Clouds_AFTER]
 GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE     TRIGGER [dbo].[TU_Cloud_AFTER] ON [dbo].[Cloud] AFTER UPDATE AS
+CREATE     TRIGGER [dbo].[TU_Clouds_AFTER] ON [dbo].[Clouds] AFTER UPDATE AS
 BEGIN
     IF (ROWCOUNT_BIG() = 0)
         RETURN;
@@ -1236,7 +1246,7 @@ BEGIN
     DECLARE @operationType nvarchar(16) = 'UPDATE';
     DECLARE @databaseName nvarchar(64) = 'SpaceFlightSimulator';
     DECLARE @schemaName nvarchar(64) = 'dbo';
-    DECLARE @tableName nvarchar(64) = 'Cloud';
+    DECLARE @tableName nvarchar(64) = 'Clouds';
 
     SELECT * INTO #ModifiedData FROM (
         SELECT * FROM deleted
@@ -1259,7 +1269,7 @@ BEGIN
         ) AS M2
 END;
 GO
-ALTER TABLE [dbo].[Cloud] ENABLE TRIGGER [TU_Cloud_AFTER]
+ALTER TABLE [dbo].[Clouds] ENABLE TRIGGER [TU_Clouds_AFTER]
 GO
 SET ANSI_NULLS ON
 GO

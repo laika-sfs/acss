@@ -57,15 +57,7 @@ INSERT INTO PlanetBaseData (
 	0.0
 )
 
-INSERT INTO TextureSize (
-	X,
-	Y
-) VALUES (
-	20.0,
-	8.0
-)
-
-SET @TextureSizeId = SCOPE_IDENTITY()
+SET @TextureSizeId = (SELECT Id FROM TextureSize WHERE X = 20 AND Y = 8)
 
 INSERT INTO Texture (
 	Title,

@@ -14,17 +14,6 @@
       "a": 1.0
     }
   },
-  "ATMOSPHERE_PHYSICS_DATA": {
-    "height": 500000.0,
-    "density": 0.0,
-    "curve": 1.0,
-    "curveScale": {},
-    "parachuteMultiplier": 1.0,
-    "upperAtmosphere": 0.33,
-    "heightDifficultyScale": {},
-    "shockwaveIntensity": 0.66,
-    "minHeatingVelocityMultiplier": 1.0
-  },
   "ATMOSPHERE_VISUALS_DATA": {
     "GRADIENT": {
       "positionZ": 2500,

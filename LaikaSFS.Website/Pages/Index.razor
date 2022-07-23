@@ -1,0 +1,33 @@
+﻿@page "/"
+@using LaikaSFS.Website.Models.Menu
+@using LaikaSFS.Website.Components
+
+<PageTitle>Index</PageTitle>
+
+<h1><center>ACSS</center></h1>
+<h2><center>SFS Planet Pack</center></h2>
+<h3><center>Version 1.2.3 (SFS 1.5.6+)</center></h3>
+<p>Features selection:</p>
+
+@if (Menu != null)
+{
+    <ul>
+        <li>
+            <span class="@(Menu.Items.Any() ? "caret" : "") @(Menu.IsExpanded ? "caret-down" : "")" @onclick="ToggleExpanded"></span>
+            <span class="box @(Menu.IsChecked ? "check-box" : "")" @onclick="ToggleChecked">Menu</span>
+            @if (Menu.Items != null && Menu.Items.Any() && Menu.IsExpanded)
+            {
+                <ul class="nested active">
+                    @foreach (MenuItem menuItem in Menu.Items)
+                    {
+                        <li>
+                            <ListItem MenuItem="@menuItem"/>
+                        </li>
+                    }
+                </ul>
+            }
+        </li>
+    </ul>
+}
+
+<SurveyPrompt Title="How is Blazor working for you?" />

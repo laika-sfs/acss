@@ -1,7 +1,7 @@
-﻿using ACSS.Web.Models.Menu;
+﻿using LaikaSFS.Website.Models.Menu;
 using Microsoft.AspNetCore.Components;
 
-namespace ACSS.Web.Components;
+namespace LaikaSFS.Website.Components;
 
 partial class ListItem {
     [Parameter]

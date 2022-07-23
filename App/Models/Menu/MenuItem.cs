@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace ACSS.Web.Models.Menu;
+namespace LaikaSFS.Website.Models.Menu;
 
 public class MenuItem {
     [JsonPropertyName("title")]

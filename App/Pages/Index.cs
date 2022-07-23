@@ -1,9 +1,9 @@
-﻿using ACSS.Web.Data;
-using ACSS.Web.Models.Menu;
-using ACSS.Web.Services;
+﻿using LaikaSFS.Website.Data;
+using LaikaSFS.Website.Models.Menu;
+using LaikaSFS.Website.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace ACSS.Web.Pages;
+namespace LaikaSFS.Website.Pages;
 
 public partial class Index {
     public Menu Menu { get; set; }

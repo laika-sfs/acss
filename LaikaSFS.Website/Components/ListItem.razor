@@ -1,0 +1,15 @@
+﻿@using LaikaSFS.Website.Models.Menu
+
+<span class="@(MenuItem.Items.Any() ? "caret" : "") @(MenuItem.IsExpanded ? "caret-down" : "")" @onclick="ToggleExpanded"></span>
+<span class="box @(MenuItem.IsChecked ? "check-box" : "")" @onclick="ToggleChecked">@MenuItem.Title</span>
+@if (MenuItem.Items.Any())
+{
+    <ul class="nested @(MenuItem.IsExpanded ? "active" : "")">
+        @foreach (MenuItem menuItem in MenuItem.Items)
+        {
+            <li>
+                <ListItem MenuItem="@menuItem"/>
+            </li>
+        }
+    </ul>
+}

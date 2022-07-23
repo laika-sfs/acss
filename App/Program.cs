@@ -1,5 +1,5 @@
-using ACSS.Web.Data;
-using ACSS.Web.Services;
+using LaikaSFS.Website.Data;
+using LaikaSFS.Website.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;

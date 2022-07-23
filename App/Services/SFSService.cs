@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ACSS.Web.Models.Planet;
-using ACSS.Web.Data;
-using ACSS.Web.Models.Menu;
+using LaikaSFS.Website.Models.Planet;
+using LaikaSFS.Website.Data;
+using LaikaSFS.Website.Models.Menu;
 using Microsoft.EntityFrameworkCore;
 
-namespace ACSS.Web.Services;
+namespace LaikaSFS.Website.Services;
 
 public class SFSService {
     private readonly SFSContext _context;

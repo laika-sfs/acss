@@ -1,0 +1,15 @@
+﻿@using ACSS.Web.Models.Menu
+
+<span class="caret"></span>
+<span class="box">@MenuItem.Title</span>
+@if (MenuItem.Items.Any())
+{
+    <ul class="nested active">
+        @foreach (MenuItem menuItem in MenuItem.Items)
+        {
+            <li>
+                <ListItem MenuItem="@menuItem"/>
+            </li>
+        }
+    </ul>
+}

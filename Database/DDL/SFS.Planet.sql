@@ -1,0 +1,1050 @@
+USE [SFS]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TextureFormula] DROP CONSTRAINT IF EXISTS [CK_TextureFormula]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TextureFormula] DROP CONSTRAINT IF EXISTS [FK_TextureFormula_TextureFormula]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TextureFormula] DROP CONSTRAINT IF EXISTS [FK_TextureFormula_Modifier]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TextureFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TextureFormula] DROP CONSTRAINT IF EXISTS [FK_TextureFormula_Heightmap]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[Texture]') AND type in (N'U'))
+ALTER TABLE [Planet].[Texture] DROP CONSTRAINT IF EXISTS [FK_Texture_TextureSize]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainTextureData]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainTextureData] DROP CONSTRAINT IF EXISTS [FK_TerrainTextureData_Texture2]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainTextureData]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainTextureData] DROP CONSTRAINT IF EXISTS [FK_TerrainTextureData_Texture1]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainTextureData]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainTextureData] DROP CONSTRAINT IF EXISTS [FK_TerrainTextureData_Texture]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainFormulaLink]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainFormulaLink] DROP CONSTRAINT IF EXISTS [FK_TerrainFormulaLink_TerrainFormulaSet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainFormulaLink]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainFormulaLink] DROP CONSTRAINT IF EXISTS [FK_TerrainFormulaLink_TerrainFormula]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainFormula_TerrainFormula]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainFormula_Modifier]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainFormula_Heightmap]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataTextureFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataTextureFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainDataTextureFormula_TextureFormula]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataTextureFormula]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataTextureFormula] DROP CONSTRAINT IF EXISTS [FK_TerrainDataTextureFormula_TerrainData]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataFormulaDifficulty]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataFormulaDifficulty]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFormulaDifficulty_TerrainData]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataFormulaDifficulty]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFormulaDifficulty_Difficulty]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataFlatZone]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataFlatZone] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFlatZone_TerrainData]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainDataFlatZone]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainDataFlatZone] DROP CONSTRAINT IF EXISTS [FK_TerrainDataFlatZone_FlatZone]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainData]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainData] DROP CONSTRAINT IF EXISTS [FK_TerrainData_TerrainTextureData]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[TerrainData]') AND type in (N'U'))
+ALTER TABLE [Planet].[TerrainData] DROP CONSTRAINT IF EXISTS [FK_TerrainData_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetPostProcessing]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetPostProcessing] DROP CONSTRAINT IF EXISTS [FK_PlanetPostProcessing_PostProcessingKey]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetPostProcessing]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetPostProcessing] DROP CONSTRAINT IF EXISTS [FK_PlanetPostProcessing_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetOrbitData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetOrbitData] DROP CONSTRAINT IF EXISTS [FK_PlanetOrbitData_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetOrbitData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetOrbitData] DROP CONSTRAINT IF EXISTS [FK_PlanetOrbitData_ParentPlanet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetLandmark]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetLandmark] DROP CONSTRAINT IF EXISTS [FK_PlanetLandmark_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetLandmark]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetLandmark] DROP CONSTRAINT IF EXISTS [FK_PlanetLandmark_Landmark]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetBaseData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetBaseData] DROP CONSTRAINT IF EXISTS [FK_PlanetBaseData_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetBaseData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetBaseData] DROP CONSTRAINT IF EXISTS [FK_PlanetBaseData_Colour]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Gradient]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_FogKeySet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetAtmosphereVisualsData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmosphereVisualsData_Clouds]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetAtmospherePhysicsData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetAtmospherePhysicsData] DROP CONSTRAINT IF EXISTS [FK_PlanetAtmospherePhysicsData_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[PlanetAchievementData]') AND type in (N'U'))
+ALTER TABLE [Planet].[PlanetAchievementData] DROP CONSTRAINT IF EXISTS [FK_PlanetAchievementData_Planet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[FogKeyLink]') AND type in (N'U'))
+ALTER TABLE [Planet].[FogKeyLink] DROP CONSTRAINT IF EXISTS [FK_FogKeyLink_FogKeySet]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[FogKeyLink]') AND type in (N'U'))
+ALTER TABLE [Planet].[FogKeyLink] DROP CONSTRAINT IF EXISTS [FK_FogKeyLink_FogKey]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Planet].[FogKey]') AND type in (N'U'))
+ALTER TABLE [Planet].[FogKey] DROP CONSTRAINT IF EXISTS [FK_FogKey_Colour]
+GO
+DROP TABLE IF EXISTS [Planet].[TextureSize]
+GO
+DROP TABLE IF EXISTS [Planet].[TextureFormula]
+GO
+DROP TABLE IF EXISTS [Planet].[Texture]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainTextureData]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainFormulaSet]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainFormulaLink]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainFormula]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainDataTextureFormula]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainDataFormulaDifficulty]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainDataFlatZone]
+GO
+DROP TABLE IF EXISTS [Planet].[TerrainData]
+GO
+DROP TABLE IF EXISTS [Planet].[PostProcessingKey]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetPostProcessing]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetOrbitData]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetLandmark]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetBaseData]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetAtmosphereVisualsData]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetAtmospherePhysicsData]
+GO
+DROP TABLE IF EXISTS [Planet].[PlanetAchievementData]
+GO
+DROP TABLE IF EXISTS [Planet].[Planet]
+GO
+DROP TABLE IF EXISTS [Planet].[Modifier]
+GO
+DROP TABLE IF EXISTS [Planet].[Landmark]
+GO
+DROP TABLE IF EXISTS [Planet].[Heightmap]
+GO
+DROP TABLE IF EXISTS [Planet].[Gradient]
+GO
+DROP TABLE IF EXISTS [Planet].[FogKeySet]
+GO
+DROP TABLE IF EXISTS [Planet].[FogKeyLink]
+GO
+DROP TABLE IF EXISTS [Planet].[FogKey]
+GO
+DROP TABLE IF EXISTS [Planet].[FlatZone]
+GO
+DROP TABLE IF EXISTS [Planet].[Difficulty]
+GO
+DROP TABLE IF EXISTS [Planet].[Colour]
+GO
+DROP TABLE IF EXISTS [Planet].[Clouds]
+GO
+DROP SCHEMA IF EXISTS [Planet]
+GO
+CREATE SCHEMA [Planet]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Clouds](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[Texture] [nvarchar](50) NOT NULL,
+	[StartHeight] [decimal](36, 18) NOT NULL,
+	[Width] [decimal](36, 18) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Alpha] [decimal](36, 18) NOT NULL,
+	[Velocity] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_Clouds] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Clouds] UNIQUE NONCLUSTERED 
+(
+	[Texture] ASC,
+	[StartHeight] ASC,
+	[Width] ASC,
+	[Height] ASC,
+	[Alpha] ASC,
+	[Velocity] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Clouds_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Colour](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[Red] [decimal](21, 18) NOT NULL,
+	[Green] [decimal](21, 18) NOT NULL,
+	[Blue] [decimal](21, 18) NOT NULL,
+	[Alpha] [decimal](21, 18) NOT NULL,
+ CONSTRAINT [PK_Colour] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Colour] UNIQUE NONCLUSTERED 
+(
+	[Red] ASC,
+	[Green] ASC,
+	[Blue] ASC,
+	[Alpha] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Colour_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Difficulty](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Difficulty] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Difficulty] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[FlatZone](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Angle] [decimal](36, 18) NOT NULL,
+	[Width] [decimal](36, 18) NOT NULL,
+	[Transition] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_FlatZone] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_FlatZone] UNIQUE NONCLUSTERED 
+(
+	[Height] ASC,
+	[Angle] ASC,
+	[Width] ASC,
+	[Transition] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_FlatZone_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[FogKey](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ColourId] [int] NOT NULL,
+	[Distance] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_FogKey] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_FogKey] UNIQUE NONCLUSTERED 
+(
+	[ColourId] ASC,
+	[Distance] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[FogKeyLink](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FogKeyId] [int] NOT NULL,
+	[FogKeySetId] [int] NOT NULL,
+ CONSTRAINT [PK_FogKeyLink] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[FogKeySet](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_FogKeySet] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_FogKeyList_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Gradient](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[PositionZ] [decimal](36, 18) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Texture] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Gradient] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Gradient] UNIQUE NONCLUSTERED 
+(
+	[PositionZ] ASC,
+	[Height] ASC,
+	[Texture] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Gradient_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Heightmap](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Heightmap] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Heightmap] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Landmark](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[Angle] [decimal](36, 18) NOT NULL,
+	[StartAngle] [decimal](36, 18) NOT NULL,
+	[EndAngle] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_Landmark] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Landmark_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Modifier](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Modifier] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Modifier] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Planet](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[GameVersion] [decimal](2, 1) NOT NULL,
+ CONSTRAINT [PK_Planet] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Planet] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC,
+	[GameVersion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetAchievementData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[Landed] [bit] NOT NULL,
+	[Takeoff] [bit] NOT NULL,
+	[Atmosphere] [bit] NOT NULL,
+	[Orbit] [bit] NOT NULL,
+	[Crash] [bit] NOT NULL,
+ CONSTRAINT [PK_PlanetAchievementData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PlanetAchievementData] UNIQUE NONCLUSTERED 
+(
+	[PlanetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetAtmospherePhysicsData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[Density] [decimal](36, 18) NOT NULL,
+	[Curve] [decimal](36, 18) NOT NULL,
+	[ParachuteMultiplier] [decimal](36, 18) NOT NULL,
+	[UpperAtmosphere] [decimal](36, 18) NOT NULL,
+	[ShockwaveIntensity] [decimal](36, 18) NOT NULL,
+	[MinHeatingVelocityMultiplier] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_PlanetAtmospherePhysicsData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PlanetAtmospherePhysicsData] UNIQUE NONCLUSTERED 
+(
+	[PlanetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetAtmosphereVisualsData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[GradientId] [int] NOT NULL,
+	[CloudsId] [int] NOT NULL,
+	[FogKeySetId] [int] NOT NULL,
+ CONSTRAINT [PK_PlanetAtmosphereVisualsData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PlanetAtmosphereVisualsData] UNIQUE NONCLUSTERED 
+(
+	[PlanetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetBaseData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[ColourId] [int] NOT NULL,
+	[Radius] [decimal](36, 18) NOT NULL,
+	[Gravity] [decimal](36, 18) NOT NULL,
+	[TimewarpHeight] [decimal](36, 18) NOT NULL,
+	[VelocityArrowsHeight] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_PlanetBaseData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PlanetBaseData] UNIQUE NONCLUSTERED 
+(
+	[PlanetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetLandmark](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[LandmarkId] [int] NOT NULL,
+ CONSTRAINT [PK_PlanetLandmark] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PlanetLandmark] UNIQUE NONCLUSTERED 
+(
+	[PlanetId] ASC,
+	[LandmarkId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetOrbitData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[ParentPlanetId] [int] NOT NULL,
+	[SemiMajorAxis] [decimal](36, 18) NOT NULL,
+	[Eccentricity] [decimal](36, 18) NOT NULL,
+	[ArgumentOfPeriapsis] [decimal](36, 18) NOT NULL,
+	[Direction] [decimal](36, 18) NOT NULL,
+	[MultiplierSOI] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_PlanetOrbitData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PlanetPostProcessing](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[PostProcessingKeyId] [int] NOT NULL,
+ CONSTRAINT [PK_PlanetPostProcessing] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PlanetPostProcessing] UNIQUE NONCLUSTERED 
+(
+	[PlanetId] ASC,
+	[PostProcessingKeyId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[PostProcessingKey](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[ShadowIntensity] [decimal](36, 18) NOT NULL,
+	[StarIntensity] [decimal](36, 18) NOT NULL,
+	[HueShift] [decimal](36, 18) NOT NULL,
+	[Saturation] [decimal](36, 18) NOT NULL,
+	[Contrast] [decimal](36, 18) NOT NULL,
+	[Red] [decimal](36, 18) NOT NULL,
+	[Green] [decimal](36, 18) NOT NULL,
+	[Blue] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_PostProcessingKey] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PostProcessingKey] UNIQUE NONCLUSTERED 
+(
+	[Height] ASC,
+	[ShadowIntensity] ASC,
+	[StarIntensity] ASC,
+	[HueShift] ASC,
+	[Saturation] ASC,
+	[Contrast] ASC,
+	[Red] ASC,
+	[Green] ASC,
+	[Blue] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_PostProcessingKey_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PlanetId] [int] NOT NULL,
+	[TerrainTextureDataId] [int] NOT NULL,
+	[VerticeSize] [decimal](36, 18) NOT NULL,
+	[Collider] [bit] NOT NULL,
+ CONSTRAINT [PK_TerrainData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainDataFlatZone](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TerrainDataId] [int] NOT NULL,
+	[FlatZoneId] [int] NOT NULL,
+ CONSTRAINT [PK_TerrainDataFlatZone] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TerrainDataFlatZone] UNIQUE NONCLUSTERED 
+(
+	[TerrainDataId] ASC,
+	[FlatZoneId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainDataFormulaDifficulty](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TerrainDataId] [int] NOT NULL,
+	[DifficultyId] [int] NOT NULL,
+	[TerrainFormulaSetId] [int] NOT NULL,
+ CONSTRAINT [PK_TerrainDataFormulaDifficulty] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TerrainDataFormulaDifficulty] UNIQUE NONCLUSTERED 
+(
+	[TerrainDataId] ASC,
+	[DifficultyId] ASC,
+	[TerrainFormulaSetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainDataTextureFormula](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TerrainDataId] [int] NOT NULL,
+	[TextureFormulaId] [int] NOT NULL,
+ CONSTRAINT [PK_TerrainDataTextureFormula] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainFormula](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[HeightmapId] [int] NOT NULL,
+	[Width] [decimal](36, 18) NOT NULL,
+	[Height] [decimal](36, 18) NOT NULL,
+	[ModifierId] [int] NULL,
+	[AddOnFormulaId] [int] NULL,
+ CONSTRAINT [PK_TerrainFormula] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TerrainFormula] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC,
+	[HeightmapId] ASC,
+	[Width] ASC,
+	[Height] ASC,
+	[ModifierId] ASC,
+	[AddOnFormulaId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainFormulaLink](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TerrainFormulaId] [int] NOT NULL,
+	[TerrainFormulaSetId] [int] NOT NULL,
+	[TerrainFormulaOrder] [int] NOT NULL,
+ CONSTRAINT [PK_TerrainFormulaLink] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainFormulaSet](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_TerrainFormulaSet] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TerrainFormulaSet] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TerrainTextureData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[PlanetTexture] [nvarchar](50) NOT NULL,
+	[PlanetTextureCutout] [decimal](36, 18) NOT NULL,
+	[SurfaceTextureA] [int] NOT NULL,
+	[SurfaceTextureB] [int] NOT NULL,
+	[TerrainTextureC] [int] NOT NULL,
+	[SurfaceLayerSize] [decimal](36, 18) NOT NULL,
+	[MinFade] [decimal](36, 18) NOT NULL,
+	[MaxFade] [decimal](36, 18) NOT NULL,
+	[ShadowIntensity] [decimal](36, 18) NOT NULL,
+	[ShadowHeight] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_TerrainTextureData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TerrainTexture] UNIQUE NONCLUSTERED 
+(
+	[PlanetTexture] ASC,
+	[PlanetTextureCutout] ASC,
+	[SurfaceTextureA] ASC,
+	[SurfaceTextureB] ASC,
+	[TerrainTextureC] ASC,
+	[SurfaceLayerSize] ASC,
+	[MinFade] ASC,
+	[MaxFade] ASC,
+	[ShadowIntensity] ASC,
+	[ShadowHeight] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TerrainTextureData_Title] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[Texture](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[TextureSizeId] [int] NOT NULL,
+ CONSTRAINT [PK_Texture] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Texture] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC,
+	[TextureSizeId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TextureFormula](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[HeightmapId] [int] NULL,
+	[Width] [decimal](36, 18) NULL,
+	[Height] [decimal](36, 18) NULL,
+	[ModifierId] [int] NULL,
+	[AddOnFormulaId] [int] NULL,
+ CONSTRAINT [PK_TextureFormula] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TextureFormula] UNIQUE NONCLUSTERED 
+(
+	[Title] ASC,
+	[HeightmapId] ASC,
+	[Width] ASC,
+	[Height] ASC,
+	[ModifierId] ASC,
+	[AddOnFormulaId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Planet].[TextureSize](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[X] [decimal](36, 18) NOT NULL,
+	[Y] [decimal](36, 18) NOT NULL,
+ CONSTRAINT [PK_TextureSize] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_TextureSize] UNIQUE NONCLUSTERED 
+(
+	[X] ASC,
+	[Y] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [Planet].[FogKey]  WITH CHECK ADD  CONSTRAINT [FK_FogKey_Colour] FOREIGN KEY([ColourId])
+REFERENCES [Planet].[Colour] ([Id])
+GO
+ALTER TABLE [Planet].[FogKey] CHECK CONSTRAINT [FK_FogKey_Colour]
+GO
+ALTER TABLE [Planet].[FogKeyLink]  WITH CHECK ADD  CONSTRAINT [FK_FogKeyLink_FogKey] FOREIGN KEY([FogKeyId])
+REFERENCES [Planet].[FogKey] ([Id])
+GO
+ALTER TABLE [Planet].[FogKeyLink] CHECK CONSTRAINT [FK_FogKeyLink_FogKey]
+GO
+ALTER TABLE [Planet].[FogKeyLink]  WITH CHECK ADD  CONSTRAINT [FK_FogKeyLink_FogKeySet] FOREIGN KEY([FogKeySetId])
+REFERENCES [Planet].[FogKeySet] ([Id])
+GO
+ALTER TABLE [Planet].[FogKeyLink] CHECK CONSTRAINT [FK_FogKeyLink_FogKeySet]
+GO
+ALTER TABLE [Planet].[PlanetAchievementData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAchievementData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetAchievementData] CHECK CONSTRAINT [FK_PlanetAchievementData_Planet]
+GO
+ALTER TABLE [Planet].[PlanetAtmospherePhysicsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetAtmospherePhysicsData] CHECK CONSTRAINT [FK_PlanetAtmospherePhysicsData_Planet]
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Clouds] FOREIGN KEY([CloudsId])
+REFERENCES [Planet].[Clouds] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Clouds]
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet] FOREIGN KEY([FogKeySetId])
+REFERENCES [Planet].[FogKeySet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_FogKeySet]
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient] FOREIGN KEY([GradientId])
+REFERENCES [Planet].[Gradient] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Gradient]
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetAtmosphereVisualsData] CHECK CONSTRAINT [FK_PlanetAtmosphereVisualsData_Planet]
+GO
+ALTER TABLE [Planet].[PlanetBaseData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetBaseData_Colour] FOREIGN KEY([ColourId])
+REFERENCES [Planet].[Colour] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetBaseData] CHECK CONSTRAINT [FK_PlanetBaseData_Colour]
+GO
+ALTER TABLE [Planet].[PlanetBaseData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetBaseData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetBaseData] CHECK CONSTRAINT [FK_PlanetBaseData_Planet]
+GO
+ALTER TABLE [Planet].[PlanetLandmark]  WITH CHECK ADD  CONSTRAINT [FK_PlanetLandmark_Landmark] FOREIGN KEY([LandmarkId])
+REFERENCES [Planet].[Landmark] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetLandmark] CHECK CONSTRAINT [FK_PlanetLandmark_Landmark]
+GO
+ALTER TABLE [Planet].[PlanetLandmark]  WITH CHECK ADD  CONSTRAINT [FK_PlanetLandmark_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetLandmark] CHECK CONSTRAINT [FK_PlanetLandmark_Planet]
+GO
+ALTER TABLE [Planet].[PlanetOrbitData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetOrbitData_ParentPlanet] FOREIGN KEY([ParentPlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetOrbitData] CHECK CONSTRAINT [FK_PlanetOrbitData_ParentPlanet]
+GO
+ALTER TABLE [Planet].[PlanetOrbitData]  WITH CHECK ADD  CONSTRAINT [FK_PlanetOrbitData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetOrbitData] CHECK CONSTRAINT [FK_PlanetOrbitData_Planet]
+GO
+ALTER TABLE [Planet].[PlanetPostProcessing]  WITH CHECK ADD  CONSTRAINT [FK_PlanetPostProcessing_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetPostProcessing] CHECK CONSTRAINT [FK_PlanetPostProcessing_Planet]
+GO
+ALTER TABLE [Planet].[PlanetPostProcessing]  WITH CHECK ADD  CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey] FOREIGN KEY([PostProcessingKeyId])
+REFERENCES [Planet].[PostProcessingKey] ([Id])
+GO
+ALTER TABLE [Planet].[PlanetPostProcessing] CHECK CONSTRAINT [FK_PlanetPostProcessing_PostProcessingKey]
+GO
+ALTER TABLE [Planet].[TerrainData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainData_Planet] FOREIGN KEY([PlanetId])
+REFERENCES [Planet].[Planet] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainData] CHECK CONSTRAINT [FK_TerrainData_Planet]
+GO
+ALTER TABLE [Planet].[TerrainData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainData_TerrainTextureData] FOREIGN KEY([TerrainTextureDataId])
+REFERENCES [Planet].[TerrainTextureData] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainData] CHECK CONSTRAINT [FK_TerrainData_TerrainTextureData]
+GO
+ALTER TABLE [Planet].[TerrainDataFlatZone]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFlatZone_FlatZone] FOREIGN KEY([FlatZoneId])
+REFERENCES [Planet].[FlatZone] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataFlatZone] CHECK CONSTRAINT [FK_TerrainDataFlatZone_FlatZone]
+GO
+ALTER TABLE [Planet].[TerrainDataFlatZone]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFlatZone_TerrainData] FOREIGN KEY([TerrainDataId])
+REFERENCES [Planet].[TerrainData] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataFlatZone] CHECK CONSTRAINT [FK_TerrainDataFlatZone_TerrainData]
+GO
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty] FOREIGN KEY([DifficultyId])
+REFERENCES [Planet].[Difficulty] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_Difficulty]
+GO
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData] FOREIGN KEY([TerrainDataId])
+REFERENCES [Planet].[TerrainData] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainData]
+GO
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet] FOREIGN KEY([TerrainFormulaSetId])
+REFERENCES [Planet].[TerrainFormulaSet] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataFormulaDifficulty] CHECK CONSTRAINT [FK_TerrainDataFormulaDifficulty_TerrainFormulaSet]
+GO
+ALTER TABLE [Planet].[TerrainDataTextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataTextureFormula_TerrainData] FOREIGN KEY([TerrainDataId])
+REFERENCES [Planet].[TerrainData] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataTextureFormula] CHECK CONSTRAINT [FK_TerrainDataTextureFormula_TerrainData]
+GO
+ALTER TABLE [Planet].[TerrainDataTextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainDataTextureFormula_TextureFormula] FOREIGN KEY([TextureFormulaId])
+REFERENCES [Planet].[TextureFormula] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainDataTextureFormula] CHECK CONSTRAINT [FK_TerrainDataTextureFormula_TextureFormula]
+GO
+ALTER TABLE [Planet].[TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_Heightmap] FOREIGN KEY([HeightmapId])
+REFERENCES [Planet].[Heightmap] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_Heightmap]
+GO
+ALTER TABLE [Planet].[TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_Modifier] FOREIGN KEY([ModifierId])
+REFERENCES [Planet].[Modifier] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_Modifier]
+GO
+ALTER TABLE [Planet].[TerrainFormula]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormula_TerrainFormula] FOREIGN KEY([AddOnFormulaId])
+REFERENCES [Planet].[TerrainFormula] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainFormula] CHECK CONSTRAINT [FK_TerrainFormula_TerrainFormula]
+GO
+ALTER TABLE [Planet].[TerrainFormulaLink]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula] FOREIGN KEY([TerrainFormulaId])
+REFERENCES [Planet].[TerrainFormula] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainFormulaLink] CHECK CONSTRAINT [FK_TerrainFormulaLink_TerrainFormula]
+GO
+ALTER TABLE [Planet].[TerrainFormulaLink]  WITH CHECK ADD  CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet] FOREIGN KEY([TerrainFormulaSetId])
+REFERENCES [Planet].[TerrainFormulaSet] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainFormulaLink] CHECK CONSTRAINT [FK_TerrainFormulaLink_TerrainFormulaSet]
+GO
+ALTER TABLE [Planet].[TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture] FOREIGN KEY([SurfaceTextureA])
+REFERENCES [Planet].[Texture] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture]
+GO
+ALTER TABLE [Planet].[TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture1] FOREIGN KEY([SurfaceTextureB])
+REFERENCES [Planet].[Texture] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture1]
+GO
+ALTER TABLE [Planet].[TerrainTextureData]  WITH CHECK ADD  CONSTRAINT [FK_TerrainTextureData_Texture2] FOREIGN KEY([TerrainTextureC])
+REFERENCES [Planet].[Texture] ([Id])
+GO
+ALTER TABLE [Planet].[TerrainTextureData] CHECK CONSTRAINT [FK_TerrainTextureData_Texture2]
+GO
+ALTER TABLE [Planet].[Texture]  WITH CHECK ADD  CONSTRAINT [FK_Texture_TextureSize] FOREIGN KEY([TextureSizeId])
+REFERENCES [Planet].[TextureSize] ([Id])
+GO
+ALTER TABLE [Planet].[Texture] CHECK CONSTRAINT [FK_Texture_TextureSize]
+GO
+ALTER TABLE [Planet].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TextureFormula_Heightmap] FOREIGN KEY([HeightmapId])
+REFERENCES [Planet].[Heightmap] ([Id])
+GO
+ALTER TABLE [Planet].[TextureFormula] CHECK CONSTRAINT [FK_TextureFormula_Heightmap]
+GO
+ALTER TABLE [Planet].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TextureFormula_Modifier] FOREIGN KEY([ModifierId])
+REFERENCES [Planet].[Modifier] ([Id])
+GO
+ALTER TABLE [Planet].[TextureFormula] CHECK CONSTRAINT [FK_TextureFormula_Modifier]
+GO
+ALTER TABLE [Planet].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [FK_TextureFormula_TextureFormula] FOREIGN KEY([AddOnFormulaId])
+REFERENCES [Planet].[TextureFormula] ([Id])
+GO
+ALTER TABLE [Planet].[TextureFormula] CHECK CONSTRAINT [FK_TextureFormula_TextureFormula]
+GO
+ALTER TABLE [Planet].[TextureFormula]  WITH CHECK ADD  CONSTRAINT [CK_TextureFormula] CHECK  (([HeightmapId] IS NULL AND [Width] IS NULL AND [Height] IS NULL AND [ModifierId] IS NOT NULL AND [AddOnFormulaId] IS NULL OR [HeightmapId] IS NOT NULL AND [Width] IS NOT NULL AND [Height] IS NOT NULL))
+GO
+ALTER TABLE [Planet].[TextureFormula] CHECK CONSTRAINT [CK_TextureFormula]
+GO

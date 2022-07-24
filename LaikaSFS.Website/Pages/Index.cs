@@ -67,7 +67,7 @@ public partial class Index {
         
         List<StreamContent?> contentList = new();
 
-        foreach (var file in e.GetMultipleFiles().OrderBy(file => file.Name)) {
+        foreach (var file in e.GetMultipleFiles(13).OrderBy(file => file.Name)) {
             var fileContent = new StreamContent(file.OpenReadStream());
             fileContent.Headers.Add("name", file.Name.Split('-')[1].Replace(".json", ""));
             contentList.Add(fileContent);
@@ -80,7 +80,6 @@ public partial class Index {
                 PlanetData? planetData = await JsonSerializer.DeserializeAsync<PlanetData>(await content.ReadAsStreamAsync());
 
                 if (name != null && planetData != null) {
-
                     SFSContext.CreatePlanetFromJson(planetData, name);
                 }
             }

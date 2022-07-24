@@ -33,3 +33,9 @@ INSERT INTO Planet.Heightmap (
 ) VALUES (
 	'Venus_Plains'
 )
+
+INSERT INTO Planet.Heightmap (
+	Title
+) VALUES (
+	'Deimos'
+)

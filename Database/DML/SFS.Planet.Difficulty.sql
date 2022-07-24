@@ -1,16 +1,16 @@
-INSERT INTO Difficulty (
+INSERT INTO Planet.Difficulty (
 	Title
 ) VALUES (
 	'normal'
 )
 
-INSERT INTO Difficulty (
+INSERT INTO Planet.Difficulty (
 	Title
 ) VALUES (
 	'hard'
 )
 
-INSERT INTO Difficulty (
+INSERT INTO Planet.Difficulty (
 	Title
 ) VALUES (
 	'realistic'

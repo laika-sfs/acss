@@ -458,6 +458,10 @@ namespace LaikaSFS.Website.Data {
                 TextureSize? TextureSizeB = texSizeB != null ? TextureSize.Where(texSize => texSize.X == texSizeB.X && texSize.Y == texSizeB.Y).FirstOrDefault() : null;
                 TextureSize? TextureSizeC = texSizeC != null ? TextureSize.Where(texSize => texSize.X == texSizeC.X && texSize.Y == texSizeC.Y).FirstOrDefault() : null;
 
+                TextureSizeA = null;
+                TextureSizeB = null;
+                TextureSizeC = null;
+
                 Texture SurfaceTextureA = new() {
                     Title = planetData.TerrainData.TerrainTextureData.SurfaceTextureA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureA : string.Empty,
                     TextureSize = TextureSizeA == null ? new() {

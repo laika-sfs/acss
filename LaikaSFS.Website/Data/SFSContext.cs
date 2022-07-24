@@ -458,32 +458,53 @@ namespace LaikaSFS.Website.Data {
                 TextureSize? TextureSizeB = texSizeB != null ? TextureSize.Where(texSize => texSize.X == texSizeB.X && texSize.Y == texSizeB.Y).FirstOrDefault() : null;
                 TextureSize? TextureSizeC = texSizeC != null ? TextureSize.Where(texSize => texSize.X == texSizeC.X && texSize.Y == texSizeC.Y).FirstOrDefault() : null;
 
+                Texture SurfaceTextureA = new() {
+                    Title = planetData.TerrainData.TerrainTextureData.SurfaceTextureA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureA : string.Empty,
+                    TextureSize = TextureSizeA == null ? new() {
+                        X = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA.X : 0,
+                        Y = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA.Y : 0
+                    } : TextureSizeA
+                };
+                Texture? SurfaceTextureAExists = Texture.Where(texture =>
+                    texture.Title == SurfaceTextureA.Title &&
+                    texture.TextureSize.X == SurfaceTextureA.TextureSize.X &&
+                    texture.TextureSize.Y == SurfaceTextureA.TextureSize.Y
+                ).FirstOrDefault();
+
+                Texture SurfaceTextureB = new() {
+                    Title = planetData.TerrainData.TerrainTextureData.SurfaceTextureB != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureB : string.Empty,
+                    TextureSize = TextureSizeB == null ? new() {
+                        X = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB.X : 0,
+                        Y = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB.Y : 0
+                    } : TextureSizeB
+                };
+                Texture? SurfaceTextureBExists = Texture.Where(texture =>
+                    texture.Title == SurfaceTextureB.Title &&
+                    texture.TextureSize.X == SurfaceTextureB.TextureSize.X &&
+                    texture.TextureSize.Y == SurfaceTextureB.TextureSize.Y
+                ).FirstOrDefault();
+
+                Texture TerrainTextureC = new() {
+                    Title = planetData.TerrainData.TerrainTextureData.TerrainTextureC != null ? planetData.TerrainData.TerrainTextureData.TerrainTextureC : string.Empty,
+                    TextureSize = TextureSizeC == null ? new() {
+                        X = planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC != null ? planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC.X : 0,
+                        Y = planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC != null ? planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC.Y : 0
+                    } : TextureSizeC
+                };
+                Texture? TerrainTextureCExists = Texture.Where(texture =>
+                    texture.Title == TerrainTextureC.Title &&
+                    texture.TextureSize.X == TerrainTextureC.TextureSize.X &&
+                    texture.TextureSize.Y == TerrainTextureC.TextureSize.Y
+                ).FirstOrDefault();
+
                 planet.TerrainData.Add(new() {
                     TerrainTextureData = new() {
                         Title = title,
                         PlanetTexture = planetData.TerrainData.TerrainTextureData.PlanetTexture != null ? planetData.TerrainData.TerrainTextureData.PlanetTexture : string.Empty,
                         PlanetTextureCutout = planetData.TerrainData.TerrainTextureData.PlanetTextureCutout,
-                        SurfaceTextureANavigation = new() {
-                            Title = planetData.TerrainData.TerrainTextureData.SurfaceTextureA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureA : string.Empty,
-                            TextureSize = TextureSizeA == null ? new() {
-                                X = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA.X : 0,
-                                Y = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeA.Y : 0
-                            } : TextureSizeA
-                        },
-                        SurfaceTextureBNavigation = new() {
-                            Title = planetData.TerrainData.TerrainTextureData.SurfaceTextureB != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureB : string.Empty,
-                            TextureSize = TextureSizeB == null ? new() {
-                                X = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB.X : 0,
-                                Y = planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB != null ? planetData.TerrainData.TerrainTextureData.SurfaceTextureSizeB.Y : 0
-                            } : TextureSizeB
-                        },
-                        TerrainTextureCNavigation = new() {
-                            Title = planetData.TerrainData.TerrainTextureData.TerrainTextureC != null ? planetData.TerrainData.TerrainTextureData.TerrainTextureC : string.Empty,
-                            TextureSize = TextureSizeC == null ? new() {
-                                X = planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC != null ? planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC.X : 0,
-                                Y = planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC != null ? planetData.TerrainData.TerrainTextureData.TerrainTextureSizeC.Y : 0
-                            } : TextureSizeC
-                        },
+                        SurfaceTextureANavigation = SurfaceTextureAExists ?? SurfaceTextureA,
+                        SurfaceTextureBNavigation = SurfaceTextureBExists ?? SurfaceTextureB,
+                        TerrainTextureCNavigation = TerrainTextureCExists ?? TerrainTextureC,
                         SurfaceLayerSize = planetData.TerrainData.TerrainTextureData.SurfaceLayerSize,
                         MinFade = planetData.TerrainData.TerrainTextureData.MinFade,
                         MaxFade = planetData.TerrainData.TerrainTextureData.MaxFade,
@@ -706,6 +727,9 @@ namespace LaikaSFS.Website.Data {
                     }
                 }
             }
+
+            Add(planet);
+            SaveChanges();
 
             return planet;
         }

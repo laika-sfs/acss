@@ -1,34 +1,34 @@
-INSERT INTO Heightmap (
+INSERT INTO Planet.Heightmap (
 	Title
 ) VALUES (
 	'Mercury_Plains'
 )
 
-INSERT INTO Heightmap (
+INSERT INTO Planet.Heightmap (
 	Title
 ) VALUES (
 	'Mercury'
 )
 
-INSERT INTO Heightmap (
+INSERT INTO Planet.Heightmap (
 	Title
 ) VALUES (
 	'Craters'
 )
 
-INSERT INTO Heightmap (
+INSERT INTO Planet.Heightmap (
 	Title
 ) VALUES (
 	'Perlin'
 )
 
-INSERT INTO Heightmap (
+INSERT INTO Planet.Heightmap (
 	Title
 ) VALUES (
 	'Venus'
 )
 
-INSERT INTO Heightmap (
+INSERT INTO Planet.Heightmap (
 	Title
 ) VALUES (
 	'Venus_Plains'

@@ -349,3 +349,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 App/Properties/ServiceDependencies/laikasfs - Web Deploy/profile.arm.json
+LaikaSFS.Website/Properties/ServiceDependencies/laikasfs - Web Deploy/profile.arm.json

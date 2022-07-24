@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaikaSFS.Website", "..\LaikaSFS.Website\LaikaSFS.Website.csproj", "{687714EF-FE2D-4686-A111-99D4A018C562}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaikaSFS.Website", "LaikaSFS.Website\LaikaSFS.Website.csproj", "{687714EF-FE2D-4686-A111-99D4A018C562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

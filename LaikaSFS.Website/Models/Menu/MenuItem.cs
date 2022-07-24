@@ -12,12 +12,43 @@ public class MenuItem {
     public string Title { get; set; }
     [JsonPropertyName("items")]
     public List<MenuItem> Items { get; set; }
-    public bool IsChecked { get; set; }
+    [JsonPropertyName("parent")]
+    public MenuItem? Parent { get; set; }
+    [JsonPropertyName("menu")]
+    public Menu Menu { get; set; }
+    public bool? IsChecked { get; set; } = false;
     public bool IsExpanded { get; set; }
 
-    public void SetChecked(bool isChecked)
+    public void ChildChecked() {
+        bool firstChild = true;
+        bool? state = null;
+
+        foreach (MenuItem item in Items) {
+            if (firstChild) {
+                firstChild = false;
+                state = item.IsChecked;
+            }
+            else if (state != item.IsChecked) {
+                state = null;
+                break;
+            }
+        }
+
+        IsChecked = state;
+
+        if (Parent != null) {
+            Parent.ChildChecked();
+        }
+        else {
+            Menu.ChildChecked();
+        }
+    }
+
+    public void SetChecked(bool? isChecked)
     {
         IsChecked = isChecked;
+
+        Parent?.ChildChecked();
 
         foreach (MenuItem item in Items)
         {

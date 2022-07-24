@@ -14,15 +14,18 @@ namespace LaikaSFS.Website.Data {
             : base(options) {
         }
 
-        private MenuItem GetMenuItems(Tree? tree) {
-            MenuItem menuItem = new();
+        private MenuItem GetMenuItems(Tree? tree, Menu menu, MenuItem? parent) {
+            MenuItem menuItem = new() {
+                Parent = parent,
+                Menu = menu,
+            };
             if (tree != null) {
                 menuItem.Title = tree.Title;
                 menuItem.Items = new();
 
                 if (tree.InverseParent.Any()) {
                     foreach (Tree subTree in tree.InverseParent.OrderBy(tr => tr.OrderBy)) {
-                        menuItem.Items.Add(GetMenuItems(subTree));
+                        menuItem.Items.Add(GetMenuItems(subTree, menu, menuItem));
                     }
                 }
             }
@@ -43,7 +46,7 @@ namespace LaikaSFS.Website.Data {
             };
 
             foreach (Tree subTree in tree.InverseParent.OrderBy(tr => tr.OrderBy)) {
-                menu.Items.Add(GetMenuItems(subTree));
+                menu.Items.Add(GetMenuItems(subTree, menu, null));
             }
             return menu;
         }

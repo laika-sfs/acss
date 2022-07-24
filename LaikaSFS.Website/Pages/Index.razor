@@ -9,7 +9,7 @@
 <h3><center>Version 1.2.3 (SFS 1.5.6+)</center></h3>
 
 <center>
-    <button @onclick="DownloadFileFromStream">
+    <button @onclick="DownloadFileFromURL">
         Download
     </button>
 </center>
@@ -20,8 +20,7 @@
 {
     <ul>
         <li>
-            <span class="@(Menu.Items.Any() ? "caret" : "") @(Menu.IsExpanded ? "caret-down" : "")" @onclick="ToggleExpanded"></span>
-            <span class="box @(Menu.IsChecked ? "check-box" : "")" @onclick="ToggleChecked">Menu</span>
+            <span>Objects</span>
             @if (Menu.Items != null && Menu.Items.Any() && Menu.IsExpanded)
             {
                 <ul class="nested active">

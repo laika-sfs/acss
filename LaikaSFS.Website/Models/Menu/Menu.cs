@@ -10,10 +10,27 @@ namespace LaikaSFS.Website.Models.Menu;
 public class Menu {
     [JsonPropertyName("items")]
     public List<MenuItem> Items { get; set; }
-    public bool IsChecked { get; set; }
+    public bool? IsChecked { get; set; } = false;
     public bool IsExpanded { get; set; } = true;
 
-    public void SetChecked(bool isChecked)
+    public void ChildChecked() {
+        bool? state = null;
+
+        foreach (MenuItem item in Items) {
+            if (state == null) {
+                state = item.IsChecked;
+            }
+            else if (state != item.IsChecked) {
+                IsChecked = null;
+                break;
+            }
+            else {
+                IsChecked = state;
+            }
+        }
+    }
+
+    public void SetChecked(bool? isChecked)
     {
         IsChecked = isChecked;
 

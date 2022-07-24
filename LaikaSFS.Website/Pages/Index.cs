@@ -14,6 +14,8 @@ public partial class Index {
     public SFSContext SFSContext { get; set; }
     [Inject]
     public IJSRuntime JS { get; set; }
+    [Inject]
+    public IConfiguration Configuration { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender) {
         if (firstRender || _loading) {
@@ -30,30 +32,26 @@ public partial class Index {
 
     public void ToggleChecked()
     {
-        Menu.IsChecked = !Menu.IsChecked;
-        Menu.SetChecked(Menu.IsChecked);
-        if (Menu.IsChecked)
-        {
-            Menu.SetExpanded(Menu.IsChecked);
+        switch (Menu.IsChecked) {
+            case true:
+                Menu.IsChecked = false;
+                break;
+            case null:
+                Menu.IsChecked = false;
+                break;
+            default:
+                Menu.IsChecked = true;
+                break;
         }
-    }
-
-    private Stream GetFileStream() {
-        return File.OpenRead(@".\wwwroot\ACSS.zip");
-    }
-
-    private async Task DownloadFileFromStream() {
-        Stream fileStream = GetFileStream();
-        string fileName = "ACSS.zip";
-
-        using DotNetStreamReference? streamRef = new DotNetStreamReference(stream: fileStream);
-
-        await JS.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
+        Menu.SetChecked(Menu.IsChecked);
+        if (Menu.IsChecked == true) {
+            Menu.SetExpanded(true);
+        }
     }
 
     private async Task DownloadFileFromURL() {
         string fileName = "ACSS.zip";
-        string fileURL = "https://laikasfs.azurewebsites.net/ACSS.zip";
+        string fileURL = $"{Configuration.GetValue<string>("SiteURL")}/ACSS.zip";
         await JS.InvokeVoidAsync("triggerFileDownload", fileName, fileURL);
     }
 }

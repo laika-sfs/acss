@@ -1,14 +1,31 @@
 ﻿@using LaikaSFS.Website.Models.Menu
 
-<span class="@(MenuItem.Items.Any() ? "caret" : "") @(MenuItem.IsExpanded ? "caret-down" : "")" @onclick="ToggleExpanded"></span>
-<span class="box @(MenuItem.IsChecked ? "check-box" : "")" @onclick="ToggleChecked">@MenuItem.Title</span>
+@if(MenuItem.Items.Any()) {
+    <span class="material-icons" aria-hidden="true" style="margin-right:5px;cursor:pointer;" @onclick="ToggleExpanded">@(MenuItem.IsExpanded ? "expand_more" : "chevron_right")</span>
+} else {
+    <span style="margin-left:24px;margin-right:5px;"></span>
+}
+<span class="material-icons" aria-hidden="true" style="margin-right:5px;cursor:pointer;" @onclick="ToggleChecked">
+    @switch (MenuItem.IsChecked) {
+        case true:
+            @("check_box")
+            break;
+        case null:
+            @("indeterminate_check_box")
+            break;
+        default:
+            @("check_box_outline_blank")
+            break;
+    }
+</span>
+<span>@MenuItem.Title</span>
 @if (MenuItem.Items.Any())
 {
     <ul class="nested @(MenuItem.IsExpanded ? "active" : "")">
         @foreach (MenuItem menuItem in MenuItem.Items)
         {
             <li>
-                <ListItem MenuItem="@menuItem"/>
+                <ListItem MenuItem="@menuItem" ChildEventCallback="@UpdateData"/>
             </li>
         }
     </ul>

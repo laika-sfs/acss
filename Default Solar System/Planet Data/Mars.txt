@@ -1,0 +1,226 @@
+{
+  "BASE_DATA": {
+    "radius": 169500.0,
+    "radiusDifficultyScale": {},
+    "gravity": 3.61,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 15000.0,
+    "velocityArrowsHeight": 3000.0,
+    "mapColor": {
+      "r": 0.67,
+      "g": 0.34,
+      "b": 0.3,
+      "a": 1.0
+    }
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 20000.0,
+    "density": 0.0008,
+    "curve": 9.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.8,
+    "upperAtmosphere": 0.15,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 0.35,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 5000,
+      "height": 25000.0,
+      "texture": "Atmo_Mars"
+    },
+    "CLOUDS": {
+      "texture": "None",
+      "startHeight": -1.0,
+      "width": 0.0,
+      "height": -1.0,
+      "alpha": 0.0,
+      "velocity": 0.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.68235296,
+            "g": 0.474509835,
+            "b": 0.407843173,
+            "a": 0.0
+          },
+          "distance": 0.0
+        },
+        {
+          "color": {
+            "r": 0.68235296,
+            "g": 0.474352956,
+            "b": 0.407058835,
+            "a": 0.3
+          },
+          "distance": 15000.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Mars",
+      "planetTextureCutout": 0.99,
+      "surfaceTexture_A": "Soft_Rocks",
+      "surfaceTextureSize_A": {
+        "x": 25.0,
+        "y": 12.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 40.0,
+        "y": 18.0
+      },
+      "terrainTexture_C": "Soft_Rocks",
+      "terrainTextureSize_C": {
+        "x": 380.0,
+        "y": 170.0
+      },
+      "surfaceLayerSize": 60.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 7.0,
+      "shadowHeight": 25.0
+    },
+    "terrainFormulaDifficulties": {
+      "normal": [
+        "PLAINS = AddHeightMap( Mars_Plains, 1064999.90956694, 1)",
+        "OUTPUT = AddHeightMap( Mars,    1064999.90956694,  3800.0)",
+        "OUTPUT = AddHeightMap( Perlin,  53249.995478347,    125.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  28783.781339647,     65.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  12987.8037752066,    24.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  3246.95094380165,     7.5, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  887.499924639117,     0.8)"
+      ],
+      "hard": [
+        "PLAINS = AddHeightMap( Mars_Plains, 2129999.81913388, 1)",
+        "OUTPUT = AddHeightMap( Mars,    2129999.81913388,  5200.0)",
+        "OUTPUT = AddHeightMap( Perlin,  53249.995478347,    125.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  28783.781339647,     65.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  12987.8037752066,    24.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  3246.95094380165,     7.5, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  887.499924639117,     0.8)"
+      ],
+      "realistic": [
+        "PLAINS = AddHeightMap( Mars_Plains, 21299998.19133879, 1)",
+        "OUTPUT = AddHeightMap( Mars_RSS,    21299998.19133879,  23333.3)",
+        "OUTPUT = AddHeightMap( Perlin,  53249.995478347,      125.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  28783.781339647,       65.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  12987.8037752066,      24.0, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  3246.95094380165,       7.5, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,  887.499924639117,       0.8)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 3.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 3500.0,
+        "shadowIntensity": 1.4,
+        "starIntensity": 0.0,
+        "hueShift": 1.0,
+        "saturation": 0.95,
+        "contrast": 0.95,
+        "red": 1.1,
+        "green": 1.1,
+        "blue": 1.0
+      },
+      {
+        "height": 20000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 30000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 40000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 11395000000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.1,
+    "argumentOfPeriapsis": 286.0,
+    "direction": 1,
+    "multiplierSOI": 2.5,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Olympus Mons",
+      "angle": 60.0,
+      "startAngle": 54.5,
+      "endAngle": 70.5
+    },
+    {
+      "name": "Valles Marineris",
+      "angle": 123.0,
+      "startAngle": 122.0,
+      "endAngle": 123.6
+    },
+    {
+      "name": "Gale Crater",
+      "angle": 283.0,
+      "startAngle": 280.8,
+      "endAngle": 285.0
+    },
+    {
+      "name": "Hellas Planitia",
+      "angle": 262.0,
+      "startAngle": 252.0,
+      "endAngle": 272.0
+    },
+    {
+      "name": "Arcadia Planitia",
+      "angle": 330.0,
+      "startAngle": 320.0,
+      "endAngle": 340.0
+    },
+    {
+      "name": "Utopia Planitia",
+      "angle": 3.0,
+      "startAngle": 353.0,
+      "endAngle": 13.0
+    }
+  ]
+}

@@ -18,6 +18,8 @@ namespace LaikaSFS.Website.Models.Planet
         public int Id { get; set; }
         public int? ParentId { get; set; }
         [StringLength(50)]
+        public string MenuType { get; set; } = null!;
+        [StringLength(50)]
         public string Title { get; set; } = null!;
         public int OrderBy { get; set; }
 

@@ -1,0 +1,218 @@
+{
+  "version": 1.5,
+  "BASE_DATA": {
+    "radius": 300000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 8.87,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 35000.0,
+    "velocityArrowsHeight": 3000.0,
+    "mapColor": {
+      "r": 0.789655149,
+      "g": 0.6457909,
+      "b": 0.49713105,
+      "a": 1.0
+    }
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 40000.0,
+    "density": 0.025,
+    "curve": 13.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.0,
+    "upperAtmosphere": 0.375,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 1.0,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 800,
+      "height": 45000.0,
+      "texture": "Atmo_Venus"
+    },
+    "CLOUDS": {
+      "texture": "Earth_Clouds",
+      "startHeight": -1500.0,
+      "width": 9157.86,
+      "height": 8500.0,
+      "alpha": 1.0,
+      "velocity": 1.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.836079836,
+            "g": 0.8455882,
+            "b": 0.559580445,
+            "a": 0.0
+          },
+          "distance": 100.0
+        },
+        {
+          "color": {
+            "r": 0.815686345,
+            "g": 0.788235366,
+            "b": 0.709803939,
+            "a": 1.0
+          },
+          "distance": 50000.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Deimos",
+      "planetTextureCutout": 0.945,
+      "surfaceTexture_A": "Dust",
+      "surfaceTextureSize_A": {
+        "x": 32.0,
+        "y": 14.0
+      },
+      "surfaceTexture_B": "Soft_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 48.0,
+        "y": 20.0
+      },
+      "terrainTexture_C": "Blured",
+      "terrainTextureSize_C": {
+        "x": 2000.0,
+        "y": 650.0
+      },
+      "surfaceLayerSize": 60.0,
+      "minFade": 0.0,
+      "maxFade": 0.8,
+      "shadowIntensity": 6.0,
+      "shadowHeight": 6.5
+    },
+    "terrainFormulaDifficulties": {
+      "normal": [
+        "OUTPUT = AddHeightMap(Venus, 1884955.592153875, 4000)",
+        "PLAINS = AddHeightMap(Venus_Plains, 1884955.5921538759, 1)",
+        "OUTPUT = AddHeightMap( Perlin,6283.18530717959, 8, Curve1, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,3490.65850398866, 5, Curve1, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,1449.96584011837, 1.6, Curve1)",
+        "OUTPUT = AddHeightMap( Perlin,942.477796076938, 1.5, Curve1, PLAINS)",
+        "M = AddHeightMap( Perlin,47123.8898038469, 1, Curve2, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,26927.9370307697, 200, Curve1, M)",
+        "M2 = AddHeightMap( Perlin,269279.370307697, 1, Curve2, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,94247.7796076938, 1300, Curve1, M2)"
+      ],
+      "hard": [
+        "OUTPUT = AddHeightMap(Venus, 3769911.18430775, 8000)",
+        "PLAINS = AddHeightMap(Venus_Plains, 3769911.184307751, 1)",
+        "OUTPUT = AddHeightMap( Perlin,6283.18530717959, 8, Curve1, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,3490.65850398866, 5, Curve1, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,1449.96584011837, 1.6, Curve1)",
+        "OUTPUT = AddHeightMap( Perlin,942.477796076938, 1.5, Curve1, PLAINS)",
+        "M = AddHeightMap( Perlin,47123.8898038469, 1, Curve2, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,26927.9370307697, 200, Curve1, M)",
+        "M2 = AddHeightMap( Perlin,269279.370307697, 1, Curve2, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,94247.7796076938, 1300, Curve1, M2)"
+      ],
+      "realistic": [
+        "OUTPUT = AddHeightMap(Venus, 37699111.8430775, 80000)",
+        "PLAINS = AddHeightMap(Venus_Plains, 37699111.84307751, 1)",
+        "OUTPUT = AddHeightMap( Perlin,6283.18530717959, 8, Curve1, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,3490.65850398866, 5, Curve1, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,1449.96584011837, 1.6, Curve1)",
+        "OUTPUT = AddHeightMap( Perlin,942.477796076938, 1.5, Curve1, PLAINS)",
+        "M = AddHeightMap( Perlin,47123.8898038469, 1, Curve2, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,26927.9370307697, 200, Curve1, M)",
+        "M2 = AddHeightMap( Perlin,269279.370307697, 1, Curve2, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,94247.7796076938, 1300, Curve1, M2)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 500.0,
+        "shadowIntensity": 1.35,
+        "starIntensity": 0.0,
+        "hueShift": 10.0,
+        "saturation": 1.0,
+        "contrast": 1.18,
+        "red": 1.11,
+        "green": 1.08,
+        "blue": 0.85
+      },
+      {
+        "height": 40000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 50000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 60000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 5410000000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Maxwell Montes",
+      "angle": 53.0,
+      "startAngle": 41.0,
+      "endAngle": 64.0
+    },
+    {
+      "name": "Atalanta Planitia",
+      "angle": 193.0,
+      "startAngle": 174.0,
+      "endAngle": 210.8
+    },
+    {
+      "name": "Lavinia Planitia",
+      "angle": 243.0,
+      "startAngle": 224.0,
+      "endAngle": 261.0
+    }
+  ]
+}

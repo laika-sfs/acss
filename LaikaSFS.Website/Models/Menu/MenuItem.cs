@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 namespace LaikaSFS.Website.Models.Menu;
 
 public class MenuItem {
+    [JsonPropertyName("menuType")]
+    public string MenuType { get; set; }
     [JsonPropertyName("title")]
     public string Title { get; set; }
     [JsonPropertyName("items")]

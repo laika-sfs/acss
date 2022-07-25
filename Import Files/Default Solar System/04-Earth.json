@@ -1,0 +1,195 @@
+{
+  "version": 1.5,
+  "BASE_DATA": {
+    "radius": 315000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 9.8,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 25000.0,
+    "velocityArrowsHeight": 5000.0,
+    "mapColor": {
+      "r": 0.45,
+      "g": 0.68,
+      "b": 1.0,
+      "a": 1.0
+    }
+  },
+  "ATMOSPHERE_PHYSICS_DATA": {
+    "height": 30000.0,
+    "density": 0.005,
+    "curve": 10.0,
+    "curveScale": {},
+    "parachuteMultiplier": 1.0,
+    "upperAtmosphere": 0.333,
+    "heightDifficultyScale": {},
+    "shockwaveIntensity": 1.0,
+    "minHeatingVelocityMultiplier": 1.0
+  },
+  "ATMOSPHERE_VISUALS_DATA": {
+    "GRADIENT": {
+      "positionZ": 4000,
+      "height": 45000.0,
+      "texture": "Atmo_Earth"
+    },
+    "CLOUDS": {
+      "texture": "Earth_Clouds",
+      "startHeight": 1200.0,
+      "width": 40845.87,
+      "height": 36000.0,
+      "alpha": 0.1,
+      "velocity": 2.0
+    },
+    "FOG": {
+      "keys": [
+        {
+          "color": {
+            "r": 0.461872876,
+            "g": 0.463235319,
+            "b": 0.3644572,
+            "a": 0.09803922
+          },
+          "distance": 500.0
+        },
+        {
+          "color": {
+            "r": 0.647058845,
+            "g": 0.848739564,
+            "b": 0.891,
+            "a": 0.117647059
+          },
+          "distance": 3000.0
+        },
+        {
+          "color": {
+            "r": 0.647058845,
+            "g": 0.848739564,
+            "b": 1.0,
+            "a": 0.416
+          },
+          "distance": 30000.0
+        }
+      ]
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Earth",
+      "planetTextureCutout": 1.0,
+      "surfaceTexture_A": "Blured",
+      "surfaceTextureSize_A": {
+        "x": 20.0,
+        "y": 8.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Blured",
+      "terrainTextureSize_C": {
+        "x": 100.0,
+        "y": 30.0
+      },
+      "surfaceLayerSize": 40.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 6.0,
+      "shadowHeight": 15.0
+    },
+    "terrainFormulaDifficulties": {
+      "normal": [
+        "OUTPUT = AddHeightMap(Perlin,19030.8016515536, 35)",
+        "OUTPUT = AddHeightMap(Perlin,2452.54445075783, 5)",
+        "OUTPUT = AddHeightMap(Perlin,1319.46891450771, 1)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 4.0,
+    "collider": true,
+    "flatZones": [
+      {
+        "height": 18.0,
+        "angle": 1.5707,
+        "width": 900.0,
+        "transition": 200.0
+      }
+    ]
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 0.0,
+        "shadowIntensity": 1.35,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.03,
+        "green": 1.02,
+        "blue": 1.0
+      },
+      {
+        "height": 7000.0,
+        "shadowIntensity": 1.5,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 25000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 40000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 50000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 7480000000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 2.5,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": false,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

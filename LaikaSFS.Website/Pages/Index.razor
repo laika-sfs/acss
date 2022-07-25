@@ -4,13 +4,13 @@
 
 <PageTitle>ACSS</PageTitle>
 
-<h1><center>ACSS</center></h1>
-<h2><center>SFS Planet Pack</center></h2>
-<h3><center>Version 1.2.3 (SFS 1.5.6+)</center></h3>
+<center><h1>ACSS</h1></center>
+<center><h2>SFS Planet Pack</h2></center>
+<center><h3>Version 1.2.3 (SFS 1.5.6+)</h3></center>
 
 <center>
     <button type="button" class="btn btn-dark" @onclick="DownloadFileFromURL">
-        Download
+        Download Complete Pack
     </button>
 </center>
 
@@ -31,7 +31,11 @@ else if (Environment.IsDevelopment() && _filesLoading) {
     </p>
 }
 
-<p>Features selection (Not working yet):</p>
+<p>Custom Selection:</p>
+
+<button type="button" class="btn btn-dark" @onclick="DownloadCustomZip">
+    Download Custom Pack
+</button>
 
 @if (Menu != null)
 {

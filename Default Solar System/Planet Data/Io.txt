@@ -1,0 +1,75 @@
+{
+  "BASE_DATA": {
+    "radius": 91000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 1.796,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 5000.0,
+    "velocityArrowsHeight": "NaN",
+    "mapColor": {
+      "r": 0.9,
+      "g": 0.85,
+      "b": 0.4,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Io",
+      "planetTextureCutout": -1.0,
+      "surfaceTexture_A": "Dust",
+      "surfaceTextureSize_A": {
+        "x": 20.0,
+        "y": 8.0
+      },
+      "surfaceTexture_B": "None",
+      "surfaceTextureSize_B": {
+        "x": -1.0,
+        "y": -1.0
+      },
+      "terrainTexture_C": "Dust",
+      "terrainTextureSize_C": {
+        "x": 150.0,
+        "y": 50.0
+      },
+      "surfaceLayerSize": 30.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 8.0,
+      "shadowHeight": 15.0
+    },
+    "terrainFormulaDifficulties": {
+      "normal": [
+        "OUTPUT = AddHeightMap( Io,7634.0701482232, 150)",
+        "OUTPUT = AddHeightMap( Io,2544.69004940773, 20)",
+        "OUTPUT = AddHeightMap( Perlin,954.2587685279, 3)"
+      ]
+    },
+    "textureFormula": [],
+    "verticeSize": 2.5,
+    "collider": true,
+    "flatZones": []
+  },
+  "ORBIT_DATA": {
+    "parent": "Jupiter",
+    "semiMajorAxis": 16868000.0,
+    "smaDifficultyScale": {
+      "normal": 1.0,
+      "hard": 2.5,
+      "realistic": 25.0
+    },
+    "eccentricity": 0.0,
+    "argumentOfPeriapsis": 0.0,
+    "direction": 1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": []
+}

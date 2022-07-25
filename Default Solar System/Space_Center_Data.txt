@@ -1,0 +1,8 @@
+{
+  "address": "Earth",
+  "angle": 90.0,
+  "position_LaunchPad": {
+    "horizontalPosition": 365.0,
+    "height": 26.2
+  }
+}

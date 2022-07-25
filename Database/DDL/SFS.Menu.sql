@@ -16,6 +16,7 @@ GO
 CREATE TABLE [Menu].[Tree](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[ParentId] [int] NULL,
+	[MenuType] [nvarchar](50) NOT NULL,
 	[Title] [nvarchar](50) NOT NULL,
 	[OrderBy] [int] NOT NULL,
  CONSTRAINT [PK_Tree] PRIMARY KEY CLUSTERED 

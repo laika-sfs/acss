@@ -17,9 +17,10 @@ namespace LaikaSFS.Website.Data {
         private MenuItem GetMenuItems(Tree? tree, Menu menu, MenuItem? parent) {
             MenuItem menuItem = new() {
                 Parent = parent,
-                Menu = menu,
+                Menu = menu
             };
             if (tree != null) {
+                menuItem.MenuType = tree.MenuType;
                 menuItem.Title = tree.Title;
                 menuItem.Items = new();
 

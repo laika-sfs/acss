@@ -1,0 +1,134 @@
+{
+  "version": 1.5,
+  "BASE_DATA": {
+    "radius": 120000.0,
+    "radiusDifficultyScale": {},
+    "gravity": 3.27,
+    "gravityDifficultyScale": {},
+    "timewarpHeight": 2500.0,
+    "velocityArrowsHeight": 0,
+    "mapColor": {
+      "r": 0.410344839,
+      "g": 0.372679353,
+      "b": 0.3495006,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Mercury",
+      "planetTextureCutout": 0.945,
+      "surfaceTexture_A": "Dark_Dust",
+      "surfaceTextureSize_A": {
+        "x": 20.0,
+        "y": 8.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 30.0,
+        "y": 14.0
+      },
+      "terrainTexture_C": "Soft_Rocks",
+      "terrainTextureSize_C": {
+        "x": 280.0,
+        "y": 145.0
+      },
+      "surfaceLayerSize": 30.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 13.0,
+      "shadowHeight": 10.0
+    },
+    "terrainFormulaDifficulties": {
+      "normal": [
+        "PLAINS = AddHeightMap(Mercury_Plains, 753982.236861550, 1)",
+        "OUTPUT = AddHeightMap(Mercury,753982.236861550, 500)",
+        "OUTPUT = AddHeightMap(Craters,75398.223686155, 350, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters,15079.644737231, 100, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters,2356.19449019234, 12, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,2513.27412287183, 3)"
+      ],
+      "hard": [
+        "PLAINS = AddHeightMap(Mercury_Plains, 1507964.4737231007544, 1)",
+        "OUTPUT = AddHeightMap(Mercury,1507964.4737231007544, 1000)",
+        "OUTPUT = AddHeightMap(Craters,75398.223686155, 350, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters,15079.644737231, 100, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters,2356.19449019234, 12, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,2513.27412287183, 3)"
+      ],
+      "realistic": [
+        "PLAINS = AddHeightMap(Mercury_Plains, 15079644.737231007544, 1)",
+        "OUTPUT = AddHeightMap(Mercury,15079644.737231007544, 5000)",
+        "OUTPUT = AddHeightMap(Craters,75398.223686155, 350, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters,15079.644737231, 100, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters,2356.19449019234, 12, null, PLAINS)",
+        "OUTPUT = AddHeightMap( Perlin,2513.27412287183, 3)"
+      ]
+    },
+    "textureFormula": [
+      "OUTPUT = AddHeightMap(Perlin,15079.644737231, 1, Curve8)",
+      "OUTPUT = ApplyCurve(Curve8)",
+      "OUTPUT = ApplyCurve(Curve8)"
+    ],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 10000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 15000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Sun",
+    "semiMajorAxis": 2895000000.0,
+    "smaDifficultyScale": {},
+    "eccentricity": 0.2,
+    "argumentOfPeriapsis": 29.0,
+    "direction": 1,
+    "multiplierSOI": 2.0,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Caloris Planitia",
+      "angle": 169.85,
+      "startAngle": 154.0,
+      "endAngle": 185.5
+    },
+    {
+      "name": "Borealis Planitia",
+      "angle": 72.0,
+      "startAngle": 64.0,
+      "endAngle": 79.0
+    }
+  ]
+}

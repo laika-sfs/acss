@@ -1,0 +1,157 @@
+{
+  "version": 1.5,
+  "BASE_DATA": {
+    "radius": 86500.0,
+    "radiusDifficultyScale": {},
+    "gravity": 1.42,
+    "gravityDifficultyScale": {
+      "normal": 1.0,
+      "hard": 1.0,
+      "realistic": 1.141
+    },
+    "timewarpHeight": 5000.0,
+    "velocityArrowsHeight": 0,
+    "mapColor": {
+      "r": 0.375,
+      "g": 0.3805147,
+      "b": 0.3805147,
+      "a": 1.0
+    }
+  },
+  "TERRAIN_DATA": {
+    "TERRAIN_TEXTURE_DATA": {
+      "planetTexture": "Moon",
+      "planetTextureCutout": -0.999,
+      "surfaceTexture_A": "Dark_Dust",
+      "surfaceTextureSize_A": {
+        "x": 20.0,
+        "y": 8.0
+      },
+      "surfaceTexture_B": "Hard_Rocks",
+      "surfaceTextureSize_B": {
+        "x": 40.0,
+        "y": 16.0
+      },
+      "terrainTexture_C": "Soft_Rocks",
+      "terrainTextureSize_C": {
+        "x": 280.0,
+        "y": 145.0
+      },
+      "surfaceLayerSize": 50.0,
+      "minFade": 0.0,
+      "maxFade": 1.0,
+      "shadowIntensity": 9.0,
+      "shadowHeight": 10.0
+    },
+    "terrainFormulaDifficulties": {
+      "normal": [
+        "OUTPUT = AddHeightMap(Moon_Normal, 543495.5290710, 250)",
+        "PLAINS = AddHeightMap(Moon_Plains, 543495.5290710, 1)",
+        "OUTPUT = AddHeightMap(Craters, 24704.3422305016, 180, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters, 3396.84705669396, 22, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Perlin, 1811.65176357011, 3)"
+      ],
+      "hard": [
+        "OUTPUT = AddHeightMap(Moon, 1086991.0581420, 500)",
+        "PLAINS = AddHeightMap(Moon_Plains, 1086991.0581420, 1)",
+        "OUTPUT = AddHeightMap(Craters, 24704.3422305016, 180, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters, 3396.84705669396, 22, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Perlin, 1811.65176357011, 3)"
+      ],
+      "realistic": [
+        "OUTPUT = AddHeightMap(Moon, 10869910.581420, 5000)",
+        "PLAINS = AddHeightMap(Moon_Plains, 10869910.581420, 1)",
+        "OUTPUT = AddHeightMap(Craters, 24704.3422305016, 180, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Craters, 3396.84705669396, 22, null, PLAINS)",
+        "OUTPUT = AddHeightMap(Perlin, 1811.65176357011, 3)"
+      ]
+    },
+    "textureFormula": [
+      "OUTPUT = AddHeightMap(Perlin, 6793.69411338793, 1, Curve8)",
+      "OUTPUT = ApplyCurve(Curve8)",
+      "OUTPUT = ApplyCurve(Curve8)"
+    ],
+    "verticeSize": 2.0,
+    "collider": true,
+    "flatZones": []
+  },
+  "POST_PROCESSING": {
+    "keys": [
+      {
+        "height": 10000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 0.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      },
+      {
+        "height": 15000.0,
+        "shadowIntensity": 1.75,
+        "starIntensity": 1.0,
+        "hueShift": 0.0,
+        "saturation": 0.95,
+        "contrast": 1.2,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0
+      }
+    ]
+  },
+  "ORBIT_DATA": {
+    "parent": "Earth",
+    "semiMajorAxis": 11200000.0,
+    "smaDifficultyScale": {
+      "normal": 1.0,
+      "hard": 4.0,
+      "realistic": 34.32
+    },
+    "eccentricity": 0.055,
+    "argumentOfPeriapsis": 304.0,
+    "direction": 1,
+    "multiplierSOI": 1.35,
+    "soiDifficultyScale": {}
+  },
+  "ACHIEVEMENT_DATA": {
+    "Landed": true,
+    "Takeoff": true,
+    "Atmosphere": true,
+    "Orbit": true,
+    "Crash": true
+  },
+  "LANDMARKS": [
+    {
+      "name": "Tycho Crater",
+      "angle": 202.0,
+      "startAngle": 197.0,
+      "endAngle": 209.0
+    },
+    {
+      "name": "Ocean of Storms",
+      "angle": 227.0,
+      "startAngle": 219.0,
+      "endAngle": 242.0
+    },
+    {
+      "name": "Copernicus Crater",
+      "angle": 262.0,
+      "startAngle": 254.8,
+      "endAngle": 268.8
+    },
+    {
+      "name": "Sea of Tranquility",
+      "angle": 310.0,
+      "startAngle": 301.0,
+      "endAngle": 317.0
+    },
+    {
+      "name": "Sea of Serenity",
+      "angle": 354.0,
+      "startAngle": 343.0,
+      "endAngle": 366.0
+    }
+  ]
+}
